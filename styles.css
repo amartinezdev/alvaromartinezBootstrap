@@ -1,0 +1,80 @@
+/* 
+----------------------
+      VARIABLES
+----------------------
+*/
+/* 
+----------------------
+       MIXINS
+----------------------
+*/
+/* 
+----------------------
+       CLASES
+----------------------
+*/
+.boton {
+  background-color: #a862e9;
+  border-radius: 5px;
+  padding: 10px 25px;
+  color: black;
+  font-weight: 500;
+  transition: 0.2s;
+}
+.boton:hover {
+  background: rgb(117.6983240223, 28.1452513966, 200.8547486034);
+  color: white;
+}
+
+.skillIcons {
+  transition: 0.2s;
+  width: 50px;
+}
+.skillIcons:hover {
+  transform: translateY(-3px);
+}
+
+.icono svg {
+  transition: 0.2s;
+}
+.icono svg:hover {
+  transform: translateY(-3px);
+}
+
+.boton-card {
+  background-color: #a862e9;
+  border-radius: 5px;
+  padding: 6px 13px;
+  color: black;
+  transition: 0.2s;
+  font-weight: 500;
+  margin-bottom: 50px;
+}
+.boton-card:hover {
+  background: rgb(117.6983240223, 28.1452513966, 200.8547486034);
+  color: white;
+}
+
+/* 
+----------------------
+       FORM
+----------------------
+*/
+form .form-control {
+  transition: 0.2s;
+}
+form .form-control:focus {
+  border-color: #a862e9;
+  box-shadow: 0 0 0 3px rgba(168, 98, 233, 0.25);
+}
+form button[type=submit] {
+  background-color: #a862e9;
+  color: #000;
+  border: none;
+  font-weight: 600;
+  transition: 0.2s;
+}
+form button[type=submit]:hover {
+  background: rgb(117.6983240223, 28.1452513966, 200.8547486034);
+  color: white;
+}/*# sourceMappingURL=styles.css.map */

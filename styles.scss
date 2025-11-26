@@ -1,0 +1,91 @@
+/* 
+----------------------
+      VARIABLES
+----------------------
+*/
+$color-principal: #a862e9;
+$color-secundario: #e685b5;
+$transition: 0.2s;
+
+/* 
+----------------------
+       MIXINS
+----------------------
+*/
+@mixin redondear($pixeles){
+    border-radius: $pixeles;
+}
+
+@mixin link-hover() {
+    transition: $transition;
+  &:hover {
+    transform: translateY(-3px);
+  }
+}
+
+@mixin boton-hover(){
+    transition: $transition;
+    &:hover{
+        background: darken($color-principal, 20%);
+        color:white;
+    }
+    
+}
+
+/* 
+----------------------
+       CLASES
+----------------------
+*/
+.boton{
+    background-color: $color-principal;
+    @include redondear(5px);
+    padding: 10px 25px;
+    color: black;
+    font-weight: 500;
+    @include boton-hover();
+}
+
+.skillIcons{
+    @include link-hover();
+    width: 50px;
+}
+
+.icono svg {
+   @include link-hover();
+}
+
+.boton-card{
+    background-color: $color-principal;
+    @include redondear(5px);
+    padding: 6px 13px;
+    color: black;
+    @include boton-hover();
+    font-weight: 500;
+    margin-bottom: 50px;
+}
+
+/* 
+----------------------
+       FORM
+----------------------
+*/
+form {
+  .form-control {
+    transition: $transition;
+
+    &:focus {
+      border-color: $color-principal;
+      box-shadow: 0 0 0 3px rgba($color-principal, 0.25);
+    }
+  }
+
+  button[type="submit"] {
+    background-color: $color-principal;
+    color: #000;
+    border: none;
+    font-weight: 600;
+    @include boton-hover();
+  }
+}
+

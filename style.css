@@ -1,0 +1,136 @@
+/* 
+----------------------
+      VARIABLES 
+----------------------
+*/
+:root {
+  --font-badges: 14px;
+}
+
+/* 
+----------------------
+      GLOBALES 
+----------------------
+*/
+body {
+  font-family: "Poppins", sans-serif !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+code {
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-size: 20px;
+  font-weight: 800;
+  font-family: "Fira Code", monospace;
+  color: #a862e9 !important;
+}
+
+/* 
+----------------------
+   SELECTORES DE ID
+----------------------
+*/
+#inicio {
+  background: url("img/bg01.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-color: rgba(0, 0, 0, 0.89);
+  background-blend-mode: darken;
+}
+
+/* un broder right simulando el cursor */
+#palabras {
+  border-right: 5px solid rgba(48, 48, 48, 0.932);
+  animation: blink 1s infinite;
+}
+
+#myCarousel {
+  width: 480px;
+}
+
+/* 
+  de 0 a 49 muestro el color
+  de 50 a 100 oculto el color
+*/
+@keyframes blink {
+  0%,
+  49% {
+    border-right-color: #3b3b3b96;
+  }
+  50%,
+  100% {
+    border-right-color: transparent;
+  }
+}
+
+/* 
+----------------------
+      NAVBAR 
+----------------------
+*/
+.navbar {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(20px);
+}
+
+/* 
+----------------------
+      CARDS
+----------------------
+*/
+.card {
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.card:hover {
+  scale: 1.01;
+}
+
+.card-text {
+  text-wrap: balance;
+}
+
+/* 
+----------------------
+       BADGES
+----------------------
+*/
+.php {
+  color: #777bb4;
+  font-size: var(--font-badges);
+}
+
+.mysql {
+  color: #4479a1;
+  font-size: var(--font-badges);
+}
+
+.vite {
+  color: #c5ad10;
+  font-size: var(--font-badges);
+}
+
+.phaser {
+  color: #0f82a0;
+  font-size: var(--font-badges);
+}
+
+.js {
+  color: #c4af16;
+  font-size: var(--font-badges);
+}
+
+.css {
+  color: #264de4;
+  font-size: var(--font-badges);
+}
+
+.carousel-item > img {
+  cursor: pointer;
+}
