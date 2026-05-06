@@ -7,7 +7,7 @@ use Dotenv\Dotenv;
 
 session_start();
 
-$dotenv = Dotenv::createImmutable(__DIR__);
+$dotenv = Dotenv::createImmutable(__DIR__ . '/../');
 $dotenv->safeLoad();
 
 function env(string $name, $default = null)
