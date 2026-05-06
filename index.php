@@ -79,6 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $error_mensaje = "El email no es válido.";
   } elseif (isRateLimited()) {
     $error_mensaje = "Has enviado demasiados mensajes en poco tiempo. Intenta de nuevo en 10 minutos.";
+    header('Location: /#contact');
   } else {
     $smtpHost = env('SMTP_HOST', 'smtp.gmail.com');
     $smtpUser = env('SMTP_USERNAME');
@@ -138,10 +139,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $mail->send();
         $_SESSION['mensaje_enviado'] = true;
-        header('Location: ' . $_SERVER['PHP_SELF'] . '#contact');
+        header('Location: /#contact');
         exit;
       } catch (Exception $e) {
         $error_mensaje = "Error al enviar el mensaje: " . $e->getMessage();
+        header('Location: /#contact');
       }
     }
   }
