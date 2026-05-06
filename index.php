@@ -84,7 +84,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $smtpUser = env('SMTP_USERNAME');
     $smtpPass = env('SMTP_PASSWORD');
     $smtpPort = env('SMTP_PORT', 587);
-    $smtpSecure = env('SMTP_SECURE', PHPMailer::ENCRYPTION_STARTTLS);
+    $smtpSecureStr = env('SMTP_SECURE', 'tls');
+    switch ($smtpSecureStr) {
+      case 'ssl':
+        $smtpSecure = PHPMailer::ENCRYPTION_SMTPS;
+        break;
+      case 'tls':
+      default:
+        $smtpSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        break;
+    }
     $mailTo = env('MAIL_TO', 'alvaromartinezdev@gmail.com');
 
     if (!$smtpUser || !$smtpPass) {
