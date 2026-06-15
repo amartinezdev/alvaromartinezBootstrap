@@ -526,22 +526,30 @@ Desarrollador Full Stack Junior graduado en DAW. Trabajo con <code>Java</code>, 
           <a href="https://www.w3schools.com/css/" class="icono" target="_blank">
             <img class="skillIcons" src="img/icons/JavaScript.svg" alt="JavaScript" title="JavaScript" />
           </a>
-          <a href="https://tailwindcss.com/" class="icono" target="_blank">
-            <img class="skillIcons" src="img/icons/TailwindCSS-Dark.svg" alt="Tailwind CSS" title="TailwindCSS" />
+
+          <a href="https://nodejs.org/" class="icono" target="_blank">
+            <img class="skillIcons" src="img/icons/NodeJS-Dark.svg" alt="Node.js" title="Node.js" />
           </a>
+
           <a href="https://es.react.dev/" class="icono" target="_blank">
             <img class="skillIcons" src="img/icons/React-Dark.svg" alt="React" title="React" />
           </a>
-          <a href="https://getbootstrap.com/" class="icono" target="_blank">
-            <img class="skillIcons" src="img/icons/Bootstrap.svg" alt="Bootstrap" title="Bootstrap" />
-          </a>
 
-          <a href="https://nodejs.org/" class="icono" target="_blank">
-            <img class="skillIcons" src="img/icons/NodeJS-dark.svg" alt="Node.js" title="Node.js" />
-          </a>
-                    <a href="https://expressjs.com/es/" class="icono" target="_blank">
+          
+          <a href="https://expressjs.com/es/" class="icono" target="_blank">
             <img class="skillIcons" src="img/icons/ExpressJS-Dark.svg" alt="ExpressJS" title="ExpressJS" />
           </a>
+
+          <a href="https://www.java.com/es/" class="icono" target="_blank">
+            <img class="skillIcons" src="img/icons/Java-Dark.svg" alt="Java" title="Java" />
+          </a>
+
+
+          <a href="https://spring.io/projects/spring-boot/" class="icono" target="_blank">
+            <img class="skillIcons" src="img/icons/Spring-Dark.svg" alt="Spring" title="Spring Boot" />
+          </a>
+
+
           <div class="w-100 d-none d-sm-block"></div>
           <a href="https://www.php.net/" class="icono" target="_blank">
             <img class="skillIcons" src="img/icons/PHP-Dark.svg" alt="PHP" title="PHP" />
@@ -553,6 +561,11 @@ Desarrollador Full Stack Junior graduado en DAW. Trabajo con <code>Java</code>, 
           <a href="https://mysql.com/" class="icono" target="_blank">
             <img class="skillIcons" src="img/icons/MySQL-Dark.svg" alt="MySQL" title="MySQL" />
           </a>
+          
+          <a href="https://tailwindcss.com/" class="icono" target="_blank">
+            <img class="skillIcons" src="img/icons/TailwindCSS-Dark.svg" alt="Tailwind CSS" title="TailwindCSS" />
+          </a>
+
           <a href="https://git-scm.com/" class="icono" target="_blank">
             <img class="skillIcons" src="img/icons/Git.svg" alt="Git" title="Git" />
           </a>
@@ -561,9 +574,6 @@ Desarrollador Full Stack Junior graduado en DAW. Trabajo con <code>Java</code>, 
           </a>
           <a href="https://www.docker.com/" class="icono" target="_blank">
             <img class="skillIcons" src="img/icons/Docker.svg" alt="Docker" title="Docker" />
-          </a>
-          <a href="https://www.java.com/es/" class="icono" target="_blank">
-            <img class="skillIcons" src="img/icons/Java-Dark.svg" alt="Java" title="Java" />
           </a>
           <a href="https://astro.build/" class="icono" target="_blank">
             <img class="skillIcons" src="img/icons/Astro.svg" alt="Astro" title="Astro" />
