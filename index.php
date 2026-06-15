@@ -79,7 +79,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $error_mensaje = "El email no es válido.";
   } elseif (isRateLimited()) {
     $error_mensaje = "Has enviado demasiados mensajes en poco tiempo. Intenta de nuevo en 10 minutos.";
-    header('Location: /#contact');
   } else {
     $smtpHost = env('SMTP_HOST', 'smtp.gmail.com');
     $smtpUser = env('SMTP_USERNAME');
@@ -207,8 +206,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <a class="nav-link text-white" href="#contact">Contacto</a>
         </li>
       </ul>
-      <button class="btn btn-outline-light position-absolute top-50 end-0 translate-middle-y me-4" id="cambiarTema" onclick="changeTheme()">
-        🌙
+      <button class="btn position-absolute top-50 end-0 translate-middle-y me-4" id="cambiarTema" onclick="changeTheme()" aria-pressed="false" aria-label="Alternar tema" title="Alternar tema" type="button">
+        <svg class="theme-icon moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+        </svg>
+        <svg class="theme-icon sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+          <path d="M8 4.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7z"/>
+          <path d="M8 0a.5.5 0 0 1 .5.5V2a.5.5 0 0 1-1 0V.5A.5.5 0 0 1 8 0zm0 14a.5.5 0 0 1 .5.5V16a.5.5 0 0 1-1 0v-1.5A.5.5 0 0 1 8 14zM2.343 2.343a.5.5 0 0 1 .707 0L4.5 3.793a.5.5 0 1 1-.707.707L2.343 3.05a.5.5 0 0 1 0-.707zm9.95 9.95a.5.5 0 0 1 .707 0l1.45 1.45a.5.5 0 0 1-.707.707l-1.45-1.45a.5.5 0 0 1 0-.707zM0 8a.5.5 0 0 1 .5-.5H2a.5.5 0 0 1 0 1H.5A.5.5 0 0 1 0 8zm14 0a.5.5 0 0 1 .5-.5H16a.5.5 0 0 1 0 1h-1.5A.5.5 0 0 1 14 8zM2.343 13.657a.5.5 0 0 1 0-.707l1.45-1.45a.5.5 0 1 1 .707.707l-1.45 1.45a.5.5 0 0 1-.707 0zm9.95-9.95a.5.5 0 0 1 0-.707l1.45-1.45a.5.5 0 1 1 .707.707l-1.45 1.45a.5.5 0 0 1-.707 0z"/>
+        </svg>
       </button>
     </div>
     <div></div>
@@ -238,30 +243,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </div>
       <div class="col-12 text-start col-md-8 col-lg-5 align-self-center">
         <h2 class="text-body-emphasis">Sobre mí</h2>
-        <p class="lead text-body-emphasis">
-          Apasionado del desarrollo web, en constante aprendizaje de nuevas tecnologías. Actualmente enfocado en mejorar mis habilidades full-stack,
-          trabajando con frameworks modernos como <code>React</code>, <code>Next.js</code>, <code>Astro</code>, y <code>Tailwind CSS</code>.
-        </p>
-        <nav class="nav justify-content-center justify-content-md-start mb-3 align-items-center">
-          <a class="nav-link icono text-body-emphasis" href="https://github.com/amartinezdev/" target="_blank">
+      <p class="lead text-body-emphasis">
+Desarrollador Full Stack Junior graduado en DAW. Trabajo con <code>Java</code>, <code>Spring Boot</code>, <code>JavaScript</code>, <code>React</code>, <code>Node.js</code> y <code>SQL</code>, desarrollando aplicaciones web completas desde la base de datos hasta la interfaz de usuario.
+        </p>        <div class="mb-4 text-center text-md-start">
+        </div>        <nav class="nav justify-content-center justify-content-md-start mb-3 align-items-center">
+          <a class="nav-link icono text-body-emphasis" href="https://github.com/amartinezdev/" target="_blank" title="GitHub">
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" class="bi bi-github" fill="currentColor" viewBox="0 0 16 16">
               <path
                 d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
             </svg>
           </a>
-          <a class="nav-link icono text-body-emphasis" href="https://www.linkedin.com/in/alvaromartinezdev" target="_blank">
+          <a class="nav-link icono text-body-emphasis" href="https://www.linkedin.com/in/alvaromartinezdev" target="_blank" title="LinkedIn">
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" class="bi bi-linkedin" fill="currentColor" viewBox="0 0 16 16">
               <path
                 d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" />
             </svg>
           </a>
-          <a class="nav-link icono text-body-emphasis" href="mailto:alvaromartinezdev@gmail.com">
+          <a class="nav-link icono text-body-emphasis" href="mailto:alvaromartinezdev@gmail.com" title="Correo electrónico">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" class="bi bi-envelope-at-fill" fill="currentColor" viewBox="0 0 16 16">
               <path
                 d="M2 2A2 2 0 0 0 .05 3.555L8 8.414l7.95-4.859A2 2 0 0 0 14 2zm-2 9.8V4.698l5.803 3.546zm6.761-2.97-6.57 4.026A2 2 0 0 0 2 14h6.256A4.5 4.5 0 0 1 8 12.5a4.49 4.49 0 0 1 1.606-3.446l-.367-.225L8 9.586zM16 9.671V4.697l-5.803 3.546.338.208A4.5 4.5 0 0 1 12.5 8c1.414 0 2.675.652 3.5 1.671" />
               <path
                 d="M15.834 12.244c0 1.168-.577 2.025-1.587 2.025-.503 0-1.002-.228-1.12-.648h-.043c-.118.416-.543.643-1.015.643-.77 0-1.259-.542-1.259-1.434v-.529c0-.844.481-1.4 1.26-1.4.585 0 .87.333.953.63h.03v-.568h.905v2.19c0 .272.18.42.411.42.315 0 .639-.415.639-1.39v-.118c0-1.277-.95-2.326-2.484-2.326h-.04c-1.582 0-2.64 1.067-2.64 2.724v.157c0 1.867 1.237 2.654 2.57 2.654h.045c.507 0 .935-.07 1.18-.18v.731c-.219.1-.643.175-1.237.175h-.044C10.438 16 9 14.82 9 12.646v-.214C9 10.36 10.421 9 12.485 9h.035c2.12 0 3.314 1.43 3.314 3.034zm-4.04.21v.227c0 .586.227.8.581.8.31 0 .564-.17.564-.743v-.367c0-.516-.275-.708-.572-.708-.346 0-.573.245-.573.791" />
             </svg>
+          </a>
+                    <a class="btn boton px-4 py-2" href="CV_ALVAROMARTINEZ.pdf" download="CV_ALVAROMARTINEZ.pdf">
+            Descargar CV
           </a>
         </nav>
       </div>
@@ -528,11 +535,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <a href="https://getbootstrap.com/" class="icono" target="_blank">
             <img class="skillIcons" src="img/icons/Bootstrap.svg" alt="Bootstrap" title="Bootstrap" />
           </a>
-          <a href="https://astro.build/" class="icono" target="_blank">
-            <img class="skillIcons" src="img/icons/Astro.svg" alt="Astro" title="Astro" />
+
+          <a href="https://nodejs.org/" class="icono" target="_blank">
+            <img class="skillIcons" src="img/icons/NodeJS-dark.svg" alt="Node.js" title="Node.js" />
           </a>
-          <a href="https://nextjs.org/" class="icono" target="_blank">
-            <img class="skillIcons" src="img/icons/NextJS-Dark.svg" alt="NextJS" title="NextJS" />
+                    <a href="https://expressjs.com/es/" class="icono" target="_blank">
+            <img class="skillIcons" src="img/icons/ExpressJS-Dark.svg" alt="ExpressJS" title="ExpressJS" />
           </a>
           <div class="w-100 d-none d-sm-block"></div>
           <a href="https://www.php.net/" class="icono" target="_blank">
@@ -557,8 +565,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <a href="https://www.java.com/es/" class="icono" target="_blank">
             <img class="skillIcons" src="img/icons/Java-Dark.svg" alt="Java" title="Java" />
           </a>
-          <a href="https://expressjs.com/es/" class="icono" target="_blank">
-            <img class="skillIcons" src="img/icons/ExpressJS-Dark.svg" alt="ExpressJS" title="ExpressJS" />
+          <a href="https://astro.build/" class="icono" target="_blank">
+            <img class="skillIcons" src="img/icons/Astro.svg" alt="Astro" title="Astro" />
           </a>
         </div>
       </div>

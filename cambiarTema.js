@@ -11,12 +11,12 @@ function changeTheme() {
 
   if (temaActual == "dark") {
     html.setAttribute("data-bs-theme", "light");
-    cambiarTema.textContent = "☀️";
+    cambiarTema.setAttribute('aria-pressed', 'true');
     inicio.style.backgroundColor = "rgba(0, 0, 0, 0.6)";
     inicio.style.backgroundBlendMode = "darken";
   } else {
     html.setAttribute("data-bs-theme", "dark");
-    cambiarTema.textContent = "🌙";
+    cambiarTema.setAttribute('aria-pressed', 'false');
     inicio.style.backgroundColor = "rgba(0, 0, 0, 0.9)";
     inicio.style.backgroundBlendMode = "darken";
   }

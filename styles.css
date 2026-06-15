@@ -77,4 +77,119 @@ form button[type=submit] {
 form button[type=submit]:hover {
   background: rgb(117.6983240223, 28.1452513966, 200.8547486034);
   color: white;
-}/*# sourceMappingURL=styles.css.map */
+}
+
+/* Minimalist toggle: circular knob, spaced icons, clear transition */
+#cambiarTema {
+  --width: 72px;
+  --height: 36px;
+  --pad: 8px;
+  --icon-size: 14px;
+  --gap: 6px;
+  /* positions so knob never reaches the icons */
+  --knob-size: calc(var(--height) - var(--pad) * 2);
+  --knob-left: calc(var(--pad) + var(--icon-size) + var(--gap));
+  --knob-right: calc(var(--width) - var(--pad) - var(--icon-size) - var(--gap) - var(--knob-size));
+  /* indicator line */
+  --indicator-width: 20px;
+  --indicator-height: 3px;
+  --indicator-left: calc(var(--pad) + (var(--icon-size) - var(--indicator-width)) / 2);
+  --indicator-right: calc(var(--width) - var(--pad) - var(--icon-size) + (var(--icon-size) - var(--indicator-width)) / 2);
+  position: relative;
+  width: var(--width);
+  height: var(--height);
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.04);
+  box-shadow: 0 6px 18px rgba(2,6,23,0.45);
+  cursor: pointer;
+  transition: background 220ms ease, box-shadow 220ms ease, transform 140ms ease;
+}
+
+#cambiarTema:focus { outline: none; box-shadow: 0 0 0 6px rgba(168,98,233,0.12); }
+
+/* small indicator line under active icon */
+#cambiarTema::after {
+  content: "";
+  position: absolute;
+  bottom: 6px;
+  left: var(--indicator-left);
+  width: var(--indicator-width);
+  height: var(--indicator-height);
+  border-radius: 2px;
+  background: #ffffff; /* default for dark theme */
+  box-shadow: 0 4px 8px rgba(2,6,23,0.25);
+  transition: left 260ms cubic-bezier(.2,.9,.3,1), background 200ms ease, box-shadow 200ms ease;
+  z-index: 2; /* below icons */
+  pointer-events: none;
+}
+
+/* When light theme, move knob to right and adapt container background */
+/* light theme: move knob to right and make it dark for clear transition */
+html[data-bs-theme="light"] #cambiarTema {
+  background: rgba(0,0,0,0.04);
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 6px 18px rgba(2,6,23,0.06);
+}
+
+html[data-bs-theme="light"] #cambiarTema::after {
+  /* move indicator under the sun and use accent color */
+  left: var(--indicator-right);
+  background: #ffd700;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.18);
+}
+
+/* Icons (placed at ends of the track with small inset so they don't touch the knob) */
+#cambiarTema .theme-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: var(--icon-size);
+  height: var(--icon-size);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  pointer-events: none;
+  transition: opacity 180ms ease, transform 200ms ease, color 160ms ease;
+}
+
+/* Slight inset from edges so icons never touch the knob */
+#cambiarTema .moon { left: calc(var(--pad)); color: #fffefe; opacity: 1; }
+/* place sun closer to right edge but respecting the track padding */
+#cambiarTema .sun { left: calc(var(--width) - var(--pad) - var(--icon-size)); color: #ffd700; opacity: 0.9; }
+
+/* Swap emphasis depending on theme */
+html[data-bs-theme="light"] #cambiarTema .sun { opacity: 1; }
+html[data-bs-theme="light"] #cambiarTema .moon { opacity: 0.45; }
+
+/* SVG sizing */
+#cambiarTema .theme-icon svg { width: 100%; height: 100%; display: block; }
+
+/* subtle press feedback without moving children */
+#cambiarTema:active {
+  transform: none;
+  box-shadow: 0 4px 12px rgba(2,6,23,0.36);
+}
+
+/* Micro-animations when toggling */
+@media (prefers-reduced-motion: no-preference) {
+  html[data-bs-theme="light"] #cambiarTema .sun { animation: sun-pop 420ms cubic-bezier(.2,.9,.3,1); }
+  html[data-bs-theme="dark"] #cambiarTema .moon { animation: moon-pop 420ms cubic-bezier(.2,.9,.3,1); }
+
+  @keyframes sun-pop {
+    0% { opacity: 0; }
+    60% { opacity: 1; }
+    100% { opacity: 1; }
+  }
+  @keyframes moon-pop {
+    0% { opacity: 0; }
+    60% { opacity: 1; }
+    100% { opacity: 1; }
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
