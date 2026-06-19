@@ -1,4 +1,14 @@
+---
+
 deployment:
-  tasks:
-    - export DEPLOYPATH=/home/alvaroma/public_html/
-    - /bin/cp -R * $DEPLOYPATH
+tasks:
+- export DEPLOYPATH=/home/alvaroma/public_html/
+- /bin/cp index.php $DEPLOYPATH
+- /bin/cp style.css $DEPLOYPATH
+- /bin/cp styles.css $DEPLOYPATH
+- /bin/cp styles.css.map $DEPLOYPATH
+- /bin/cp styles.scss $DEPLOYPATH
+- /bin/cp cambiarTema.js $DEPLOYPATH
+- /bin/cp palabras.js $DEPLOYPATH
+- /bin/cp CV_ALVAROMARTINEZ.pdf $DEPLOYPATH
+- /bin/cp -R img $DEPLOYPATH
