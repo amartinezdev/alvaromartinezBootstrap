@@ -1,0 +1,16 @@
+{
+  "name": "Álvaro Martínez - Desarrollador FullStack",
+  "short_name": "Álvaro Martínez",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0d0d0d",
+  "theme_color": "#0d0d0d",
+  "lang": "es",
+  "icons": [
+    {
+      "src": "img/am_bw.png",
+      "sizes": "50x50",
+      "type": "image/png"
+    }
+  ]
+}

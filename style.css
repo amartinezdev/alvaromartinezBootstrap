@@ -35,12 +35,15 @@ code {
 ----------------------
 */
 #inicio {
-  background: url("img/bg01.jpg");
+  background-image: url("img/bg01.webp");
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
   background-color: rgba(0, 0, 0, 0.89);
   background-blend-mode: darken;
+}
+
+html[data-bs-theme="light"] #inicio {
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 /* un broder right simulando el cursor */

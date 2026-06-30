@@ -63,6 +63,12 @@ if (isset($_SESSION['error_mensaje'])) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  // Honeypot anti-spam: campo oculto que solo rellenan los bots
+  if (!empty($_POST['website'])) {
+    header('Location: /#contact');
+    exit;
+  }
+
   recordSubmissionAttempt();
 
   // Recibir los datos del formulario
@@ -155,7 +161,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Álvaro Martínez - Desarrollador FullStack</title>
-  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+  <meta name="description" content="Álvaro Martínez, desarrollador Full Stack Junior (Java, Spring Boot, JavaScript, React, Node.js, PHP, MySQL). Descubre mis proyectos, certificados y contacta conmigo." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://alvaromartinez.dev/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://alvaromartinez.dev/" />
+  <meta property="og:title" content="Álvaro Martínez - Desarrollador FullStack" />
+  <meta property="og:description" content="Desarrollador Full Stack Junior. Java, Spring Boot, React, Node.js, PHP, MySQL. Proyectos, certificados y contacto." />
+  <meta property="og:image" content="https://alvaromartinez.dev/img/og-cover.jpg" />
+  <meta property="og:locale" content="es_ES" />
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Álvaro Martínez - Desarrollador FullStack" />
+  <meta name="twitter:description" content="Desarrollador Full Stack Junior. Java, Spring Boot, React, Node.js, PHP, MySQL." />
+  <meta name="twitter:image" content="https://alvaromartinez.dev/img/og-cover.jpg" />
+
+  <meta name="theme-color" content="#0d0d0d" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+  <link rel="manifest" href="manifest.webmanifest" />
+
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
     rel="stylesheet"
@@ -164,21 +191,84 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-    crossorigin="anonymous"></script>
-  <link rel="shortcut icon" href="img/am_bw.png" type="image/x-icon" />
+    crossorigin="anonymous"
+    defer></script>
+  <link rel="icon" href="img/am_bw.png" type="image/png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="img/am_bw.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Álvaro Martínez",
+    "url": "https://alvaromartinez.dev/",
+    "image": "https://alvaromartinez.dev/img/01_azul.webp",
+    "jobTitle": "Desarrollador Full Stack",
+    "knowsAbout": ["Java", "Spring Boot", "JavaScript", "React", "Node.js", "PHP", "MySQL"],
+    "email": "mailto:alvaromartinezdev@gmail.com",
+    "sameAs": [
+      "https://github.com/amartinezdev",
+      "https://www.linkedin.com/in/alvaromartinezdev"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Álvaro Martínez - Desarrollador FullStack en Murcia",
+    "url": "https://alvaromartinez.dev/"
+  }
+  </script>
+
+  <script>
+    (function () {
+      var guardado = localStorage.getItem("theme");
+      var prefiereClaro = window.matchMedia("(prefers-color-scheme: light)").matches;
+      var tema = guardado || (prefiereClaro ? "light" : "dark");
+      document.documentElement.setAttribute("data-bs-theme", tema);
+    })();
+  </script>
 </head>
 
 <body class="vh-100">
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+    <symbol id="icon-github" viewBox="0 0 16 16">
+      <path
+        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
+    </symbol>
+    <symbol id="icon-linkedin" viewBox="0 0 16 16">
+      <path
+        d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" />
+    </symbol>
+    <symbol id="icon-envelope" viewBox="0 0 16 16">
+      <path
+        d="M2 2A2 2 0 0 0 .05 3.555L8 8.414l7.95-4.859A2 2 0 0 0 14 2zm-2 9.8V4.698l5.803 3.546zm6.761-2.97-6.57 4.026A2 2 0 0 0 2 14h6.256A4.5 4.5 0 0 1 8 12.5a4.49 4.49 0 0 1 1.606-3.446l-.367-.225L8 9.586zM16 9.671V4.697l-5.803 3.546.338.208A4.5 4.5 0 0 1 12.5 8c1.414 0 2.675.652 3.5 1.671" />
+      <path
+        d="M15.834 12.244c0 1.168-.577 2.025-1.587 2.025-.503 0-1.002-.228-1.12-.648h-.043c-.118.416-.543.643-1.015.643-.77 0-1.259-.542-1.259-1.434v-.529c0-.844.481-1.4 1.26-1.4.585 0 .87.333.953.63h.03v-.568h.905v2.19c0 .272.18.42.411.42.315 0 .639-.415.639-1.39v-.118c0-1.277-.95-2.326-2.484-2.326h-.04c-1.582 0-2.64 1.067-2.64 2.724v.157c0 1.867 1.237 2.654 2.57 2.654h.045c.507 0 .935-.07 1.18-.18v.731c-.219.1-.643.175-1.237.175h-.044C10.438 16 9 14.82 9 12.646v-.214C9 10.36 10.421 9 12.485 9h.035c2.12 0 3.314 1.43 3.314 3.034zm-4.04.21v.227c0 .586.227.8.581.8.31 0 .564-.17.564-.743v-.367c0-.516-.275-.708-.572-.708-.346 0-.573.245-.573.791" />
+    </symbol>
+    <symbol id="icon-browser-chrome" viewBox="0 0 16 16">
+      <path
+        fill-rule="evenodd"
+        d="M16 8a8 8 0 0 1-7.022 7.94l1.902-7.098a3 3 0 0 0 .05-1.492A3 3 0 0 0 10.237 6h5.511A8 8 0 0 1 16 8M0 8a8 8 0 0 0 7.927 8l1.426-5.321a3 3 0 0 1-.723.255 3 3 0 0 1-1.743-.147 3 3 0 0 1-1.043-.7L.633 4.876A8 8 0 0 0 0 8m5.004-.167L1.108 3.936A8.003 8.003 0 0 1 15.418 5H8.066a3 3 0 0 0-1.252.243 2.99 2.99 0 0 0-1.81 2.59M8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4" />
+    </symbol>
+    <symbol id="icon-download" viewBox="0 0 16 16">
+      <path
+        d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5" />
+      <path
+        d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z" />
+    </symbol>
+  </svg>
   <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
     <a class="navbar-brand ms-4 mt-0 position-absolute" href="#inicio">
-      <img src="img/am_wb.png" alt="Álvaro Martínez logo" />
+      <img src="img/am_wb.png" alt="Álvaro Martínez logo" width="50" height="50" />
     </a>
     <button
       class="navbar-toggler d-lg-none ms-auto"
@@ -239,38 +329,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!--  ABOUT  -->
     <section class="row d-flex align-items-center text-center mt-5 mt-lg-2 mb-5">
       <div class="col-12 mb-4 text-center col-md-4 col-xl-5 text-md-end">
-        <img src="img/01_azul.webp" alt="Álvaro Martínez" class="img-fluid rounded-5" style="width: 200px" />
+        <img src="img/01_azul.webp" alt="Álvaro Martínez, desarrollador Full Stack" class="img-fluid rounded-5" style="width: 200px" width="400" height="471" />
       </div>
       <div class="col-12 text-start col-md-8 col-lg-5 align-self-center">
         <h2 class="text-body-emphasis">Sobre mí</h2>
       <p class="lead text-body-emphasis">
 Desarrollador Full Stack Junior graduado en DAW. Trabajo con <code>Java</code>, <code>Spring Boot</code>, <code>JavaScript</code>, <code>React</code>, <code>Node.js</code> y <code>SQL</code>, desarrollando aplicaciones web completas desde la base de datos hasta la interfaz de usuario.
-        </p>        <div class="mb-4 text-center text-md-start">
-        </div>        <nav class="nav justify-content-center justify-content-md-start mb-3 align-items-center">
-          <a class="nav-link icono text-body-emphasis" href="https://github.com/amartinezdev/" target="_blank" title="GitHub">
-            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" class="bi bi-github" fill="currentColor" viewBox="0 0 16 16">
-              <path
-                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
+        </p>
+        <div class="d-flex flex-column align-items-center align-items-md-start">
+          <nav class="nav mb-3 align-items-center gap-2">
+            <a class="nav-link icono text-body-emphasis" href="https://github.com/amartinezdev/" target="_blank" title="GitHub">
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" class="bi bi-github" fill="currentColor" aria-hidden="true">
+                <use href="#icon-github"></use>
+              </svg>
+            </a>
+            <a class="nav-link icono text-body-emphasis" href="https://www.linkedin.com/in/alvaromartinezdev" target="_blank" title="LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" class="bi bi-linkedin" fill="currentColor" aria-hidden="true">
+                <use href="#icon-linkedin"></use>
+              </svg>
+            </a>
+            <a class="nav-link icono text-body-emphasis" href="mailto:alvaromartinezdev@gmail.com" title="Correo electrónico">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" class="bi bi-envelope-at-fill" fill="currentColor" aria-hidden="true">
+                <use href="#icon-envelope"></use>
+              </svg>
+            </a>
+          </nav>
+          <a class="btn boton-card filled cv-link" href="CV_ALVAROMARTINEZ.pdf" download="CV_ALVAROMARTINEZ.pdf">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-download" aria-hidden="true">
+              <use href="#icon-download"></use>
             </svg>
-          </a>
-          <a class="nav-link icono text-body-emphasis" href="https://www.linkedin.com/in/alvaromartinezdev" target="_blank" title="LinkedIn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" class="bi bi-linkedin" fill="currentColor" viewBox="0 0 16 16">
-              <path
-                d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" />
-            </svg>
-          </a>
-          <a class="nav-link icono text-body-emphasis" href="mailto:alvaromartinezdev@gmail.com" title="Correo electrónico">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" class="bi bi-envelope-at-fill" fill="currentColor" viewBox="0 0 16 16">
-              <path
-                d="M2 2A2 2 0 0 0 .05 3.555L8 8.414l7.95-4.859A2 2 0 0 0 14 2zm-2 9.8V4.698l5.803 3.546zm6.761-2.97-6.57 4.026A2 2 0 0 0 2 14h6.256A4.5 4.5 0 0 1 8 12.5a4.49 4.49 0 0 1 1.606-3.446l-.367-.225L8 9.586zM16 9.671V4.697l-5.803 3.546.338.208A4.5 4.5 0 0 1 12.5 8c1.414 0 2.675.652 3.5 1.671" />
-              <path
-                d="M15.834 12.244c0 1.168-.577 2.025-1.587 2.025-.503 0-1.002-.228-1.12-.648h-.043c-.118.416-.543.643-1.015.643-.77 0-1.259-.542-1.259-1.434v-.529c0-.844.481-1.4 1.26-1.4.585 0 .87.333.953.63h.03v-.568h.905v2.19c0 .272.18.42.411.42.315 0 .639-.415.639-1.39v-.118c0-1.277-.95-2.326-2.484-2.326h-.04c-1.582 0-2.64 1.067-2.64 2.724v.157c0 1.867 1.237 2.654 2.57 2.654h.045c.507 0 .935-.07 1.18-.18v.731c-.219.1-.643.175-1.237.175h-.044C10.438 16 9 14.82 9 12.646v-.214C9 10.36 10.421 9 12.485 9h.035c2.12 0 3.314 1.43 3.314 3.034zm-4.04.21v.227c0 .586.227.8.581.8.31 0 .564-.17.564-.743v-.367c0-.516-.275-.708-.572-.708-.346 0-.573.245-.573.791" />
-            </svg>
-          </a>
-                    <a class="btn boton px-4 py-2" href="CV_ALVAROMARTINEZ.pdf" download="CV_ALVAROMARTINEZ.pdf">
             Descargar CV
           </a>
-        </nav>
+        </div>
       </div>
     </section>
   </div>
@@ -294,40 +384,41 @@ Desarrollador Full Stack Junior graduado en DAW. Trabajo con <code>Java</code>, 
               <div class="row g-0 row-cols-1 row-cols-md-2">
                 <div class="col-md-6">
                   <a href="https://github.com/amartinezdev/restaurante">
-                    <img src="img/restaurante.png" class="img-fluid rounded-start-3" alt="Card title" />
+                    <img
+                      src="img/restaurante.webp"
+                      srcset="img/restaurante-350.webp 350w, img/restaurante.webp 700w"
+                      sizes="(max-width: 767px) 100vw, 350px"
+                      class="img-fluid rounded-start-3"
+                      alt="Captura del proyecto Restaurante, desarrollado con PHP y MySQL"
+                      width="700"
+                      height="525"
+                      loading="lazy" />
                   </a>
                 </div>
                 <div class="col-md-6 text-center">
                   <div class="card-body text-start">
                     <a href="https://github.com/amartinezdev/restaurante" target="_blank" class="text-light-emphasis">
-                      <h5 class="card-title text-body-emphasis">Restaurante</h5>
+                      <h3 class="card-title h5 text-body-emphasis">Restaurante</h3>
                       <p class="card-text text-start mt-4 text-body-emphasis small">
                         Proyecto práctico de un restaurante desarrollado con <span class="php badge bg-dark-subtle">PHP</span> y
                         <span class="mysql badge bg-dark-subtle">MySQL</span>. Simula la funcionalidad de un restaurante real.
                       </p>
                     </a>
                   </div>
-                  <a
-                    href="https://github.com/amartinezdev/restaurante"
-                    target="_blank"
-                    class="btn boton-card mb-3 text-center align-self-center mx-3 mt-2 ms-4 mx-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
-                      <path
-                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
-                    </svg>
-                    Github</a>
-                  <a href="https://amartinezdev.github.io/iOScalculator/" target="_blank" class="btn boton-card mb-3 mx-3 mt-2 ms-4 mx-4 disabled"><svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      fill="currentColor"
-                      class="bi bi-browser-chrome"
-                      viewBox="0 0 16 16">
-                      <path
-                        fill-rule="evenodd"
-                        d="M16 8a8 8 0 0 1-7.022 7.94l1.902-7.098a3 3 0 0 0 .05-1.492A3 3 0 0 0 10.237 6h5.511A8 8 0 0 1 16 8M0 8a8 8 0 0 0 7.927 8l1.426-5.321a3 3 0 0 1-.723.255 3 3 0 0 1-1.743-.147 3 3 0 0 1-1.043-.7L.633 4.876A8 8 0 0 0 0 8m5.004-.167L1.108 3.936A8.003 8.003 0 0 1 15.418 5H8.066a3 3 0 0 0-1.252.243 2.99 2.99 0 0 0-1.81 2.59M8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4" />
-                    </svg>
-                    Preview</a>
+                  <div class="d-flex flex-wrap justify-content-center gap-2 mb-3">
+                    <a href="https://github.com/amartinezdev/restaurante" target="_blank" class="btn boton-card">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-github" aria-hidden="true">
+                        <use href="#icon-github"></use>
+                      </svg>
+                      Github
+                    </a>
+                    <a href="https://amartinezdev.github.io/iOScalculator/" target="_blank" class="btn boton-card disabled">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-browser-chrome" aria-hidden="true">
+                        <use href="#icon-browser-chrome"></use>
+                      </svg>
+                      Preview
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -339,40 +430,41 @@ Desarrollador Full Stack Junior graduado en DAW. Trabajo con <code>Java</code>, 
               <div class="row g-0 row-cols-1 row-cols-md-2">
                 <div class="col-md-6">
                   <a href="https://amartinezdev.github.io/iOScalculator/">
-                    <img src="img/calculator.webp" class="img-fluid rounded-start-3" alt="Card title" />
+                    <img
+                      src="img/calculator.webp"
+                      srcset="img/calculator-350.webp 350w, img/calculator.webp 700w"
+                      sizes="(max-width: 767px) 100vw, 350px"
+                      class="img-fluid rounded-start-3"
+                      alt="Captura de la calculadora web estilo iOS hecha con JavaScript y CSS"
+                      width="700"
+                      height="525"
+                      loading="lazy" />
                   </a>
                 </div>
                 <div class="col-md-6 text-center">
                   <div class="card-body text-start">
                     <a href="https://amartinezdev.github.io/iOScalculator/" target="_blank" class="text-light-emphasis">
-                      <h5 class="card-title text-body-emphasis">Calculadora</h5>
+                      <h3 class="card-title h5 text-body-emphasis">Calculadora</h3>
                       <p class="card-text text-start mt-4 text-body-emphasis small">
                         Este proyecto es una calculadora web totalmente funcional inspirada en la interfaz de la calculadora iOS de Apple.
                         <span class="js badge bg-dark-subtle">JavaScript</span> y <span class="css badge bg-dark-subtle">CSS</span>
                       </p>
                     </a>
                   </div>
-                  <a
-                    href="https://github.com/amartinezdev/iOScalculator"
-                    target="_blank"
-                    class="btn boton-card mb-3 text-center align-self-center mx-3 mt-2 ms-4 mx-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
-                      <path
-                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
-                    </svg>
-                    Github</a>
-                  <a href="https://amartinezdev.github.io/iOScalculator/" target="_blank" class="btn boton-card mb-3 mx-3 mt-2 ms-4 mx-4"><svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      fill="currentColor"
-                      class="bi bi-browser-chrome"
-                      viewBox="0 0 16 16">
-                      <path
-                        fill-rule="evenodd"
-                        d="M16 8a8 8 0 0 1-7.022 7.94l1.902-7.098a3 3 0 0 0 .05-1.492A3 3 0 0 0 10.237 6h5.511A8 8 0 0 1 16 8M0 8a8 8 0 0 0 7.927 8l1.426-5.321a3 3 0 0 1-.723.255 3 3 0 0 1-1.743-.147 3 3 0 0 1-1.043-.7L.633 4.876A8 8 0 0 0 0 8m5.004-.167L1.108 3.936A8.003 8.003 0 0 1 15.418 5H8.066a3 3 0 0 0-1.252.243 2.99 2.99 0 0 0-1.81 2.59M8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4" />
-                    </svg>
-                    Preview</a>
+                  <div class="d-flex flex-wrap justify-content-center gap-2 mb-3">
+                    <a href="https://github.com/amartinezdev/iOScalculator" target="_blank" class="btn boton-card">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-github" aria-hidden="true">
+                        <use href="#icon-github"></use>
+                      </svg>
+                      Github
+                    </a>
+                    <a href="https://amartinezdev.github.io/iOScalculator/" target="_blank" class="btn boton-card">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-browser-chrome" aria-hidden="true">
+                        <use href="#icon-browser-chrome"></use>
+                      </svg>
+                      Preview
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -384,40 +476,41 @@ Desarrollador Full Stack Junior graduado en DAW. Trabajo con <code>Java</code>, 
               <div class="row g-0 row-cols-1 row-cols-md-2">
                 <div class="col-md-6">
                   <a href="https://alvaromartinez.dev/pong">
-                    <img src="img/pong.png" class="img-fluid rounded-start-3" alt="Card title" />
+                    <img
+                      src="img/pong.webp"
+                      srcset="img/pong-350.webp 350w, img/pong.webp 700w"
+                      sizes="(max-width: 767px) 100vw, 350px"
+                      class="img-fluid rounded-start-3"
+                      alt="Captura del juego Pong recreado con Phaser y Vite"
+                      width="700"
+                      height="525"
+                      loading="lazy" />
                   </a>
                 </div>
                 <div class="col-md-6 text-center">
                   <div class="card-body text-start">
                     <a href="https://alvaromartinez.dev/pong" target="_blank" class="text-light-emphasis">
-                      <h5 class="card-title text-body-emphasis">Ping Pong</h5>
+                      <h3 class="card-title h5 text-body-emphasis">Ping Pong</h3>
                       <p class="card-text text-start mt-4 text-body-emphasis small">
                         Recreación del clásico Pong, desarrollado con <span class="phaser badge bg-dark-subtle">Phaser</span> e integrado con
                         <span class="vite badge bg-dark-subtle">Vite</span>. Permite partidas locales para dos jugadores.
                       </p>
                     </a>
                   </div>
-                  <a
-                    href="https://github.com/amartinezdev/pong"
-                    target="_blank"
-                    class="btn boton-card mb-3 text-center align-self-center mx-3 mt-2 ms-4 mx-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
-                      <path
-                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
-                    </svg>
-                    Github</a>
-                  <a href="https://alvaromartinez.dev/pong" target="_blank" class="btn boton-card mb-3 mx-3 mt-2 ms-4 mx-4"><svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      fill="currentColor"
-                      class="bi bi-browser-chrome"
-                      viewBox="0 0 16 16">
-                      <path
-                        fill-rule="evenodd"
-                        d="M16 8a8 8 0 0 1-7.022 7.94l1.902-7.098a3 3 0 0 0 .05-1.492A3 3 0 0 0 10.237 6h5.511A8 8 0 0 1 16 8M0 8a8 8 0 0 0 7.927 8l1.426-5.321a3 3 0 0 1-.723.255 3 3 0 0 1-1.743-.147 3 3 0 0 1-1.043-.7L.633 4.876A8 8 0 0 0 0 8m5.004-.167L1.108 3.936A8.003 8.003 0 0 1 15.418 5H8.066a3 3 0 0 0-1.252.243 2.99 2.99 0 0 0-1.81 2.59M8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4" />
-                    </svg>
-                    Preview</a>
+                  <div class="d-flex flex-wrap justify-content-center gap-2 mb-3">
+                    <a href="https://github.com/amartinezdev/pong" target="_blank" class="btn boton-card">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-github" aria-hidden="true">
+                        <use href="#icon-github"></use>
+                      </svg>
+                      Github
+                    </a>
+                    <a href="https://alvaromartinez.dev/pong" target="_blank" class="btn boton-card">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-browser-chrome" aria-hidden="true">
+                        <use href="#icon-browser-chrome"></use>
+                      </svg>
+                      Preview
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -429,40 +522,41 @@ Desarrollador Full Stack Junior graduado en DAW. Trabajo con <code>Java</code>, 
               <div class="row g-0 row-cols-1 row-cols-md-2">
                 <div class="col-md-6">
                   <a href="https://amartinezdev.github.io/etch-a-sketch/">
-                    <img src="img/etch-a-sketch.webp" class="img-fluid rounded-start-3" alt="Card title" />
+                    <img
+                      src="img/etch-a-sketch.webp"
+                      srcset="img/etch-a-sketch-350.webp 350w, img/etch-a-sketch.webp 700w"
+                      sizes="(max-width: 767px) 100vw, 350px"
+                      class="img-fluid rounded-start-3"
+                      alt="Captura del proyecto Etch a Sketch hecho con JavaScript"
+                      width="700"
+                      height="525"
+                      loading="lazy" />
                   </a>
                 </div>
                 <div class="col-md-6 text-center">
                   <div class="card-body text-start">
                     <a href="https://amartinezdev.github.io/etch-a-sketch/" target="_blank" class="text-light-emphasis">
-                      <h5 class="card-title text-body-emphasis">Etch a Sketch</h5>
+                      <h3 class="card-title h5 text-body-emphasis">Etch a Sketch</h3>
                       <p class="card-text text-start mt-4 text-body-emphasis small">
                         Este proyecto es una recreación del clásico juego "Etch a Sketch", donde puedes dibujar utilizando un sistema de píxeles.
                         <span class="js badge bg-dark-subtle">JavaScript</span>
                       </p>
                     </a>
                   </div>
-                  <a
-                    href="https://github.com/amartinezdev/etch-a-sketch"
-                    target="_blank"
-                    class="btn boton-card mb-3 text-center align-self-center mx-3 mt-2 ms-4 mx-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
-                      <path
-                        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
-                    </svg>
-                    Github</a>
-                  <a href="https://amartinezdev.github.io/etch-a-sketch/" target="_blank" class="btn boton-card mb-3 mx-3 mt-2 ms-4 mx-4"><svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      fill="currentColor"
-                      class="bi bi-browser-chrome"
-                      viewBox="0 0 16 16">
-                      <path
-                        fill-rule="evenodd"
-                        d="M16 8a8 8 0 0 1-7.022 7.94l1.902-7.098a3 3 0 0 0 .05-1.492A3 3 0 0 0 10.237 6h5.511A8 8 0 0 1 16 8M0 8a8 8 0 0 0 7.927 8l1.426-5.321a3 3 0 0 1-.723.255 3 3 0 0 1-1.743-.147 3 3 0 0 1-1.043-.7L.633 4.876A8 8 0 0 0 0 8m5.004-.167L1.108 3.936A8.003 8.003 0 0 1 15.418 5H8.066a3 3 0 0 0-1.252.243 2.99 2.99 0 0 0-1.81 2.59M8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4" />
-                    </svg>
-                    Preview</a>
+                  <div class="d-flex flex-wrap justify-content-center gap-2 mb-3">
+                    <a href="https://github.com/amartinezdev/etch-a-sketch" target="_blank" class="btn boton-card">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-github" aria-hidden="true">
+                        <use href="#icon-github"></use>
+                      </svg>
+                      Github
+                    </a>
+                    <a href="https://amartinezdev.github.io/etch-a-sketch/" target="_blank" class="btn boton-card">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-browser-chrome" aria-hidden="true">
+                        <use href="#icon-browser-chrome"></use>
+                      </svg>
+                      Preview
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -478,34 +572,46 @@ Desarrollador Full Stack Junior graduado en DAW. Trabajo con <code>Java</code>, 
       <div class="col-12">
         <h2 class="text-body-emphasis mb-4">Certificados</h2>
 
-        <div id="myCarousel" class="carousel slide mx-auto" data-bs-ride="carousel">
+        <div id="myCarousel" class="carousel slide mx-auto certs-carousel" data-bs-ride="carousel">
           <div class="carousel-indicators">
-            <button data-bs-target="#myCarousel" data-bs-slide-to="0" class="active bg-dark" aria-current="true" aria-label="First slide"></button>
-            <button data-bs-target="#myCarousel" data-bs-slide-to="1" class="bg-dark" aria-label="Second slide"></button>
-            <button data-bs-target="#myCarousel" data-bs-slide-to="2" class="bg-dark" aria-label="Third slide"></button>
-            <button data-bs-target="#myCarousel" data-bs-slide-to="3" class="bg-dark" aria-label="Fourth slide"></button>
+            <button data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Certificado de IA Generativa"></button>
+            <button data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Certificado de JavaScript en Udemy"></button>
+            <button data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Certificado de Full-Stack Engineer"></button>
+            <button data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Certificado de Data Engineer"></button>
           </div>
           <div class="carousel-inner" role="listbox">
             <div class="carousel-item active">
-              <img src="img/certs/AI-gen-sm.png" class="w-100 d-block" alt="First slide" data-bs-toggle="modal" data-bs-target="#modal1" />
+              <img src="img/certs/AI-gen-sm.png" class="w-100 d-block" alt="Certificado de IA Generativa y su impacto en el negocio" width="700" height="539" loading="lazy" data-bs-toggle="modal" data-bs-target="#modal1" />
+              <div class="carousel-caption">
+                <span>IA Generativa y su impacto en el negocio</span>
+              </div>
             </div>
             <div class="carousel-item">
-              <img src="img/certs/udemy_JS_sm.png" class="w-100 d-block" alt="Second slide" data-bs-toggle="modal" data-bs-target="#modal2" />
+              <img src="img/certs/udemy_JS_sm.png" class="w-100 d-block" alt="Certificado de JavaScript en Udemy" width="700" height="539" loading="lazy" data-bs-toggle="modal" data-bs-target="#modal2" />
+              <div class="carousel-caption">
+                <span>JavaScript &middot; Udemy</span>
+              </div>
             </div>
             <div class="carousel-item">
-              <img src="img/certs/full-stack-sm.png" class="w-100 d-block" alt="Second slide" data-bs-toggle="modal" data-bs-target="#modal4" />
+              <img src="img/certs/full-stack-sm.png" class="w-100 d-block" alt="Certificado de Full-Stack Engineer" width="700" height="539" loading="lazy" data-bs-toggle="modal" data-bs-target="#modal4" />
+              <div class="carousel-caption">
+                <span>Full-Stack Engineer</span>
+              </div>
             </div>
             <div class="carousel-item">
-              <img src="img/certs/data-eng-sm.png" class="w-100 d-block" alt="Second slide" data-bs-toggle="modal" data-bs-target="#modal3" />
+              <img src="img/certs/data-eng-sm.png" class="w-100 d-block" alt="Certificado de Data Engineer" width="700" height="539" loading="lazy" data-bs-toggle="modal" data-bs-target="#modal3" />
+              <div class="carousel-caption">
+                <span>Data Engineer</span>
+              </div>
             </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden text-dark">Previous</span>
+            <span class="visually-hidden">Anterior</span>
           </button>
           <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden text-dark">Next</span>
+            <span class="visually-hidden">Siguiente</span>
           </button>
         </div>
       </div>
@@ -514,69 +620,69 @@ Desarrollador Full Stack Junior graduado en DAW. Trabajo con <code>Java</code>, 
     <!-- SKILLS -->
     <section class="row mt-5 text-center mb-5">
       <div class="col-12">
-        <h4 class="text-body-emphasis">Skills</h4>
+        <h3 class="text-body-emphasis h4">Skills</h3>
 
         <div class="d-flex flex-wrap gap-2 mt-3 justify-content-center mb-5">
           <a href="https://developer.mozilla.org/es/docs/Web/HTML" class="icono" target="_blank">
-            <img class="skillIcons" src="img/icons/HTML.svg" alt="HTML" title="HTML" />
+            <img class="skillIcons" src="img/icons/HTML.svg" alt="HTML" title="HTML" width="50" height="50" loading="lazy" />
           </a>
           <a href="https://www.w3schools.com/css/" class="icono" target="_blank">
-            <img class="skillIcons" src="img/icons/CSS.svg" alt="CSS" title="CSS" />
+            <img class="skillIcons" src="img/icons/CSS.svg" alt="CSS" title="CSS" width="50" height="50" loading="lazy" />
           </a>
           <a href="https://www.w3schools.com/css/" class="icono" target="_blank">
-            <img class="skillIcons" src="img/icons/JavaScript.svg" alt="JavaScript" title="JavaScript" />
+            <img class="skillIcons" src="img/icons/JavaScript.svg" alt="JavaScript" title="JavaScript" width="50" height="50" loading="lazy" />
           </a>
 
           <a href="https://nodejs.org/" class="icono" target="_blank">
-            <img class="skillIcons" src="img/icons/NodeJS-Dark.svg" alt="Node.js" title="Node.js" />
+            <img class="skillIcons" src="img/icons/NodeJS-Dark.svg" alt="Node.js" title="Node.js" width="50" height="50" loading="lazy" />
           </a>
 
           <a href="https://es.react.dev/" class="icono" target="_blank">
-            <img class="skillIcons" src="img/icons/React-Dark.svg" alt="React" title="React" />
+            <img class="skillIcons" src="img/icons/React-Dark.svg" alt="React" title="React" width="50" height="50" loading="lazy" />
           </a>
 
           
           <a href="https://expressjs.com/es/" class="icono" target="_blank">
-            <img class="skillIcons" src="img/icons/ExpressJS-Dark.svg" alt="ExpressJS" title="ExpressJS" />
+            <img class="skillIcons" src="img/icons/ExpressJS-Dark.svg" alt="ExpressJS" title="ExpressJS" width="50" height="50" loading="lazy" />
           </a>
 
           <a href="https://www.java.com/es/" class="icono" target="_blank">
-            <img class="skillIcons" src="img/icons/Java-Dark.svg" alt="Java" title="Java" />
+            <img class="skillIcons" src="img/icons/Java-Dark.svg" alt="Java" title="Java" width="50" height="50" loading="lazy" />
           </a>
 
 
           <a href="https://spring.io/projects/spring-boot/" class="icono" target="_blank">
-            <img class="skillIcons" src="img/icons/Spring-Dark.svg" alt="Spring" title="Spring Boot" />
+            <img class="skillIcons" src="img/icons/Spring-Dark.svg" alt="Spring" title="Spring Boot" width="50" height="50" loading="lazy" />
           </a>
 
 
           <div class="w-100 d-none d-sm-block"></div>
           <a href="https://www.php.net/" class="icono" target="_blank">
-            <img class="skillIcons" src="img/icons/PHP-Dark.svg" alt="PHP" title="PHP" />
+            <img class="skillIcons" src="img/icons/PHP-Dark.svg" alt="PHP" title="PHP" width="50" height="50" loading="lazy" />
           </a>
 
           <a href="https://laravel.com/" class="icono" target="_blank">
-            <img class="skillIcons" src="img/icons/Laravel-Dark.svg" alt="Laravel" title="Laravel" />
+            <img class="skillIcons" src="img/icons/Laravel-Dark.svg" alt="Laravel" title="Laravel" width="50" height="50" loading="lazy" />
           </a>
           <a href="https://mysql.com/" class="icono" target="_blank">
-            <img class="skillIcons" src="img/icons/MySQL-Dark.svg" alt="MySQL" title="MySQL" />
+            <img class="skillIcons" src="img/icons/MySQL-Dark.svg" alt="MySQL" title="MySQL" width="50" height="50" loading="lazy" />
           </a>
           
           <a href="https://tailwindcss.com/" class="icono" target="_blank">
-            <img class="skillIcons" src="img/icons/TailwindCSS-Dark.svg" alt="Tailwind CSS" title="TailwindCSS" />
+            <img class="skillIcons" src="img/icons/TailwindCSS-Dark.svg" alt="Tailwind CSS" title="TailwindCSS" width="50" height="50" loading="lazy" />
           </a>
 
           <a href="https://git-scm.com/" class="icono" target="_blank">
-            <img class="skillIcons" src="img/icons/Git.svg" alt="Git" title="Git" />
+            <img class="skillIcons" src="img/icons/Git.svg" alt="Git" title="Git" width="50" height="50" loading="lazy" />
           </a>
           <a href="https://github.com/amartinezdev/" class="icono" target="_blank">
-            <img class="skillIcons" src="img/icons/Github-Dark.svg" alt="GitHub" title="GitHub" />
+            <img class="skillIcons" src="img/icons/Github-Dark.svg" alt="GitHub" title="GitHub" width="50" height="50" loading="lazy" />
           </a>
           <a href="https://www.docker.com/" class="icono" target="_blank">
-            <img class="skillIcons" src="img/icons/Docker.svg" alt="Docker" title="Docker" />
+            <img class="skillIcons" src="img/icons/Docker.svg" alt="Docker" title="Docker" width="50" height="50" loading="lazy" />
           </a>
           <a href="https://astro.build/" class="icono" target="_blank">
-            <img class="skillIcons" src="img/icons/Astro.svg" alt="Astro" title="Astro" />
+            <img class="skillIcons" src="img/icons/Astro.svg" alt="Astro" title="Astro" width="50" height="50" loading="lazy" />
           </a>
         </div>
       </div>
@@ -588,7 +694,7 @@ Desarrollador Full Stack Junior graduado en DAW. Trabajo con <code>Java</code>, 
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
         <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal"></button>
-        <img src="img/certs/AI-gen.png" class="w-100" alt="imagenCertificado" />
+        <img src="img/certs/AI-gen.png" class="w-100" alt="Certificado de IA Generativa y su impacto en el negocio" width="1225" height="943" loading="lazy" />
       </div>
     </div>
   </div>
@@ -598,7 +704,7 @@ Desarrollador Full Stack Junior graduado en DAW. Trabajo con <code>Java</code>, 
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
         <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal"></button>
-        <img src="img/certs/udemy_JS.jpg" class="w-100" alt="imagenCertificado" />
+        <img src="img/certs/udemy_JS.jpg" class="w-100" alt="Certificado de JavaScript en Udemy" width="1600" height="1190" loading="lazy" />
       </div>
     </div>
   </div>
@@ -608,7 +714,7 @@ Desarrollador Full Stack Junior graduado en DAW. Trabajo con <code>Java</code>, 
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
         <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal"></button>
-        <img src="img/certs/data-eng.png" class="w-100" alt="imagenCertificado" />
+        <img src="img/certs/data-eng.png" class="w-100" alt="Certificado de Data Engineer" width="1227" height="947" loading="lazy" />
       </div>
     </div>
   </div>
@@ -618,7 +724,7 @@ Desarrollador Full Stack Junior graduado en DAW. Trabajo con <code>Java</code>, 
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
         <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal"></button>
-        <img src="img/certs/full-stack-eng.png" class="w-100" alt="imagenCertificado" />
+        <img src="img/certs/full-stack-eng.png" class="w-100" alt="Certificado de Full-Stack Engineer" width="1228" height="946" loading="lazy" />
       </div>
     </div>
   </div>
@@ -642,13 +748,14 @@ Desarrollador Full Stack Junior graduado en DAW. Trabajo con <code>Java</code>, 
       <?php elseif (!empty($error_mensaje)): ?>
         <div class="col-12 col-md-10 col-lg-8 col-xl-6 mx-auto">
           <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <strong>Error:</strong> <?php echo $error_mensaje; ?>
+            <strong>Error:</strong> <?php echo htmlspecialchars($error_mensaje); ?>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
           </div>
         </div>
       <?php endif; ?>
       <?php if (!$mensaje_enviado): ?>
         <form method="POST">
+          <input type="text" name="website" id="website" style="position: absolute; left: -9999px" tabindex="-1" autocomplete="off" aria-hidden="true" />
           <div class="row justify-content-center">
             <div class="col-12 d-flex align-items-center justify-content-between col-md-10 col-lg-10 col-xl-8 col-xxl-6">
               <div class="col form-floating mb-1 m-3">
@@ -699,25 +806,20 @@ Desarrollador Full Stack Junior graduado en DAW. Trabajo con <code>Java</code>, 
   <div class="container-fluid mb-4">
     <footer class="row mt-5">
       <div class="col-12 text-center mt-5 d-flex flex-column justify-content-center align-items-center">
-        <nav class="nav justify-content-center justify-content-md-start mb-3 align-items-center">
+        <nav class="nav justify-content-center justify-content-md-start mb-3 align-items-center gap-2">
           <a class="nav-link icono text-body-emphasis" href="https://github.com/amartinezdev/" target="_blank">
-            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" class="bi bi-github" fill="currentColor" viewBox="0 0 16 16">
-              <path
-                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8" />
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" class="bi bi-github" fill="currentColor" aria-hidden="true">
+              <use href="#icon-github"></use>
             </svg>
           </a>
           <a class="nav-link icono text-body-emphasis" href="https://www.linkedin.com/in/alvaromartinezdev" target="_blank">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" class="bi bi-linkedin" fill="currentColor" viewBox="0 0 16 16">
-              <path
-                d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" />
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" class="bi bi-linkedin" fill="currentColor" aria-hidden="true">
+              <use href="#icon-linkedin"></use>
             </svg>
           </a>
           <a class="nav-link icono text-body-emphasis" href="mailto:alvaromartinezdev@gmail.com">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" class="bi bi-envelope-at-fill" fill="currentColor" viewBox="0 0 16 16">
-              <path
-                d="M2 2A2 2 0 0 0 .05 3.555L8 8.414l7.95-4.859A2 2 0 0 0 14 2zm-2 9.8V4.698l5.803 3.546zm6.761-2.97-6.57 4.026A2 2 0 0 0 2 14h6.256A4.5 4.5 0 0 1 8 12.5a4.49 4.49 0 0 1 1.606-3.446l-.367-.225L8 9.586zM16 9.671V4.697l-5.803 3.546.338.208A4.5 4.5 0 0 1 12.5 8c1.414 0 2.675.652 3.5 1.671" />
-              <path
-                d="M15.834 12.244c0 1.168-.577 2.025-1.587 2.025-.503 0-1.002-.228-1.12-.648h-.043c-.118.416-.543.643-1.015.643-.77 0-1.259-.542-1.259-1.434v-.529c0-.844.481-1.4 1.26-1.4.585 0 .87.333.953.63h.03v-.568h.905v2.19c0 .272.18.42.411.42.315 0 .639-.415.639-1.39v-.118c0-1.277-.95-2.326-2.484-2.326h-.04c-1.582 0-2.64 1.067-2.64 2.724v.157c0 1.867 1.237 2.654 2.57 2.654h.045c.507 0 .935-.07 1.18-.18v.731c-.219.1-.643.175-1.237.175h-.044C10.438 16 9 14.82 9 12.646v-.214C9 10.36 10.421 9 12.485 9h.035c2.12 0 3.314 1.43 3.314 3.034zm-4.04.21v.227c0 .586.227.8.581.8.31 0 .564-.17.564-.743v-.367c0-.516-.275-.708-.572-.708-.346 0-.573.245-.573.791" />
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" class="bi bi-envelope-at-fill" fill="currentColor" aria-hidden="true">
+              <use href="#icon-envelope"></use>
             </svg>
           </a>
         </nav>
@@ -728,7 +830,6 @@ Desarrollador Full Stack Junior graduado en DAW. Trabajo con <code>Java</code>, 
 
   <script src="palabras.js"></script>
   <script src="cambiarTema.js"></script>
-  <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /img/certs/*.pdf
+
+Sitemap: https://alvaromartinez.dev/sitemap.xml
