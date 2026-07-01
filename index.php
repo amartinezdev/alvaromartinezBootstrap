@@ -578,6 +578,7 @@ Desarrollador Full Stack Junior graduado en DAW. Trabajo con <code>Java</code>, 
             <button data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Certificado de JavaScript en Udemy"></button>
             <button data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Certificado de Full-Stack Engineer"></button>
             <button data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Certificado de Data Engineer"></button>
+            <button data-bs-target="#myCarousel" data-bs-slide-to="4" aria-label="Certificado de Claude Code in Action"></button>
           </div>
           <div class="carousel-inner" role="listbox">
             <div class="carousel-item active">
@@ -602,6 +603,12 @@ Desarrollador Full Stack Junior graduado en DAW. Trabajo con <code>Java</code>, 
               <img src="img/certs/data-eng-sm.png" class="w-100 d-block" alt="Certificado de Data Engineer" width="700" height="539" loading="lazy" data-bs-toggle="modal" data-bs-target="#modal3" />
               <div class="carousel-caption">
                 <span>Data Engineer</span>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="img/certs/claude-sm.png" class="w-100 d-block" alt="Certificado de Claude Code in Action" width="700" height="539" loading="lazy" data-bs-toggle="modal" data-bs-target="#modal5" />
+              <div class="carousel-caption">
+                <span>Claude Code in Action</span>
               </div>
             </div>
           </div>
@@ -725,6 +732,16 @@ Desarrollador Full Stack Junior graduado en DAW. Trabajo con <code>Java</code>, 
       <div class="modal-content">
         <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal"></button>
         <img src="img/certs/full-stack-eng.png" class="w-100" alt="Certificado de Full-Stack Engineer" width="1228" height="946" loading="lazy" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 5 -->
+  <div class="modal fade" id="modal5" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal"></button>
+        <img src="img/certs/claude.png" class="w-100" alt="Certificado de Claude Code in Action" width="1228" height="949" loading="lazy" />
       </div>
     </div>
   </div>
