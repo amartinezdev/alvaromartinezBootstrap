@@ -167,24 +167,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <!-- End Google Tag Manager -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Álvaro Martínez - Desarrollador FullStack</title>
-  <meta name="description" content="Álvaro Martínez, desarrollador Full Stack Junior (Java, Spring Boot, JavaScript, React, Node.js, PHP, MySQL). Descubre mis proyectos, certificados y contacta conmigo." />
+  <title>Álvaro Martínez | Desarrollador Full Stack en Murcia</title>
+  <meta name="description" content="Álvaro Martínez, desarrollador Full Stack Junior en Murcia. Especializado en Java, Spring Boot, JavaScript, React, Node.js, PHP y MySQL. Descubre mis proyectos, certificados y contacta conmigo." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://alvaromartinez.dev/" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Álvaro Martínez | Portfolio" />
   <meta property="og:url" content="https://alvaromartinez.dev/" />
-  <meta property="og:title" content="Álvaro Martínez - Desarrollador FullStack" />
-  <meta property="og:description" content="Desarrollador Full Stack Junior. Java, Spring Boot, React, Node.js, PHP, MySQL. Proyectos, certificados y contacto." />
+  <meta property="og:title" content="Álvaro Martínez | Desarrollador Full Stack en Murcia" />
+  <meta property="og:description" content="Desarrollador Full Stack Junior en Murcia. Java, Spring Boot, React, Node.js, PHP, MySQL. Proyectos, certificados y contacto." />
   <meta property="og:image" content="https://alvaromartinez.dev/img/og-cover.jpg" />
+  <meta property="og:image:alt" content="Portfolio de Álvaro Martínez, desarrollador Full Stack en Murcia" />
   <meta property="og:locale" content="es_ES" />
 
   <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Álvaro Martínez - Desarrollador FullStack" />
-  <meta name="twitter:description" content="Desarrollador Full Stack Junior. Java, Spring Boot, React, Node.js, PHP, MySQL." />
+  <meta name="twitter:title" content="Álvaro Martínez | Desarrollador Full Stack en Murcia" />
+  <meta name="twitter:description" content="Desarrollador Full Stack Junior en Murcia. Java, Spring Boot, React, Node.js, PHP, MySQL." />
   <meta name="twitter:image" content="https://alvaromartinez.dev/img/og-cover.jpg" />
+  <meta name="twitter:image:alt" content="Portfolio de Álvaro Martínez, desarrollador Full Stack en Murcia" />
 
   <meta name="theme-color" content="#0d0d0d" media="(prefers-color-scheme: dark)" />
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
@@ -213,25 +216,88 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Álvaro Martínez",
-    "url": "https://alvaromartinez.dev/",
-    "image": "https://alvaromartinez.dev/img/01_azul.webp",
-    "jobTitle": "Desarrollador Full Stack",
-    "knowsAbout": ["Java", "Spring Boot", "JavaScript", "React", "Node.js", "PHP", "MySQL"],
-    "email": "mailto:alvaromartinezdev@gmail.com",
-    "sameAs": [
-      "https://github.com/amartinezdev",
-      "https://www.linkedin.com/in/alvaromartinezdev"
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://alvaromartinez.dev/#person",
+        "name": "Álvaro Martínez",
+        "alternateName": "alvaromartinezdev",
+        "url": "https://alvaromartinez.dev/",
+        "image": {
+          "@type": "ImageObject",
+          "@id": "https://alvaromartinez.dev/#personimage",
+          "url": "https://alvaromartinez.dev/img/alvaro-martinez.webp",
+          "caption": "Álvaro Martínez, desarrollador Full Stack en Murcia"
+        },
+        "description": "Desarrollador Full Stack Junior en Murcia, especializado en Java, Spring Boot, JavaScript, React y Node.js. Portfolio con proyectos y experiencia.",
+        "jobTitle": "Desarrollador Full Stack",
+        "hasOccupation": {
+          "@type": "Occupation",
+          "name": "Desarrollador Full Stack",
+          "occupationLocation": {
+            "@type": "City",
+            "name": "Murcia, España"
+          }
+        },
+        "homeLocation": {
+          "@type": "Place",
+          "name": "Murcia, España"
+        },
+        "knowsAbout": [
+          "Java",
+          "Spring Boot",
+          "JavaScript",
+          "React",
+          "Node.js",
+          "Express",
+          "PHP",
+          "Laravel",
+          "REST APIs",
+          "MySQL",
+          "Git",
+          "Docker",
+          "HTML",
+          "CSS",
+          "Responsive Web Design"
+        ],
+        "knowsLanguage": "es",
+        "email": "mailto:alvaromartinezdev@gmail.com",
+        "sameAs": [
+          "https://github.com/amartinezdev",
+          "https://www.linkedin.com/in/alvaromartinezdev"
+        ],
+        "mainEntityOfPage": {
+          "@id": "https://alvaromartinez.dev/#webpage"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://alvaromartinez.dev/#website",
+        "name": "Álvaro Martínez | Portfolio",
+        "url": "https://alvaromartinez.dev/",
+        "inLanguage": "es",
+        "publisher": {
+          "@id": "https://alvaromartinez.dev/#person"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://alvaromartinez.dev/#webpage",
+        "url": "https://alvaromartinez.dev/",
+        "name": "Álvaro Martínez | Desarrollador Full Stack en Murcia",
+        "description": "Álvaro Martínez, desarrollador Full Stack Junior en Murcia. Especializado en Java, Spring Boot, JavaScript, React, Node.js, PHP y MySQL.",
+        "isPartOf": {
+          "@id": "https://alvaromartinez.dev/#website"
+        },
+        "about": {
+          "@id": "https://alvaromartinez.dev/#person"
+        },
+        "primaryImageOfPage": {
+          "@id": "https://alvaromartinez.dev/#personimage"
+        },
+        "inLanguage": "es"
+      }
     ]
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Álvaro Martínez - Desarrollador FullStack en Murcia",
-    "url": "https://alvaromartinez.dev/"
   }
   </script>
 
@@ -326,7 +392,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <div class="col-12 text-white">
         <h2>👋<span id="palabras">Hey!</span> Soy</h2>
         <h1 class="display-4">Álvaro Martínez</h1>
-        <h2>Desarrollador FullStack</h2>
+        <h2>Desarrollador Full Stack en Murcia</h2>
         <a class="btn boton mt-5 py-2 px-4" href="#about" role="button">Sobre mí</a>
       </div>
     </header>
@@ -340,12 +406,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!--  ABOUT  -->
     <section class="row d-flex align-items-center text-center mt-5 mt-lg-2 mb-5">
       <div class="col-12 mb-4 text-center col-md-4 col-xl-5 text-md-end">
-        <img src="img/01_azul.webp" alt="Álvaro Martínez, desarrollador Full Stack" class="img-fluid rounded-5" style="width: 200px" width="400" height="471" />
+        <img src="img/alvaro-martinez.webp" alt="Álvaro Martínez, desarrollador Full Stack en Murcia" class="img-fluid rounded-5" style="width: 200px" width="400" height="471" />
       </div>
       <div class="col-12 text-start col-md-8 col-lg-5 align-self-center">
         <h2 class="text-body-emphasis">Sobre mí</h2>
       <p class="lead text-body-emphasis">
-Desarrollador Full Stack Junior graduado en DAW. Trabajo con <code>Java</code>, <code>Spring Boot</code>, <code>JavaScript</code>, <code>React</code>, <code>Node.js</code> y <code>SQL</code>, desarrollando aplicaciones web completas desde la base de datos hasta la interfaz de usuario.
+Desarrollador Full Stack Junior de Murcia, graduado en DAW. Trabajo con <code>Java</code>, <code>Spring Boot</code>, <code>JavaScript</code>, <code>React</code>, <code>Node.js</code> y <code>SQL</code>, desarrollando aplicaciones web completas desde la base de datos hasta la interfaz de usuario.
         </p>
         <div class="d-flex flex-column align-items-center align-items-md-start">
           <nav class="nav mb-3 align-items-center gap-2">
@@ -365,7 +431,7 @@ Desarrollador Full Stack Junior graduado en DAW. Trabajo con <code>Java</code>, 
               </svg>
             </a>
           </nav>
-          <a class="btn boton-card filled cv-link" href="CV_ALVAROMARTINEZ.pdf" download="CV_ALVAROMARTINEZ.pdf">
+          <a class="btn boton-card filled cv-link" href="ALVARO_MARTINEZ_CV.pdf" download="ALVARO_MARTINEZ_CV.pdf">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-download" aria-hidden="true">
               <use href="#icon-download"></use>
             </svg>
