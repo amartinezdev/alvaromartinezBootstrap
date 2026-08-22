@@ -9,6 +9,64 @@ $transition: 0.2s;
 // ease-out nativo del navegador, que se queda plano para esto).
 $ease-out-strong: cubic-bezier(0.23, 1, 0.32, 1);
 
+// JetBrains Mono alojada en local (assets/fonts/) en vez de por Google
+// Fonts: es la fuente monoespaciada de toda la web (antes Fira Code).
+// El archivo es la variante de peso variable (cubre 100–800 en un solo
+// .woff2), por eso el font-weight se declara como rango.
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 100 800;
+  font-display: swap;
+  src: url("../fonts/JetBrainsMono.woff2") format("woff2-variations"), url("../fonts/JetBrainsMono.woff2") format("woff2");
+}
+
+// Poppins alojada en local (assets/fonts/), también en vez de por
+// Google Fonts: es una familia estática (no de peso variable), de ahí
+// un @font-face por cada peso realmente usado en la web.
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("../fonts/Poppins-300.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/Poppins-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/Poppins-500.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/Poppins-600.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/Poppins-700.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("../fonts/Poppins-800.woff2") format("woff2");
+}
+
 /*
 ----------------------
        MIXINS
@@ -32,7 +90,7 @@ $ease-out-strong: cubic-bezier(0.23, 1, 0.32, 1);
   align-items: center;
   justify-content: center;
   gap: 8px;
-  font-family: "Fira Code", "Poppins", monospace;
+  font-family: "JetBrains Mono", "Poppins", monospace;
   font-weight: 600;
   font-size: 0.86rem;
   letter-spacing: 0.01em;
@@ -78,6 +136,13 @@ $ease-out-strong: cubic-bezier(0.23, 1, 0.32, 1);
   --text-faint: #6b6b6b;
   --win-dot: #3a3a3a;
   --accent: #{$accent};
+  // Canal RGB del acento + opacidades para el aurora/spotlight del hero
+  // (EXP 1 y 2): se separan por tema porque el mismo dorado con la misma
+  // opacidad se ve bien sobre el fondo casi negro pero casi desaparece
+  // sobre el fondo claro.
+  --glow-rgb: 229, 192, 123;
+  --aurora-alpha: 0.22;
+  --spotlight-alpha: 0.12;
 }
 
 html[data-bs-theme="light"] {
@@ -97,6 +162,12 @@ html[data-bs-theme="light"] {
   // $accent se mantiene igual y se sigue usando tal cual para fondos sólidos
   // (p.ej. hover de .boton), donde el texto oscuro que va encima ya contrasta bien.
   --accent: #8a5a10;
+  // Mismo dorado oscuro que --accent, pero con más opacidad que en oscuro:
+  // sobre un fondo casi blanco, un tono tan claro necesita más presencia
+  // para no perderse.
+  --glow-rgb: 138, 90, 16;
+  --aurora-alpha: 0.6;
+  --spotlight-alpha: 0.14;
 }
 
 // Evita que las imágenes con width/height fijos (atributos HTML para
@@ -131,11 +202,11 @@ a:hover {
 ----------------------
 */
 .mono {
-  font-family: "Fira Code", ui-monospace, monospace;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
 }
 
 h1, h2, h3, .section-title {
-  font-family: "Fira Code", ui-monospace, monospace;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
   color: var(--text-strong);
 }
 
@@ -150,7 +221,7 @@ h1, h2, h3, .section-title {
   margin-bottom: 8px;
 
   .num {
-    font-family: "Fira Code", monospace;
+    font-family: "JetBrains Mono", monospace;
     font-size: 0.8rem;
     color: var(--text-faint);
   }
@@ -175,7 +246,7 @@ h1, h2, h3, .section-title {
 }
 
 code {
-  font-family: "Fira Code", monospace;
+  font-family: "JetBrains Mono", monospace;
   background: rgba($accent, 0.14);
   border: 1px solid rgba($accent, 0.28);
   color: var(--accent);
@@ -215,7 +286,7 @@ code {
 }
 
 .win-name {
-  font-family: "Fira Code", monospace;
+  font-family: "JetBrains Mono", monospace;
   font-size: 0.72rem;
   color: var(--text-faint);
   margin-left: 6px;
@@ -269,7 +340,7 @@ code {
 // para que se lean como enlaces y no solo como texto de terminal
 // decorativo.
 .cmd-link {
-  font-family: "Fira Code", monospace;
+  font-family: "JetBrains Mono", monospace;
   font-size: 0.86rem;
   color: var(--accent);
   text-underline-offset: 3px;
@@ -292,7 +363,7 @@ code {
 .tag {
   display: inline-flex;
   align-items: center;
-  font-family: "Fira Code", monospace;
+  font-family: "JetBrains Mono", monospace;
   font-size: 0.76rem;
   font-weight: 600;
   letter-spacing: 0.01em;
@@ -318,9 +389,15 @@ code {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 96px 16px 72px;
+  padding: 64px 16px 48px;
   background-image: radial-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px);
   background-size: 26px 26px;
+}
+
+@media (min-width: 768px) {
+  .hero-section {
+    padding: 96px 16px 72px;
+  }
 }
 
 html[data-bs-theme="light"] .hero-section {
@@ -344,7 +421,7 @@ html[data-bs-theme="light"] .hero-section {
 }
 
 .term-prompt {
-  font-family: "Fira Code", monospace;
+  font-family: "JetBrains Mono", monospace;
   color: var(--text-faint);
   font-size: 0.9rem;
   margin-bottom: 10px;
@@ -359,7 +436,7 @@ html[data-bs-theme="light"] .hero-section {
 }
 
 .hero-greeting {
-  font-family: "Fira Code", monospace;
+  font-family: "JetBrains Mono", monospace;
   font-size: 1.1rem;
   color: var(--accent);
   margin: 0 0 22px;
@@ -390,7 +467,7 @@ html[data-bs-theme="light"] .hero-section {
 }
 
 .hero-role {
-  font-family: "Fira Code", monospace;
+  font-family: "JetBrains Mono", monospace;
   font-size: 1.05rem;
   color: var(--text-muted);
   margin: 0 0 40px;
@@ -486,7 +563,7 @@ html[data-bs-theme="light"] .hero-section {
 }
 
 .project-title {
-  font-family: "Fira Code", monospace;
+  font-family: "JetBrains Mono", monospace;
   font-weight: 600;
   font-size: 1.15rem;
   color: var(--text-strong);
@@ -527,105 +604,173 @@ html[data-bs-theme="light"] .hero-section {
 
 /*
 ----------------------
-   CARRUSEL CERTIFICADOS
+   CERTIFICADOS (cinta infinita)
 ----------------------
 */
-// Alineada a la izquierda como el resto de la página, no centrada:
-// Es un objeto único (una "ventana" de certificados), se centra como
-// tarjeta en la página.
+// A diferencia del resto de "win" de la página, esta ocupa el máximo
+// del contenedor de la sección (mismo max-width que .section-eyebrow /
+// .section-lede) en vez de una anchura de tarjeta propia, así caben
+// tantas tarjetas como quepan de forma natural en vez de un número fijo.
 .certs-window {
-  max-width: 280px;
   margin: 0 auto;
 }
 
 @media (min-width: 768px) {
   .certs-window {
-    max-width: 528px;
+    max-width: 1100px;
   }
 }
 
-.certs-carousel {
-  .carousel-item img {
-    width: 100%;
-    height: 216px;
-    object-fit: cover;
-    display: block;
-    transition: transform 400ms ease;
-  }
+// Cinta con scroll real por debajo (overflow-x), pero: 1) la barra se
+// oculta (es un efecto de "cinta", no una lista para hojear a mano),
+// 2) assets/js/certsMarquee.js clona el contenido una vez y hace avanzar
+// scrollLeft solo con un rAF muy lento, dando la vuelta sin cortes
+// cuando llega a la mitad — así se ve como un bucle infinito aunque por
+// debajo siga siendo un contenedor con overflow normal. Sin snap: con
+// movimiento continuo, el snap solo generaría tirones.
+.certs-grid {
+  display: flex;
+  gap: 10px;
+  padding: 22px 12px;
+  overflow-x: auto;
+  scrollbar-width: none;
 
-  &:hover .carousel-item.active img {
-    transform: scale(1.03);
-  }
-
-  .carousel-caption {
-    left: 0;
-    right: 0;
-    bottom: 0;
-    padding: 26px 16px 12px;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0));
-
-    span {
-      display: inline-block;
-      font-family: "Fira Code", monospace;
-      font-size: 0.76rem;
-      font-weight: 600;
-      color: #fff;
-    }
-  }
-
-  .carousel-control-prev,
-  .carousel-control-next {
-    width: auto;
-    opacity: 1;
-
-    &:hover {
-      opacity: 1;
-    }
-  }
-
-  .carousel-control-prev-icon,
-  .carousel-control-next-icon {
-    width: 32px;
-    height: 32px;
-    border-radius: 4px;
-    background-color: rgba(0, 0, 0, 0.4);
-    background-size: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.35);
-    transition: background-color $transition, border-color $transition;
-  }
-
-  .carousel-control-prev:hover .carousel-control-prev-icon,
-  .carousel-control-next:hover .carousel-control-next-icon {
-    background-color: $accent;
-    border-color: transparent;
-  }
-
-  .carousel-indicators {
-    top: 12px;
-    bottom: auto;
-    margin: 0;
-
-    button {
-      width: 8px;
-      height: 3px;
-      border-radius: 2px;
-      border: none;
-      background-color: rgba(255, 255, 255, 0.35);
-      opacity: 1;
-      transition: background $transition, width $transition;
-
-      &.active {
-        width: 20px;
-        background: $accent;
-      }
-    }
+  &::-webkit-scrollbar {
+    display: none;
   }
 }
 
 @media (min-width: 768px) {
-  .certs-carousel .carousel-item img {
-    height: 400px;
+  .certs-grid {
+    gap: 20px;
+    padding: 34px 24px;
   }
+}
+
+// Arrastrar con el ratón para adelantar/retrasar la cinta a mano, con
+// inercia al soltar (ver assets/js/certsMarquee.js). Solo aplica con
+// ratón: en touch/trackpad el scroll nativo ya vale y no conviene
+// interferir — ahí el avance automático sigue effectivamente igual.
+@media (hover: hover) and (pointer: fine) {
+  .certs-grid {
+    cursor: grab;
+  }
+
+  .certs-grid.is-dragging {
+    cursor: grabbing;
+  }
+}
+
+.certs-grid.is-dragging,
+.certs-grid.is-dragging * {
+  user-select: none;
+}
+
+.cert-tile img {
+  -webkit-user-drag: none;
+}
+
+// Cada certificado es un <button> real (no una <img> con data-bs-toggle):
+// además de abrir el modal con la versión ampliada, queda enfocable con
+// teclado, cosa que un <img> nunca es.
+//
+// Móvil: ancho en % para que quepan exactamente 2 (más grandes que
+// cuando eran 3). Escritorio: ancho fijo en px — como la ventana ya
+// ocupa todo el ancho de su padre, caben tantas como el sitio permita
+// en vez de un número fijo.
+.cert-tile {
+  flex: 0 0 calc((100% - 10px) / 2);
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: transparent;
+  overflow: hidden;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color $transition;
+
+  img {
+    width: 100%;
+    aspect-ratio: 700 / 539;
+    object-fit: cover;
+    display: block;
+    transition: transform 220ms ease;
+  }
+
+  &:hover {
+    border-color: var(--accent);
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba($accent, 0.35);
+  }
+}
+
+@media (min-width: 768px) {
+  .cert-tile {
+    flex: 0 0 220px;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .cert-tile:hover img {
+    transform: scale(1.04);
+  }
+}
+
+.cert-tile-caption {
+  display: block;
+  padding: 10px 12px;
+  border-top: 1px solid var(--border-soft);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--text-dim);
+}
+
+// Flechas para recorrer certificados sin cerrar el modal (ver
+// assets/js/certModal.js). .modal-content ya es position:relative
+// por defecto en Bootstrap.
+.cert-modal-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  font-size: 1.6rem;
+  line-height: 1;
+  padding: 0;
+  transition: background-color $transition, border-color $transition;
+
+  &:hover {
+    background-color: $accent;
+    border-color: transparent;
+    color: #0a0a0a;
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba($accent, 0.4);
+  }
+}
+
+.cert-modal-prev {
+  left: 12px;
+}
+
+.cert-modal-next {
+  right: 12px;
 }
 
 /*
@@ -672,7 +817,7 @@ html[data-bs-theme="light"] .hero-section {
   }
 
   span {
-    font-family: "Fira Code", monospace;
+    font-family: "JetBrains Mono", monospace;
     font-size: 0.68rem;
     color: var(--text-dim);
     text-align: center;
@@ -732,7 +877,7 @@ html[data-bs-theme="light"] .hero-section {
 
 .field-label {
   display: block;
-  font-family: "Fira Code", monospace;
+  font-family: "JetBrains Mono", monospace;
   font-size: 0.76rem;
   color: var(--text-faint);
   margin-bottom: 7px;
@@ -923,4 +1068,205 @@ html[data-bs-theme="light"] #cambiarTema {
     transition: opacity 200ms ease;
     transition-delay: 0ms;
   }
+}
+
+/*
+======================================================================
+   ANIMACIONES EXPERIMENTALES — cada bloque es independiente y se
+   puede borrar por separado sin afectar a los demás. Pensadas para
+   probar y quedarse solo con las que convenzan.
+======================================================================
+*/
+
+/* ---- EXP 1: fondo del hero — resplandor de "pantalla encendida" centrado tras la ventana terminal, con una respiración muy sutil ---- */
+.hero-section {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  // En pantallas estrechas, 640px de diámetro es más ancho que el
+  // propio viewport: el overflow:hidden de .hero-section lo recorta en
+  // un borde duro y poco favorecedor a los lados. min() lo encoge
+  // junto con el ancho de pantalla (hasta 640px como techo en tablet+).
+  width: min(640px, 88vw);
+  height: min(640px, 88vw);
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  background: radial-gradient(circle, rgba(var(--glow-rgb), var(--aurora-alpha)), transparent 70%);
+  filter: blur(70px);
+  animation: heroGlowBreathe 7s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes heroGlowBreathe {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-section::before {
+    animation: none;
+  }
+}
+
+/* ---- EXP 2: mancha de luz que sigue al ratón por toda la web, siempre detrás del contenido (ver assets/js/mouseSpotlight.js) ---- */
+// Solo con puntero fino Y pantalla de escritorio: en touch no hay
+// ratón que lo mueva, así que se quedaría como una mancha fija en el
+// sitio del último toque. (hover:hover)/(pointer:fine) no basta por sí
+// solo — algunos portátiles con pantalla táctil siguen reportando
+// "fine" porque también tienen trackpad, aunque se esté usando el
+// dedo — por eso se añade además el ancho mínimo de escritorio.
+@media (min-width: 768px) and (hover: hover) and (pointer: fine) {
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: radial-gradient(150px circle at var(--spot-x, 50vw) var(--spot-y, 30vh), rgba(var(--glow-rgb), var(--spotlight-alpha)), transparent 70%);
+    pointer-events: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before {
+    display: none;
+  }
+}
+
+/* ---- EXP 3: la ventana del hero aparece 1s después de cargar la página, con el mismo fundido+desplazamiento que el resto de secciones al hacer scroll (reutiliza .reveal/.is-visible; ver assets/js/heroReveal.js) ---- */
+
+/* ---- EXP 4: barra de progreso de scroll (ver assets/js/scrollProgress.js) ---- */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  z-index: 1050;
+  pointer-events: none;
+}
+
+/* ---- EXP 5: barrido de brillo al pasar el ratón por los botones .boton, los iconos de redes sociales .nav-link.icono y el botón "volver arriba" ---- */
+.boton,
+.nav-link.icono {
+  position: relative;
+  overflow: hidden;
+}
+
+.back-to-top {
+  overflow: hidden;
+}
+
+.boton::before,
+.nav-link.icono::before,
+.back-to-top::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(115deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  transform: translateX(-250%);
+  transition: transform 500ms ease;
+  pointer-events: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .boton:hover::before,
+  .nav-link.icono:hover::before,
+  .back-to-top:hover::before {
+    transform: translateX(250%);
+  }
+}
+
+/* ---- EXP 6: elevación de las imágenes de proyectos al pasar el ratón ---- */
+.project-image {
+  transition: transform 220ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .project-item:hover .project-image {
+    transform: translateY(-4px) scale(1.015);
+  }
+}
+
+/* ---- EXP 7: rebote del icono al pasar el ratón por una skill ---- */
+.skill-tile img {
+  transition: transform 150ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .skill-tile:hover img {
+    transform: scale(1.12);
+  }
+}
+
+/* ---- EXP 9: "semáforos" de las ventanas terminal con el color de macOS siempre puesto, y un pequeño brillo extra al pasar el ratón por la barra ---- */
+.win-dot:nth-child(1) {
+  background: #ff5f57;
+}
+
+.win-dot:nth-child(2) {
+  background: #ffbd2e;
+}
+
+.win-dot:nth-child(3) {
+  background: #28c840;
+}
+
+.win-dot {
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .win-bar:hover .win-dot {
+    transform: scale(1.15);
+  }
+
+  .win-bar:hover .win-dot:nth-child(1) {
+    box-shadow: 0 0 6px 1px rgba(255, 95, 87, 0.55);
+  }
+
+  .win-bar:hover .win-dot:nth-child(2) {
+    box-shadow: 0 0 6px 1px rgba(255, 189, 46, 0.55);
+  }
+
+  .win-bar:hover .win-dot:nth-child(3) {
+    box-shadow: 0 0 6px 1px rgba(40, 200, 64, 0.55);
+  }
+}
+
+/* ---- EXP 11: barra de scroll del navegador en el color de acento (no es una animación, pero encaja con el resto de retoques) ---- */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) var(--bg-panel);
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--bg-panel);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--accent);
+  border-radius: 999px;
+  border: 2px solid var(--bg-panel);
 }

@@ -4,6 +4,55 @@
       VARIABLES
 ----------------------
 */
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 100 800;
+  font-display: swap;
+  src: url("../fonts/JetBrainsMono.woff2") format("woff2-variations"), url("../fonts/JetBrainsMono.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("../fonts/Poppins-300.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/Poppins-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/Poppins-500.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("../fonts/Poppins-600.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/Poppins-700.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("../fonts/Poppins-800.woff2") format("woff2");
+}
 /*
 ----------------------
        MIXINS
@@ -27,6 +76,9 @@
   --text-faint: #6b6b6b;
   --win-dot: #3a3a3a;
   --accent: #e5c07b;
+  --glow-rgb: 229, 192, 123;
+  --aurora-alpha: 0.22;
+  --spotlight-alpha: 0.12;
 }
 
 html[data-bs-theme=light] {
@@ -42,6 +94,9 @@ html[data-bs-theme=light] {
   --text-faint: #8c8880;
   --win-dot: #cfcbc0;
   --accent: #8a5a10;
+  --glow-rgb: 138, 90, 16;
+  --aurora-alpha: 0.6;
+  --spotlight-alpha: 0.14;
 }
 
 img {
@@ -73,11 +128,11 @@ a:hover {
 ----------------------
 */
 .mono {
-  font-family: "Fira Code", ui-monospace, monospace;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
 }
 
 h1, h2, h3, .section-title {
-  font-family: "Fira Code", ui-monospace, monospace;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
   color: var(--text-strong);
 }
 
@@ -88,7 +143,7 @@ h1, h2, h3, .section-title {
   margin-bottom: 8px;
 }
 .section-eyebrow .num {
-  font-family: "Fira Code", monospace;
+  font-family: "JetBrains Mono", monospace;
   font-size: 0.8rem;
   color: var(--text-faint);
 }
@@ -109,9 +164,8 @@ h1, h2, h3, .section-title {
     margin: 0 auto;
   }
 }
-
 code {
-  font-family: "Fira Code", monospace;
+  font-family: "JetBrains Mono", monospace;
   background: rgba(229, 192, 123, 0.14);
   border: 1px solid rgba(229, 192, 123, 0.28);
   color: var(--accent);
@@ -151,7 +205,7 @@ code {
 }
 
 .win-name {
-  font-family: "Fira Code", monospace;
+  font-family: "JetBrains Mono", monospace;
   font-size: 0.72rem;
   color: var(--text-faint);
   margin-left: 6px;
@@ -167,7 +221,7 @@ code {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  font-family: "Fira Code", "Poppins", monospace;
+  font-family: "JetBrains Mono", "Poppins", monospace;
   font-weight: 600;
   font-size: 0.86rem;
   letter-spacing: 0.01em;
@@ -222,7 +276,7 @@ code {
 }
 
 .cmd-link {
-  font-family: "Fira Code", monospace;
+  font-family: "JetBrains Mono", monospace;
   font-size: 0.86rem;
   color: var(--accent);
   text-underline-offset: 3px;
@@ -242,7 +296,7 @@ code {
 .tag {
   display: inline-flex;
   align-items: center;
-  font-family: "Fira Code", monospace;
+  font-family: "JetBrains Mono", monospace;
   font-size: 0.76rem;
   font-weight: 600;
   letter-spacing: 0.01em;
@@ -267,11 +321,16 @@ code {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 96px 16px 72px;
+  padding: 64px 16px 48px;
   background-image: radial-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px);
   background-size: 26px 26px;
 }
 
+@media (min-width: 768px) {
+  .hero-section {
+    padding: 96px 16px 72px;
+  }
+}
 html[data-bs-theme=light] .hero-section {
   background-image: radial-gradient(rgba(10, 10, 10, 0.05) 1px, transparent 1px);
 }
@@ -292,7 +351,7 @@ html[data-bs-theme=light] .hero-section {
   }
 }
 .term-prompt {
-  font-family: "Fira Code", monospace;
+  font-family: "JetBrains Mono", monospace;
   color: var(--text-faint);
   font-size: 0.9rem;
   margin-bottom: 10px;
@@ -307,7 +366,7 @@ html[data-bs-theme=light] .hero-section {
 }
 
 .hero-greeting {
-  font-family: "Fira Code", monospace;
+  font-family: "JetBrains Mono", monospace;
   font-size: 1.1rem;
   color: var(--accent);
   margin: 0 0 22px;
@@ -333,7 +392,7 @@ html[data-bs-theme=light] .hero-section {
   }
 }
 .hero-role {
-  font-family: "Fira Code", monospace;
+  font-family: "JetBrains Mono", monospace;
   font-size: 1.05rem;
   color: var(--text-muted);
   margin: 0 0 40px;
@@ -365,10 +424,10 @@ html[data-bs-theme=light] .hero-section {
     margin: 0;
   }
 }
-
 #about .lead {
   max-width: 62ch;
 }
+
 /*
 ----------------------
    ESPACIADO DE SECCIONES
@@ -417,7 +476,7 @@ html[data-bs-theme=light] .hero-section {
 }
 
 .project-title {
-  font-family: "Fira Code", monospace;
+  font-family: "JetBrains Mono", monospace;
   font-weight: 600;
   font-size: 1.15rem;
   color: var(--text-strong);
@@ -456,91 +515,137 @@ html[data-bs-theme=light] .hero-section {
 }
 /*
 ----------------------
-   CARRUSEL CERTIFICADOS
+   CERTIFICADOS (cinta infinita)
 ----------------------
 */
 .certs-window {
-  max-width: 280px;
   margin: 0 auto;
 }
 
 @media (min-width: 768px) {
   .certs-window {
-    max-width: 528px;
+    max-width: 1100px;
   }
 }
-.certs-carousel .carousel-item img {
-  width: 100%;
-  height: 216px;
-  object-fit: cover;
-  display: block;
-  transition: transform 400ms ease;
+.certs-grid {
+  display: flex;
+  gap: 10px;
+  padding: 22px 12px;
+  overflow-x: auto;
+  scrollbar-width: none;
 }
-.certs-carousel:hover .carousel-item.active img {
-  transform: scale(1.03);
-}
-.certs-carousel .carousel-caption {
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: 26px 16px 12px;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0));
-}
-.certs-carousel .carousel-caption span {
-  display: inline-block;
-  font-family: "Fira Code", monospace;
-  font-size: 0.76rem;
-  font-weight: 600;
-  color: #fff;
-}
-.certs-carousel .carousel-control-prev,
-.certs-carousel .carousel-control-next {
-  width: auto;
-  opacity: 1;
-}
-.certs-carousel .carousel-control-prev:hover,
-.certs-carousel .carousel-control-next:hover {
-  opacity: 1;
-}
-.certs-carousel .carousel-control-prev-icon,
-.certs-carousel .carousel-control-next-icon {
-  width: 32px;
-  height: 32px;
-  border-radius: 4px;
-  background-color: rgba(0, 0, 0, 0.4);
-  background-size: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  transition: background-color 0.2s, border-color 0.2s;
-}
-.certs-carousel .carousel-control-prev:hover .carousel-control-prev-icon,
-.certs-carousel .carousel-control-next:hover .carousel-control-next-icon {
-  background-color: #e5c07b;
-  border-color: transparent;
-}
-.certs-carousel .carousel-indicators {
-  top: 12px;
-  bottom: auto;
-  margin: 0;
-}
-.certs-carousel .carousel-indicators button {
-  width: 8px;
-  height: 3px;
-  border-radius: 2px;
-  border: none;
-  background-color: rgba(255, 255, 255, 0.35);
-  opacity: 1;
-  transition: background 0.2s, width 0.2s;
-}
-.certs-carousel .carousel-indicators button.active {
-  width: 20px;
-  background: #e5c07b;
+.certs-grid::-webkit-scrollbar {
+  display: none;
 }
 
 @media (min-width: 768px) {
-  .certs-carousel .carousel-item img {
-    height: 400px;
+  .certs-grid {
+    gap: 20px;
+    padding: 34px 24px;
   }
 }
+@media (hover: hover) and (pointer: fine) {
+  .certs-grid {
+    cursor: grab;
+  }
+  .certs-grid.is-dragging {
+    cursor: grabbing;
+  }
+}
+.certs-grid.is-dragging,
+.certs-grid.is-dragging * {
+  user-select: none;
+}
+
+.cert-tile img {
+  -webkit-user-drag: none;
+}
+
+.cert-tile {
+  flex: 0 0 calc((100% - 10px) / 2);
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: transparent;
+  overflow: hidden;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.2s;
+}
+.cert-tile img {
+  width: 100%;
+  aspect-ratio: 700/539;
+  object-fit: cover;
+  display: block;
+  transition: transform 220ms ease;
+}
+.cert-tile:hover {
+  border-color: var(--accent);
+}
+.cert-tile:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(229, 192, 123, 0.35);
+}
+
+@media (min-width: 768px) {
+  .cert-tile {
+    flex: 0 0 220px;
+  }
+}
+@media (hover: hover) and (pointer: fine) {
+  .cert-tile:hover img {
+    transform: scale(1.04);
+  }
+}
+.cert-tile-caption {
+  display: block;
+  padding: 10px 12px;
+  border-top: 1px solid var(--border-soft);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--text-dim);
+}
+
+.cert-modal-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  font-size: 1.6rem;
+  line-height: 1;
+  padding: 0;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+.cert-modal-nav:hover {
+  background-color: #e5c07b;
+  border-color: transparent;
+  color: #0a0a0a;
+}
+.cert-modal-nav:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(229, 192, 123, 0.4);
+}
+
+.cert-modal-prev {
+  left: 12px;
+}
+
+.cert-modal-next {
+  right: 12px;
+}
+
 /*
 ----------------------
         SKILLS
@@ -583,7 +688,7 @@ html[data-bs-theme=light] .hero-section {
   height: 28px;
 }
 .skill-tile span {
-  font-family: "Fira Code", monospace;
+  font-family: "JetBrains Mono", monospace;
   font-size: 0.68rem;
   color: var(--text-dim);
   text-align: center;
@@ -635,7 +740,7 @@ html[data-bs-theme=light] .hero-section {
 }
 .field-label {
   display: block;
-  font-family: "Fira Code", monospace;
+  font-family: "JetBrains Mono", monospace;
   font-size: 0.76rem;
   color: var(--text-faint);
   margin-bottom: 7px;
@@ -735,7 +840,6 @@ html[data-bs-theme=light] #cambiarTema .sun {
     transform: translate(-50%, -50%) !important;
   }
 }
-
 /*
 ----------------------
    VOLVER ARRIBA
@@ -779,7 +883,6 @@ html[data-bs-theme=light] #cambiarTema .sun {
     transition: opacity 0.2s, border-color 0.2s, color 0.2s;
   }
 }
-
 /*
 ----------------------
    REVEAL AL HACER SCROLL
@@ -802,4 +905,180 @@ html[data-bs-theme=light] #cambiarTema .sun {
     transition: opacity 200ms ease;
     transition-delay: 0ms;
   }
+}
+/*
+======================================================================
+   ANIMACIONES EXPERIMENTALES — cada bloque es independiente y se
+   puede borrar por separado sin afectar a los demás. Pensadas para
+   probar y quedarse solo con las que convenzan.
+======================================================================
+*/
+/* ---- EXP 1: fondo del hero — resplandor de "pantalla encendida" centrado tras la ventana terminal, con una respiración muy sutil ---- */
+.hero-section {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(640px, 88vw);
+  height: min(640px, 88vw);
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  background: radial-gradient(circle, rgba(var(--glow-rgb), var(--aurora-alpha)), transparent 70%);
+  filter: blur(70px);
+  animation: heroGlowBreathe 7s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes heroGlowBreathe {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.08);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-section::before {
+    animation: none;
+  }
+}
+/* ---- EXP 2: mancha de luz que sigue al ratón por toda la web, siempre detrás del contenido (ver assets/js/mouseSpotlight.js) ---- */
+@media (min-width: 768px) and (hover: hover) and (pointer: fine) {
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: radial-gradient(150px circle at var(--spot-x, 50vw) var(--spot-y, 30vh), rgba(var(--glow-rgb), var(--spotlight-alpha)), transparent 70%);
+    pointer-events: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  body::before {
+    display: none;
+  }
+}
+/* ---- EXP 3: la ventana del hero aparece 1s después de cargar la página, con el mismo fundido+desplazamiento que el resto de secciones al hacer scroll (reutiliza .reveal/.is-visible; ver assets/js/heroReveal.js) ---- */
+/* ---- EXP 4: barra de progreso de scroll (ver assets/js/scrollProgress.js) ---- */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  z-index: 1050;
+  pointer-events: none;
+}
+
+/* ---- EXP 5: barrido de brillo al pasar el ratón por los botones .boton, los iconos de redes sociales .nav-link.icono y el botón "volver arriba" ---- */
+.boton,
+.nav-link.icono {
+  position: relative;
+  overflow: hidden;
+}
+
+.back-to-top {
+  overflow: hidden;
+}
+
+.boton::before,
+.nav-link.icono::before,
+.back-to-top::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(115deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  transform: translateX(-250%);
+  transition: transform 500ms ease;
+  pointer-events: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .boton:hover::before,
+  .nav-link.icono:hover::before,
+  .back-to-top:hover::before {
+    transform: translateX(250%);
+  }
+}
+/* ---- EXP 6: elevación de las imágenes de proyectos al pasar el ratón ---- */
+.project-image {
+  transition: transform 220ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .project-item:hover .project-image {
+    transform: translateY(-4px) scale(1.015);
+  }
+}
+/* ---- EXP 7: rebote del icono al pasar el ratón por una skill ---- */
+.skill-tile img {
+  transition: transform 150ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .skill-tile:hover img {
+    transform: scale(1.12);
+  }
+}
+/* ---- EXP 9: "semáforos" de las ventanas terminal con el color de macOS siempre puesto, y un pequeño brillo extra al pasar el ratón por la barra ---- */
+.win-dot:nth-child(1) {
+  background: #ff5f57;
+}
+
+.win-dot:nth-child(2) {
+  background: #ffbd2e;
+}
+
+.win-dot:nth-child(3) {
+  background: #28c840;
+}
+
+.win-dot {
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .win-bar:hover .win-dot {
+    transform: scale(1.15);
+  }
+  .win-bar:hover .win-dot:nth-child(1) {
+    box-shadow: 0 0 6px 1px rgba(255, 95, 87, 0.55);
+  }
+  .win-bar:hover .win-dot:nth-child(2) {
+    box-shadow: 0 0 6px 1px rgba(255, 189, 46, 0.55);
+  }
+  .win-bar:hover .win-dot:nth-child(3) {
+    box-shadow: 0 0 6px 1px rgba(40, 200, 64, 0.55);
+  }
+}
+/* ---- EXP 11: barra de scroll del navegador en el color de acento (no es una animación, pero encaja con el resto de retoques) ---- */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent) var(--bg-panel);
+}
+
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--bg-panel);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--accent);
+  border-radius: 999px;
+  border: 2px solid var(--bg-panel);
 }

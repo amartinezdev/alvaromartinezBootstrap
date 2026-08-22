@@ -4,7 +4,10 @@
   el viewport — no se vuelve a animar si se sube y se baja otra vez.
 */
 (function () {
-  var items = Array.prototype.slice.call(document.querySelectorAll(".reveal"));
+  // Los elementos con data-reveal-step (la secuencia escalonada del hero)
+  // usan la misma clase .reveal por el CSS, pero los dispara un timeout
+  // propio (ver heroReveal.js) en vez del scroll, así que se excluyen aquí.
+  var items = Array.prototype.slice.call(document.querySelectorAll(".reveal:not([data-reveal-step])"));
   if (!items.length) return;
 
   // Escalona los elementos que aparecen juntos (p.ej. las tarjetas de

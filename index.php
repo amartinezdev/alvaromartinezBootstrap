@@ -210,11 +210,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     defer></script>
   <link rel="icon" href="img/brand/am_bw.png" type="image/png" sizes="32x32" />
   <link rel="apple-touch-icon" href="img/brand/am_bw.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600;700&display=swap"
-    rel="stylesheet" />
+  <!-- Poppins y JetBrains Mono se sirven en local (assets/fonts/, @font-face en styles.scss); ya no hace falta Google Fonts. -->
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="stylesheet" href="assets/css/styles.css" />
 
@@ -349,9 +345,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       document.documentElement.setAttribute("data-bs-theme", tema);
     })();
   </script>
+  <!-- Sin JS, nada dispara .is-visible (ni el IntersectionObserver de
+       scrollReveal.js ni el timeout de heroReveal.js): esto evita que
+       el contenido con .reveal (incluidos el nombre, el rol y el botón
+       del hero) se quede permanentemente en opacity:0. -->
+  <noscript>
+    <style>
+      .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    </style>
+  </noscript>
 </head>
 
 <body class="vh-100">
+  <div id="scrollProgress" class="scroll-progress" aria-hidden="true"></div>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TGNZRFLL"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -438,18 +447,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   <!--  HEADER  -->
   <header class="hero-section" id="inicio">
-    <div class="win hero-window">
+    <div class="win hero-window reveal" data-reveal-step="1">
       <div class="win-bar">
         <span class="win-dot"></span><span class="win-dot"></span><span class="win-dot"></span>
         <span class="win-name">zsh — ~/alvaromartinez.dev</span>
       </div>
       <div class="hero-body">
-        <p class="term-prompt mb-0">~ $ echo $SALUDO</p>
-        <p class="hero-greeting">👋 <span id="palabras">Hey!</span></p>
-        <p class="term-prompt mb-0">~ $ whoami</p>
-        <h1 class="hero-name">Álvaro Martínez</h1>
-        <h2 class="hero-role">Desarrollador Web Full Stack en Murcia</h2>
-        <a class="btn boton" href="#about" role="button">→ sobre_mi.sh</a>
+        <p class="term-prompt mb-0 reveal" data-reveal-step="2">~ $ echo $SALUDO</p>
+        <p class="hero-greeting reveal" data-reveal-step="2">👋 <span id="palabras">Hey!</span></p>
+        <p class="term-prompt mb-0 reveal" data-reveal-step="3">~ $ whoami</p>
+        <h1 class="hero-name reveal" data-reveal-step="3">Álvaro Martínez</h1>
+        <p class="term-prompt mb-0 reveal" data-reveal-step="4">~ $ echo $PROFESION</p>
+        <h2 class="hero-role reveal" data-reveal-step="4">Desarrollador Web Full Stack en Murcia</h2>
+        <a class="btn boton reveal" data-reveal-step="5" href="#about" role="button">→ sobre_mi.sh</a>
       </div>
     </div>
   </header>
@@ -477,7 +487,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
         <div class="col-12 text-start col-md">
           <p class="lead">
-Desarrollador web Full Stack Junior de Murcia, graduado en DAW. Trabajo con <span class="tag">Java</span> <span class="tag">Spring Boot</span> <span class="tag">JavaScript</span> <span class="tag">React</span> <span class="tag">Node.js</span> y <span class="tag">SQL</span>, desarrollando aplicaciones web completas desde la base de datos hasta la interfaz de usuario.
+Desarrollador web Full Stack Junior de Murcia, graduado en DAW. Trabajo con <span class="tag">Java</span>, <span class="tag">Spring Boot</span>, <span class="tag">JavaScript</span>, <span class="tag">React</span>, <span class="tag">Node.js</span> y <span class="tag">SQL</span>, desarrollando aplicaciones web completas desde la base de datos hasta la interfaz de usuario.
           </p>
           <div class="d-flex flex-wrap justify-content-center justify-content-md-start align-items-center gap-3 mt-4">
             <nav class="nav align-items-center gap-2">
@@ -631,53 +641,26 @@ Desarrollador web Full Stack Junior de Murcia, graduado en DAW. Trabajo con <spa
           <span class="win-dot"></span><span class="win-dot"></span><span class="win-dot"></span>
           <span class="win-name">certificados.log</span>
         </div>
-        <div id="myCarousel" class="carousel slide certs-carousel" data-bs-ride="carousel">
-          <div class="carousel-indicators">
-            <button data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Certificado de IA Generativa"></button>
-            <button data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Certificado de JavaScript en Udemy"></button>
-            <button data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Certificado de Full-Stack Engineer"></button>
-            <button data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Certificado de Data Engineer"></button>
-            <button data-bs-target="#myCarousel" data-bs-slide-to="4" aria-label="Certificado de Claude Code in Action"></button>
-          </div>
-          <div class="carousel-inner" role="listbox">
-            <div class="carousel-item active">
-              <img src="img/certs/AI-gen-sm.png" class="w-100 d-block" alt="Certificado de IA Generativa y su impacto en el negocio" width="700" height="539" loading="lazy" data-bs-toggle="modal" data-bs-target="#modal1" />
-              <div class="carousel-caption">
-                <span>IA Generativa y su impacto en el negocio</span>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img src="img/certs/udemy_JS_sm.png" class="w-100 d-block" alt="Certificado de JavaScript en Udemy" width="700" height="539" loading="lazy" data-bs-toggle="modal" data-bs-target="#modal2" />
-              <div class="carousel-caption">
-                <span>JavaScript &middot; Udemy</span>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img src="img/certs/full-stack-sm.png" class="w-100 d-block" alt="Certificado de Full-Stack Engineer" width="700" height="539" loading="lazy" data-bs-toggle="modal" data-bs-target="#modal4" />
-              <div class="carousel-caption">
-                <span>Full-Stack Engineer</span>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img src="img/certs/data-eng-sm.png" class="w-100 d-block" alt="Certificado de Data Engineer" width="700" height="539" loading="lazy" data-bs-toggle="modal" data-bs-target="#modal3" />
-              <div class="carousel-caption">
-                <span>Data Engineer</span>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <img src="img/certs/claude-sm.png" class="w-100 d-block" alt="Certificado de Claude Code in Action" width="700" height="539" loading="lazy" data-bs-toggle="modal" data-bs-target="#modal5" />
-              <div class="carousel-caption">
-                <span>Claude Code in Action</span>
-              </div>
-            </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Anterior</span>
+        <div class="certs-grid">
+          <button type="button" class="cert-tile" data-bs-toggle="modal" data-bs-target="#certModal" data-cert-full="img/certs/AI-gen.png" data-cert-full-alt="Certificado de IA Generativa y su impacto en el negocio" aria-label="Ver certificado ampliado: IA Generativa y su impacto en el negocio">
+            <img src="img/certs/AI-gen-sm.png" alt="Certificado de IA Generativa y su impacto en el negocio" width="700" height="539" loading="lazy" draggable="false" />
+            <span class="cert-tile-caption">IA Generativa</span>
           </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Siguiente</span>
+          <button type="button" class="cert-tile" data-bs-toggle="modal" data-bs-target="#certModal" data-cert-full="img/certs/udemy_JS.jpg" data-cert-full-alt="Certificado de JavaScript en Udemy" aria-label="Ver certificado ampliado: JavaScript · Udemy">
+            <img src="img/certs/udemy_JS_sm.png" alt="Certificado de JavaScript en Udemy" width="700" height="539" loading="lazy" draggable="false" />
+            <span class="cert-tile-caption">JavaScript &middot; Udemy</span>
+          </button>
+          <button type="button" class="cert-tile" data-bs-toggle="modal" data-bs-target="#certModal" data-cert-full="img/certs/full-stack-eng.png" data-cert-full-alt="Certificado de Full-Stack Engineer" aria-label="Ver certificado ampliado: Full-Stack Engineer">
+            <img src="img/certs/full-stack-sm.png" alt="Certificado de Full-Stack Engineer" width="700" height="539" loading="lazy" draggable="false" />
+            <span class="cert-tile-caption">Full-Stack Engineer</span>
+          </button>
+          <button type="button" class="cert-tile" data-bs-toggle="modal" data-bs-target="#certModal" data-cert-full="img/certs/data-eng.png" data-cert-full-alt="Certificado de Data Engineer" aria-label="Ver certificado ampliado: Data Engineer">
+            <img src="img/certs/data-eng-sm.png" alt="Certificado de Data Engineer" width="700" height="539" loading="lazy" draggable="false" />
+            <span class="cert-tile-caption">Data Engineer</span>
+          </button>
+          <button type="button" class="cert-tile" data-bs-toggle="modal" data-bs-target="#certModal" data-cert-full="img/certs/claude.png" data-cert-full-alt="Certificado de Claude Code in Action" aria-label="Ver certificado ampliado: Claude Code in Action">
+            <img src="img/certs/claude-sm.png" alt="Certificado de Claude Code in Action" width="700" height="539" loading="lazy" draggable="false" />
+            <span class="cert-tile-caption">Claude Code in Action</span>
           </button>
         </div>
       </div>
@@ -785,52 +768,17 @@ Desarrollador web Full Stack Junior de Murcia, graduado en DAW. Trabajo con <spa
     </section>
   </div>
 
-  <!-- Modal 1 -->
-  <div class="modal fade" id="modal1" tabindex="-1">
+  <!-- Modal de certificados: uno solo, reutilizado para todos. El src/alt
+       se rellena por JS (ver assets/js/certModal.js) leyendo los
+       data-cert-full/-alt del botón .cert-tile que lo abrió. Añadir un
+       certificado nuevo no requiere tocar este bloque. -->
+  <div class="modal fade" id="certModal" tabindex="-1" aria-label="Certificado ampliado">
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
         <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal"></button>
-        <img src="img/certs/AI-gen.png" class="w-100" alt="Certificado de IA Generativa y su impacto en el negocio" width="1225" height="943" loading="lazy" />
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal 2 -->
-  <div class="modal fade" id="modal2" tabindex="-1">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
-        <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal"></button>
-        <img src="img/certs/udemy_JS.jpg" class="w-100" alt="Certificado de JavaScript en Udemy" width="1600" height="1190" loading="lazy" />
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal 3 -->
-  <div class="modal fade" id="modal3" tabindex="-1">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
-        <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal"></button>
-        <img src="img/certs/data-eng.png" class="w-100" alt="Certificado de Data Engineer" width="1227" height="947" loading="lazy" />
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal 4 -->
-  <div class="modal fade" id="modal4" tabindex="-1">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
-        <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal"></button>
-        <img src="img/certs/full-stack-eng.png" class="w-100" alt="Certificado de Full-Stack Engineer" width="1228" height="946" loading="lazy" />
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal 5 -->
-  <div class="modal fade" id="modal5" tabindex="-1">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
-        <button type="button" class="btn-close ms-auto" data-bs-dismiss="modal"></button>
-        <img src="img/certs/claude.png" class="w-100" alt="Certificado de Claude Code in Action" width="1228" height="949" loading="lazy" />
+        <img src="" class="w-100" id="certModalImg" alt="" loading="lazy" />
+        <button type="button" class="cert-modal-nav cert-modal-prev" aria-label="Certificado anterior">&lsaquo;</button>
+        <button type="button" class="cert-modal-nav cert-modal-next" aria-label="Certificado siguiente">&rsaquo;</button>
       </div>
     </div>
   </div>
@@ -932,6 +880,12 @@ Desarrollador web Full Stack Junior de Murcia, graduado en DAW. Trabajo con <spa
   <script src="assets/js/backToTop.js"></script>
   <script src="assets/js/scrollspy.js"></script>
   <script src="assets/js/scrollReveal.js"></script>
+  <script src="assets/js/heroReveal.js"></script>
+  <script src="assets/js/certsMarquee.js"></script>
+  <script src="assets/js/certModal.js"></script>
+  <script src="assets/js/scrollProgress.js"></script>
+  <script src="assets/js/mouseSpotlight.js"></script>
+  <script src="assets/js/textScramble.js"></script>
 </body>
 
 </html>
