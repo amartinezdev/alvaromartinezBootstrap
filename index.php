@@ -461,11 +461,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <div class="container" id="about">
     <!--  ABOUT  -->
     <section class="section-py">
-      <div class="section-eyebrow">
+      <div class="section-eyebrow reveal">
         <span class="num">01</span>
         <h2 class="section-title mb-0">sobre_mi/</h2>
       </div>
-      <div class="row g-4 align-items-center mt-2 about-card">
+      <div class="row g-4 align-items-center mt-2 about-card reveal">
         <div class="col-12 mb-4 mb-md-0 col-md-auto">
           <div class="win about-photo-window">
             <div class="win-bar">
@@ -512,14 +512,14 @@ Desarrollador web Full Stack Junior de Murcia, graduado en DAW. Trabajo con <spa
   <!--  PROYECTOS  -->
   <div class="container" id="projects">
     <section class="section-py">
-      <div class="section-eyebrow">
+      <div class="section-eyebrow reveal">
         <span class="num">02</span>
         <h2 class="section-title mb-0">proyectos/</h2>
       </div>
-      <p class="section-lede mb-4">Una muestra de proyectos prácticos, de la base de datos a la interfaz.</p>
+      <p class="section-lede mb-4 reveal">Una muestra de proyectos prácticos, de la base de datos a la interfaz.</p>
 
       <div class="project-list">
-        <div class="project-item">
+        <div class="project-item reveal">
           <img
             src="img/projects/restaurante.webp"
             srcset="img/projects/restaurante-350.webp 350w, img/projects/restaurante.webp 700w"
@@ -543,7 +543,7 @@ Desarrollador web Full Stack Junior de Murcia, graduado en DAW. Trabajo con <spa
           </div>
         </div>
 
-        <div class="project-item">
+        <div class="project-item reveal">
           <img
             src="img/projects/calculator.webp"
             srcset="img/projects/calculator-350.webp 350w, img/projects/calculator.webp 700w"
@@ -567,7 +567,7 @@ Desarrollador web Full Stack Junior de Murcia, graduado en DAW. Trabajo con <spa
           </div>
         </div>
 
-        <div class="project-item">
+        <div class="project-item reveal">
           <img
             src="img/projects/pong.webp"
             srcset="img/projects/pong-350.webp 350w, img/projects/pong.webp 700w"
@@ -591,7 +591,7 @@ Desarrollador web Full Stack Junior de Murcia, graduado en DAW. Trabajo con <spa
           </div>
         </div>
 
-        <div class="project-item">
+        <div class="project-item reveal">
           <img
             src="img/projects/etch-a-sketch.webp"
             srcset="img/projects/etch-a-sketch-350.webp 350w, img/projects/etch-a-sketch.webp 700w"
@@ -620,13 +620,13 @@ Desarrollador web Full Stack Junior de Murcia, graduado en DAW. Trabajo con <spa
   <!-- CERTIFICADOS -->
   <div class="container">
     <section class="section-py" id="certificados">
-      <div class="section-eyebrow">
+      <div class="section-eyebrow reveal">
         <span class="num">03</span>
         <h2 class="section-title mb-0">certificados/</h2>
       </div>
-      <p class="section-lede mb-4">Formación complementaria en IA, ingeniería de datos y desarrollo full-stack.</p>
+      <p class="section-lede mb-4 reveal">Formación complementaria en IA, ingeniería de datos y desarrollo full-stack.</p>
 
-      <div class="win certs-window">
+      <div class="win certs-window reveal">
         <div class="win-bar">
           <span class="win-dot"></span><span class="win-dot"></span><span class="win-dot"></span>
           <span class="win-name">certificados.log</span>
@@ -685,14 +685,14 @@ Desarrollador web Full Stack Junior de Murcia, graduado en DAW. Trabajo con <spa
 
     <!-- SKILLS -->
     <section class="section-py" id="skills">
-      <div class="section-eyebrow">
+      <div class="section-eyebrow reveal">
         <span class="num">04</span>
         <h2 class="section-title mb-0">skills/</h2>
       </div>
-      <p class="section-lede mb-4">Tecnologías y herramientas con las que trabajo a diario.</p>
+      <p class="section-lede mb-4 reveal">Tecnologías y herramientas con las que trabajo a diario.</p>
 
       <div class="skills-grid-outer">
-        <div class="win">
+        <div class="win reveal">
           <div class="win-bar">
             <span class="win-dot"></span><span class="win-dot"></span><span class="win-dot"></span>
             <span class="win-name">frontend/</span>
@@ -719,7 +719,7 @@ Desarrollador web Full Stack Junior de Murcia, graduado en DAW. Trabajo con <spa
           </div>
         </div>
 
-        <div class="win">
+        <div class="win reveal">
           <div class="win-bar">
             <span class="win-dot"></span><span class="win-dot"></span><span class="win-dot"></span>
             <span class="win-name">backend/</span>
@@ -746,7 +746,7 @@ Desarrollador web Full Stack Junior de Murcia, graduado en DAW. Trabajo con <spa
           </div>
         </div>
 
-        <div class="win">
+        <div class="win reveal">
           <div class="win-bar">
             <span class="win-dot"></span><span class="win-dot"></span><span class="win-dot"></span>
             <span class="win-name">bbdd/</span>
@@ -764,7 +764,7 @@ Desarrollador web Full Stack Junior de Murcia, graduado en DAW. Trabajo con <spa
           </div>
         </div>
 
-        <div class="win">
+        <div class="win reveal">
           <div class="win-bar">
             <span class="win-dot"></span><span class="win-dot"></span><span class="win-dot"></span>
             <span class="win-name">herramientas/</span>
@@ -838,11 +838,11 @@ Desarrollador web Full Stack Junior de Murcia, graduado en DAW. Trabajo con <spa
   <!--  CONTACTO  -->
   <div class="container mb-5" id="contact">
     <section class="section-py">
-      <div class="section-eyebrow">
+      <div class="section-eyebrow reveal">
         <span class="num">05</span>
         <h2 class="section-title mb-0">contacto/</h2>
       </div>
-      <p class="section-lede mb-4">¿Tienes un proyecto en mente? Escríbeme y te respondo lo antes posible.</p>
+      <p class="section-lede mb-4 reveal">¿Tienes un proyecto en mente? Escríbeme y te respondo lo antes posible.</p>
 
       <?php if ($mensaje_enviado): ?>
         <div class="contact-window mb-4">
@@ -860,7 +860,7 @@ Desarrollador web Full Stack Junior de Murcia, graduado en DAW. Trabajo con <spa
         </div>
       <?php endif; ?>
       <?php if (!$mensaje_enviado): ?>
-        <form method="POST" class="win contact-window">
+        <form method="POST" class="win contact-window reveal">
           <div class="win-bar">
             <span class="win-dot"></span><span class="win-dot"></span><span class="win-dot"></span>
             <span class="win-name">contacto.form</span>
@@ -931,6 +931,7 @@ Desarrollador web Full Stack Junior de Murcia, graduado en DAW. Trabajo con <spa
   <script src="assets/js/cambiarTema.js"></script>
   <script src="assets/js/backToTop.js"></script>
   <script src="assets/js/scrollspy.js"></script>
+  <script src="assets/js/scrollReveal.js"></script>
 </body>
 
 </html>

@@ -5,6 +5,9 @@
 */
 $accent: #e5c07b;
 $transition: 0.2s;
+// Ease-out fuerte para animaciones de entrada (más marcado que el
+// ease-out nativo del navegador, que se queda plano para esto).
+$ease-out-strong: cubic-bezier(0.23, 1, 0.32, 1);
 
 /*
 ----------------------
@@ -890,5 +893,34 @@ html[data-bs-theme="light"] #cambiarTema {
 @media (prefers-reduced-motion: reduce) {
   .back-to-top {
     transition: opacity $transition, border-color $transition, color $transition;
+  }
+}
+
+/*
+----------------------
+   REVEAL AL HACER SCROLL
+----------------------
+*/
+// Fundido + ligero desplazamiento al entrar en el viewport (ver
+// assets/js/scrollReveal.js). Solo opacity/transform: no dispara
+// layout ni paint. --reveal-delay lo fija el JS para escalonar
+// elementos que aparecen juntos (tarjetas de un grid, etc.).
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 550ms $ease-out-strong, transform 550ms $ease-out-strong;
+  transition-delay: var(--reveal-delay, 0ms);
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    transform: none;
+    transition: opacity 200ms ease;
+    transition-delay: 0ms;
   }
 }

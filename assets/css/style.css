@@ -63,7 +63,10 @@ a {
     transform: scaleX(0);
     transform-origin: left;
     opacity: 0;
-    transition: transform 0.35s ease, opacity 0.35s ease;
+    /* Curva ease-out fuerte para un elemento que entra/sale, en vez
+       del ease nativo del navegador; 220ms se queda dentro del tope
+       de 300ms para animaciones de interfaz. */
+    transition: transform 220ms cubic-bezier(0.23, 1, 0.32, 1), opacity 220ms cubic-bezier(0.23, 1, 0.32, 1);
   }
 
   .navbar-nav .nav-link.active::after {
