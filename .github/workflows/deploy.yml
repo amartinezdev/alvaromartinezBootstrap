@@ -50,7 +50,7 @@ jobs:
             **/node_modules/**
             **/.env
             **/.env.example
-            **/img/bg01.jpg
-            **/img/pong.png
-            **/img/restaurante.png
-            **/img/icons.zip
+            **/img/archive/**
+            **/img/**/originals/**
+            **/.claude/**
+            **/.agents/**

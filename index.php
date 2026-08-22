@@ -167,27 +167,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <!-- End Google Tag Manager -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Álvaro Martínez | Desarrollador Full Stack en Murcia</title>
-  <meta name="description" content="Álvaro Martínez, desarrollador Full Stack Junior en Murcia. Especializado en Java, Spring Boot, JavaScript, React, Node.js, PHP y MySQL. Descubre mis proyectos, certificados y contacta conmigo." />
+  <title>Álvaro Martínez | Desarrollador Web Full Stack en Murcia</title>
+  <meta name="description" content="Álvaro Martínez, desarrollador web Full Stack Junior en Murcia. Java, Spring Boot, React, Node.js y PHP. Descubre mis proyectos, certificados y contacto." />
+  <meta name="author" content="Álvaro Martínez" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://alvaromartinez.dev/" />
 
   <!-- Open Graph -->
-  <meta property="og:type" content="website" />
+  <meta property="og:type" content="profile" />
+  <meta property="profile:first_name" content="Álvaro" />
+  <meta property="profile:last_name" content="Martínez" />
   <meta property="og:site_name" content="Álvaro Martínez | Portfolio" />
   <meta property="og:url" content="https://alvaromartinez.dev/" />
-  <meta property="og:title" content="Álvaro Martínez | Desarrollador Full Stack en Murcia" />
-  <meta property="og:description" content="Desarrollador Full Stack Junior en Murcia. Java, Spring Boot, React, Node.js, PHP, MySQL. Proyectos, certificados y contacto." />
-  <meta property="og:image" content="https://alvaromartinez.dev/img/og-cover.jpg" />
-  <meta property="og:image:alt" content="Portfolio de Álvaro Martínez, desarrollador Full Stack en Murcia" />
+  <meta property="og:title" content="Álvaro Martínez | Desarrollador Web Full Stack en Murcia" />
+  <meta property="og:description" content="Desarrollador web Full Stack Junior en Murcia. Java, Spring Boot, React, Node.js, PHP, MySQL. Proyectos, certificados y contacto." />
+  <meta property="og:image" content="https://alvaromartinez.dev/img/brand/og-cover.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Portfolio de Álvaro Martínez, desarrollador web Full Stack en Murcia" />
   <meta property="og:locale" content="es_ES" />
 
   <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Álvaro Martínez | Desarrollador Full Stack en Murcia" />
-  <meta name="twitter:description" content="Desarrollador Full Stack Junior en Murcia. Java, Spring Boot, React, Node.js, PHP, MySQL." />
-  <meta name="twitter:image" content="https://alvaromartinez.dev/img/og-cover.jpg" />
-  <meta name="twitter:image:alt" content="Portfolio de Álvaro Martínez, desarrollador Full Stack en Murcia" />
+  <meta name="twitter:title" content="Álvaro Martínez | Desarrollador Web Full Stack en Murcia" />
+  <meta name="twitter:description" content="Desarrollador web Full Stack Junior en Murcia. Java, Spring Boot, React, Node.js, PHP, MySQL." />
+  <meta name="twitter:image" content="https://alvaromartinez.dev/img/brand/og-cover.jpg" />
+  <meta name="twitter:image:alt" content="Portfolio de Álvaro Martínez, desarrollador web Full Stack en Murcia" />
 
   <meta name="theme-color" content="#0d0d0d" media="(prefers-color-scheme: dark)" />
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
@@ -203,15 +208,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
     crossorigin="anonymous"
     defer></script>
-  <link rel="icon" href="img/am_bw.png" type="image/png" sizes="32x32" />
-  <link rel="apple-touch-icon" href="img/am_bw.png" />
+  <link rel="icon" href="img/brand/am_bw.png" type="image/png" sizes="32x32" />
+  <link rel="apple-touch-icon" href="img/brand/am_bw.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600;700&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
 
   <script type="application/ld+json">
   {
@@ -226,14 +231,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         "image": {
           "@type": "ImageObject",
           "@id": "https://alvaromartinez.dev/#personimage",
-          "url": "https://alvaromartinez.dev/img/alvaro-martinez.webp",
-          "caption": "Álvaro Martínez, desarrollador Full Stack en Murcia"
+          "url": "https://alvaromartinez.dev/img/profile/alvaro-martinez.webp",
+          "caption": "Álvaro Martínez, desarrollador web Full Stack en Murcia"
         },
-        "description": "Desarrollador Full Stack Junior en Murcia, especializado en Java, Spring Boot, JavaScript, React y Node.js. Portfolio con proyectos y experiencia.",
-        "jobTitle": "Desarrollador Full Stack",
+        "description": "Desarrollador web Full Stack Junior en Murcia, especializado en Java, Spring Boot, JavaScript, React y Node.js. Portfolio con proyectos y experiencia.",
+        "jobTitle": "Desarrollador Web Full Stack",
         "hasOccupation": {
           "@type": "Occupation",
-          "name": "Desarrollador Full Stack",
+          "name": "Desarrollador Web Full Stack",
           "occupationLocation": {
             "@type": "City",
             "name": "Murcia, España"
@@ -244,6 +249,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           "name": "Murcia, España"
         },
         "knowsAbout": [
+          "Desarrollo web",
+          "Desarrollo Full Stack",
           "Java",
           "Spring Boot",
           "JavaScript",
@@ -254,6 +261,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           "Laravel",
           "REST APIs",
           "MySQL",
+          "PostgreSQL",
+          "SQLite",
           "Git",
           "Docker",
           "HTML",
@@ -265,6 +274,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         "sameAs": [
           "https://github.com/amartinezdev",
           "https://www.linkedin.com/in/alvaromartinezdev"
+        ],
+        "hasCredential": [
+          {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "certificate",
+            "name": "IA Generativa y su impacto en el negocio"
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "certificate",
+            "name": "JavaScript · Udemy"
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "certificate",
+            "name": "Full-Stack Engineer"
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "certificate",
+            "name": "Data Engineer"
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "certificate",
+            "name": "Claude Code in Action"
+          }
         ],
         "mainEntityOfPage": {
           "@id": "https://alvaromartinez.dev/#webpage"
@@ -281,20 +317,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
       },
       {
-        "@type": "WebPage",
+        "@type": "ProfilePage",
         "@id": "https://alvaromartinez.dev/#webpage",
         "url": "https://alvaromartinez.dev/",
-        "name": "Álvaro Martínez | Desarrollador Full Stack en Murcia",
-        "description": "Álvaro Martínez, desarrollador Full Stack Junior en Murcia. Especializado en Java, Spring Boot, JavaScript, React, Node.js, PHP y MySQL.",
+        "name": "Álvaro Martínez | Desarrollador Web Full Stack en Murcia",
+        "description": "Álvaro Martínez, desarrollador web Full Stack Junior en Murcia. Especializado en Java, Spring Boot, JavaScript, React, Node.js, PHP y MySQL.",
         "isPartOf": {
           "@id": "https://alvaromartinez.dev/#website"
         },
         "about": {
           "@id": "https://alvaromartinez.dev/#person"
         },
+        "mainEntity": {
+          "@id": "https://alvaromartinez.dev/#person"
+        },
         "primaryImageOfPage": {
           "@id": "https://alvaromartinez.dev/#personimage"
         },
+        "dateModified": "2026-08-22",
         "inLanguage": "es"
       }
     ]
@@ -342,13 +382,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <path
         d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708z" />
     </symbol>
+    <symbol id="icon-arrow-up" viewBox="0 0 16 16">
+      <path
+        fill-rule="evenodd"
+        d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5" />
+    </symbol>
   </svg>
-  <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
     <a class="navbar-brand ms-4 mt-0 position-absolute" href="#inicio">
-      <img src="img/am_wb.png" alt="Álvaro Martínez logo" width="50" height="50" />
+      <img src="img/brand/am_wb.png" alt="Álvaro Martínez logo" width="50" height="50" />
     </a>
     <button
-      class="navbar-toggler d-lg-none ms-auto"
+      class="navbar-toggler d-lg-none ms-auto me-3"
       type="button"
       data-bs-toggle="collapse"
       data-bs-target="#collapse"
@@ -358,19 +403,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse mt-2" id="collapse">
-      <ul class="navbar-nav mt-2 mt-lg-0 mx-auto gap-0 gap-md-4 text-center">
+      <ul class="navbar-nav mt-2 mt-lg-0 mx-auto gap-0 gap-lg-3 text-center">
         <li class="nav-item">
-          <a class="nav-link text-white" href="#inicio" aria-current="page">Inicio <span class="visually-hidden">(current)</span></a>
+          <a class="nav-link" href="#inicio">inicio</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="#about">Sobre mí</a>
+          <a class="nav-link" href="#about">sobre_mi</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-white" href="#projects">Proyectos</a>
+          <a class="nav-link" href="#projects">proyectos</a>
         </li>
-
         <li class="nav-item">
-          <a class="nav-link text-white" href="#contact">Contacto</a>
+          <a class="nav-link" href="#certificados">certificados</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#skills">skills</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">contacto</a>
         </li>
       </ul>
       <button class="btn position-absolute top-50 end-0 translate-middle-y me-4" id="cambiarTema" onclick="changeTheme()" aria-pressed="false" aria-label="Alternar tema" title="Alternar tema" type="button">
@@ -386,256 +436,196 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div></div>
   </nav>
 
-  <div class="container-fluid">
-    <!--  HEADER  -->
-    <header class="row min-vh-100 d-flex align-items-center text-center" id="inicio">
-      <div class="col-12 text-white">
-        <h2>👋<span id="palabras">Hey!</span> Soy</h2>
-        <h1 class="display-4">Álvaro Martínez</h1>
-        <h2>Desarrollador Full Stack en Murcia</h2>
-        <a class="btn boton mt-5 py-2 px-4" href="#about" role="button">Sobre mí</a>
+  <!--  HEADER  -->
+  <header class="hero-section" id="inicio">
+    <div class="win hero-window">
+      <div class="win-bar">
+        <span class="win-dot"></span><span class="win-dot"></span><span class="win-dot"></span>
+        <span class="win-name">zsh — ~/alvaromartinez.dev</span>
       </div>
-    </header>
-  </div>
+      <div class="hero-body">
+        <p class="term-prompt mb-0">~ $ echo $SALUDO</p>
+        <p class="hero-greeting">👋 <span id="palabras">Hey!</span></p>
+        <p class="term-prompt mb-0">~ $ whoami</p>
+        <h1 class="hero-name">Álvaro Martínez</h1>
+        <h2 class="hero-role">Desarrollador Web Full Stack en Murcia</h2>
+        <a class="btn boton" href="#about" role="button">→ sobre_mi.sh</a>
+      </div>
+    </div>
+  </header>
 
   <!-- <div class="col-12 d-none d-lg-block" id="about"></div> -->
 
   <!-- <div class="w-100 altura d-block" ></div> -->
 
-  <div class="container h-auto align-items-center justify-content-center d-flex flex-column mt-5 mb-4" id="about">
+  <div class="container" id="about">
     <!--  ABOUT  -->
-    <section class="row d-flex align-items-center text-center mt-5 mt-lg-2 mb-5">
-      <div class="col-12 mb-4 text-center col-md-4 col-xl-5 text-md-end">
-        <img src="img/alvaro-martinez.webp" alt="Álvaro Martínez, desarrollador Full Stack en Murcia" class="img-fluid rounded-5" style="width: 200px" width="400" height="471" />
+    <section class="section-py">
+      <div class="section-eyebrow">
+        <span class="num">01</span>
+        <h2 class="section-title mb-0">sobre_mi/</h2>
       </div>
-      <div class="col-12 text-start col-md-8 col-lg-5 align-self-center">
-        <h2 class="text-body-emphasis">Sobre mí</h2>
-      <p class="lead text-body-emphasis">
-Desarrollador Full Stack Junior de Murcia, graduado en DAW. Trabajo con <code>Java</code>, <code>Spring Boot</code>, <code>JavaScript</code>, <code>React</code>, <code>Node.js</code> y <code>SQL</code>, desarrollando aplicaciones web completas desde la base de datos hasta la interfaz de usuario.
-        </p>
-        <div class="d-flex flex-column align-items-center align-items-md-start">
-          <nav class="nav mb-3 align-items-center gap-2">
-            <a class="nav-link icono text-body-emphasis" href="https://github.com/amartinezdev/" target="_blank" title="GitHub">
-              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" class="bi bi-github" fill="currentColor" aria-hidden="true">
-                <use href="#icon-github"></use>
+      <div class="row g-4 align-items-center mt-2 about-card">
+        <div class="col-12 mb-4 mb-md-0 col-md-auto">
+          <div class="win about-photo-window">
+            <div class="win-bar">
+              <span class="win-dot"></span><span class="win-dot"></span><span class="win-dot"></span>
+              <span class="win-name">alvaro.webp</span>
+            </div>
+            <img src="img/profile/alvaro-martinez.webp" alt="Álvaro Martínez, desarrollador web Full Stack en Murcia" width="280" height="330" />
+          </div>
+        </div>
+        <div class="col-12 text-start col-md">
+          <p class="lead">
+Desarrollador web Full Stack Junior de Murcia, graduado en DAW. Trabajo con <span class="tag">Java</span> <span class="tag">Spring Boot</span> <span class="tag">JavaScript</span> <span class="tag">React</span> <span class="tag">Node.js</span> y <span class="tag">SQL</span>, desarrollando aplicaciones web completas desde la base de datos hasta la interfaz de usuario.
+          </p>
+          <div class="d-flex flex-wrap justify-content-center justify-content-md-start align-items-center gap-3 mt-4">
+            <nav class="nav align-items-center gap-2">
+              <a class="nav-link icono" href="https://github.com/amartinezdev/" target="_blank" rel="noopener noreferrer" title="GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="bi bi-github" fill="currentColor" aria-hidden="true">
+                  <use href="#icon-github"></use>
+                </svg>
+              </a>
+              <a class="nav-link icono" href="https://www.linkedin.com/in/alvaromartinezdev" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" class="bi bi-linkedin" fill="currentColor" aria-hidden="true">
+                  <use href="#icon-linkedin"></use>
+                </svg>
+              </a>
+              <a class="nav-link icono" href="mailto:alvaromartinezdev@gmail.com" title="Correo electrónico">
+                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" class="bi bi-envelope-at-fill" fill="currentColor" aria-hidden="true">
+                  <use href="#icon-envelope"></use>
+                </svg>
+              </a>
+            </nav>
+            <a class="btn boton" href="docs/ALVARO_MARTINEZ_CV.pdf" download="ALVARO_MARTINEZ_CV.pdf">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" aria-hidden="true">
+                <use href="#icon-download"></use>
               </svg>
+              descargar_cv.pdf
             </a>
-            <a class="nav-link icono text-body-emphasis" href="https://www.linkedin.com/in/alvaromartinezdev" target="_blank" title="LinkedIn">
-              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" class="bi bi-linkedin" fill="currentColor" aria-hidden="true">
-                <use href="#icon-linkedin"></use>
-              </svg>
-            </a>
-            <a class="nav-link icono text-body-emphasis" href="mailto:alvaromartinezdev@gmail.com" title="Correo electrónico">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" class="bi bi-envelope-at-fill" fill="currentColor" aria-hidden="true">
-                <use href="#icon-envelope"></use>
-              </svg>
-            </a>
-          </nav>
-          <a class="btn boton-card filled cv-link" href="ALVARO_MARTINEZ_CV.pdf" download="ALVARO_MARTINEZ_CV.pdf">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-download" aria-hidden="true">
-              <use href="#icon-download"></use>
-            </svg>
-            Descargar CV
-          </a>
+          </div>
         </div>
       </div>
     </section>
   </div>
 
-  <!--  DIVIDER 1  -->
-  <div class="col-12 d-none d-lg-block mt-5 mt-lg-2"></div>
-  <!-- <div class="w-100 h-25 d-block d-md-none"></div> -->
-
   <!--  PROYECTOS  -->
-  <div class="container projects-section mb-0 mb-md-5 mt-1" id="projects">
-    <section class="row mt-4">
-      <div class="col-12 mb-3 text-center mt-1 mt-xl-2">
-        <h2 class="text-body-emphasis text-start text-md-center">Proyectos</h2>
+  <div class="container" id="projects">
+    <section class="section-py">
+      <div class="section-eyebrow">
+        <span class="num">02</span>
+        <h2 class="section-title mb-0">proyectos/</h2>
       </div>
+      <p class="section-lede mb-4">Una muestra de proyectos prácticos, de la base de datos a la interfaz.</p>
 
-      <div class="col-12">
-        <div class="row">
-          <!-- CARD 1 -->
-          <div class="col-12 align-items-center justify-content-center d-flex col-xxl-6">
-            <div class="card bg-secondary-subtle mb-2 mt-3" style="max-width: 700px">
-              <div class="row g-0 row-cols-1 row-cols-md-2">
-                <div class="col-md-6">
-                  <a href="https://github.com/amartinezdev/restaurante">
-                    <img
-                      src="img/restaurante.webp"
-                      srcset="img/restaurante-350.webp 350w, img/restaurante.webp 700w"
-                      sizes="(max-width: 767px) 100vw, 350px"
-                      class="img-fluid rounded-start-3"
-                      alt="Captura del proyecto Restaurante, desarrollado con PHP y MySQL"
-                      width="700"
-                      height="525"
-                      loading="lazy" />
-                  </a>
-                </div>
-                <div class="col-md-6 text-center">
-                  <div class="card-body text-start">
-                    <a href="https://github.com/amartinezdev/restaurante" target="_blank" class="text-light-emphasis">
-                      <h3 class="card-title h5 text-body-emphasis">Restaurante</h3>
-                      <p class="card-text text-start mt-4 text-body-emphasis small">
-                        Proyecto práctico de un restaurante desarrollado con <span class="php badge bg-dark-subtle">PHP</span> y
-                        <span class="mysql badge bg-dark-subtle">MySQL</span>. Simula la funcionalidad de un restaurante real.
-                      </p>
-                    </a>
-                  </div>
-                  <div class="d-flex flex-wrap justify-content-center gap-2 mb-3">
-                    <a href="https://github.com/amartinezdev/restaurante" target="_blank" class="btn boton-card">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-github" aria-hidden="true">
-                        <use href="#icon-github"></use>
-                      </svg>
-                      Github
-                    </a>
-                    <a href="https://amartinezdev.github.io/iOScalculator/" target="_blank" class="btn boton-card disabled">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-browser-chrome" aria-hidden="true">
-                        <use href="#icon-browser-chrome"></use>
-                      </svg>
-                      Preview
-                    </a>
-                  </div>
-                </div>
-              </div>
+      <div class="project-list">
+        <div class="project-item">
+          <img
+            src="img/projects/restaurante.webp"
+            srcset="img/projects/restaurante-350.webp 350w, img/projects/restaurante.webp 700w"
+            sizes="260px"
+            class="project-image"
+            alt="Captura del proyecto Restaurante, desarrollado con PHP y MySQL"
+            width="700"
+            height="525"
+            loading="lazy" />
+          <div class="project-body">
+            <h3 class="project-title">&gt; Restaurante</h3>
+            <div class="project-tags">
+              <span class="tag">PHP</span>
+              <span class="tag">MySQL</span>
+            </div>
+            <p class="project-desc">Proyecto práctico de un restaurante desarrollado con PHP y MySQL. Simula la funcionalidad de un restaurante real.</p>
+            <div class="project-links">
+              <a href="https://github.com/amartinezdev/restaurante" target="_blank" rel="noopener noreferrer" class="cmd-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" aria-hidden="true"><use href="#icon-github"></use></svg>$ github
+              </a>
+              <span class="cmd-link disabled">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" aria-hidden="true"><use href="#icon-browser-chrome"></use></svg>$ preview
+              </span>
             </div>
           </div>
+        </div>
 
-          <!-- CARD 2 -->
-          <div class="col-12 align-items-center justify-content-center d-flex col-xxl-6">
-            <div class="card bg-secondary-subtle mb-2 mt-3" style="max-width: 700px">
-              <div class="row g-0 row-cols-1 row-cols-md-2">
-                <div class="col-md-6">
-                  <a href="https://amartinezdev.github.io/iOScalculator/">
-                    <img
-                      src="img/calculator.webp"
-                      srcset="img/calculator-350.webp 350w, img/calculator.webp 700w"
-                      sizes="(max-width: 767px) 100vw, 350px"
-                      class="img-fluid rounded-start-3"
-                      alt="Captura de la calculadora web estilo iOS hecha con JavaScript y CSS"
-                      width="700"
-                      height="525"
-                      loading="lazy" />
-                  </a>
-                </div>
-                <div class="col-md-6 text-center">
-                  <div class="card-body text-start">
-                    <a href="https://amartinezdev.github.io/iOScalculator/" target="_blank" class="text-light-emphasis">
-                      <h3 class="card-title h5 text-body-emphasis">Calculadora</h3>
-                      <p class="card-text text-start mt-4 text-body-emphasis small">
-                        Este proyecto es una calculadora web totalmente funcional inspirada en la interfaz de la calculadora iOS de Apple.
-                        <span class="js badge bg-dark-subtle">JavaScript</span> y <span class="css badge bg-dark-subtle">CSS</span>
-                      </p>
-                    </a>
-                  </div>
-                  <div class="d-flex flex-wrap justify-content-center gap-2 mb-3">
-                    <a href="https://github.com/amartinezdev/iOScalculator" target="_blank" class="btn boton-card">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-github" aria-hidden="true">
-                        <use href="#icon-github"></use>
-                      </svg>
-                      Github
-                    </a>
-                    <a href="https://amartinezdev.github.io/iOScalculator/" target="_blank" class="btn boton-card">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-browser-chrome" aria-hidden="true">
-                        <use href="#icon-browser-chrome"></use>
-                      </svg>
-                      Preview
-                    </a>
-                  </div>
-                </div>
-              </div>
+        <div class="project-item">
+          <img
+            src="img/projects/calculator.webp"
+            srcset="img/projects/calculator-350.webp 350w, img/projects/calculator.webp 700w"
+            sizes="260px"
+            class="project-image"
+            alt="Captura de la calculadora web estilo iOS hecha con JavaScript y CSS"
+            width="700"
+            height="525"
+            loading="lazy" />
+          <div class="project-body">
+            <h3 class="project-title">&gt; Calculadora</h3>
+            <div class="project-tags">
+              <span class="tag">JavaScript</span>
+              <span class="tag">CSS</span>
+            </div>
+            <p class="project-desc">Calculadora web totalmente funcional inspirada en la interfaz de la calculadora iOS de Apple.</p>
+            <div class="project-links">
+              <a href="https://github.com/amartinezdev/iOScalculator" target="_blank" rel="noopener noreferrer" class="cmd-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" aria-hidden="true"><use href="#icon-github"></use></svg>$ github
+              </a>
+              <a href="https://amartinezdev.github.io/iOScalculator/" target="_blank" rel="noopener noreferrer" class="cmd-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" aria-hidden="true"><use href="#icon-browser-chrome"></use></svg>$ preview
+              </a>
             </div>
           </div>
+        </div>
 
-          <!-- CARD 3 -->
-          <div class="col-12 align-items-center justify-content-center d-flex col-xxl-6">
-            <div class="card bg-secondary-subtle mb-2 mt-3" style="max-width: 700px">
-              <div class="row g-0 row-cols-1 row-cols-md-2">
-                <div class="col-md-6">
-                  <a href="https://alvaromartinez.dev/pong">
-                    <img
-                      src="img/pong.webp"
-                      srcset="img/pong-350.webp 350w, img/pong.webp 700w"
-                      sizes="(max-width: 767px) 100vw, 350px"
-                      class="img-fluid rounded-start-3"
-                      alt="Captura del juego Pong recreado con Phaser y Vite"
-                      width="700"
-                      height="525"
-                      loading="lazy" />
-                  </a>
-                </div>
-                <div class="col-md-6 text-center">
-                  <div class="card-body text-start">
-                    <a href="https://alvaromartinez.dev/pong" target="_blank" class="text-light-emphasis">
-                      <h3 class="card-title h5 text-body-emphasis">Ping Pong</h3>
-                      <p class="card-text text-start mt-4 text-body-emphasis small">
-                        Recreación del clásico Pong, desarrollado con <span class="phaser badge bg-dark-subtle">Phaser</span> e integrado con
-                        <span class="vite badge bg-dark-subtle">Vite</span>. Permite partidas locales para dos jugadores.
-                      </p>
-                    </a>
-                  </div>
-                  <div class="d-flex flex-wrap justify-content-center gap-2 mb-3">
-                    <a href="https://github.com/amartinezdev/pong" target="_blank" class="btn boton-card">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-github" aria-hidden="true">
-                        <use href="#icon-github"></use>
-                      </svg>
-                      Github
-                    </a>
-                    <a href="https://alvaromartinez.dev/pong" target="_blank" class="btn boton-card">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-browser-chrome" aria-hidden="true">
-                        <use href="#icon-browser-chrome"></use>
-                      </svg>
-                      Preview
-                    </a>
-                  </div>
-                </div>
-              </div>
+        <div class="project-item">
+          <img
+            src="img/projects/pong.webp"
+            srcset="img/projects/pong-350.webp 350w, img/projects/pong.webp 700w"
+            sizes="260px"
+            class="project-image"
+            alt="Captura del juego Pong recreado con Phaser y Vite"
+            width="700"
+            height="525"
+            loading="lazy" />
+          <div class="project-body">
+            <h3 class="project-title">&gt; Ping Pong</h3>
+            <div class="project-tags">
+              <span class="tag">Phaser</span>
+              <span class="tag">Vite</span>
+            </div>
+            <p class="project-desc">Recreación del clásico Pong, desarrollado con Phaser e integrado con Vite. Permite partidas locales para dos jugadores.</p>
+            <div class="project-links">
+              <a href="https://github.com/amartinezdev/pong" target="_blank" rel="noopener noreferrer" class="cmd-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" aria-hidden="true"><use href="#icon-github"></use></svg>$ github
+              </a>
+              <a href="https://alvaromartinez.dev/pong" target="_blank" rel="noopener noreferrer" class="cmd-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" aria-hidden="true"><use href="#icon-browser-chrome"></use></svg>$ preview
+              </a>
             </div>
           </div>
+        </div>
 
-          <!-- CARD 4 -->
-          <div class="col-12 align-items-center justify-content-center d-flex col-xxl-6">
-            <div class="card bg-secondary-subtle mb-2 mt-3" style="max-width: 700px">
-              <div class="row g-0 row-cols-1 row-cols-md-2">
-                <div class="col-md-6">
-                  <a href="https://amartinezdev.github.io/etch-a-sketch/">
-                    <img
-                      src="img/etch-a-sketch.webp"
-                      srcset="img/etch-a-sketch-350.webp 350w, img/etch-a-sketch.webp 700w"
-                      sizes="(max-width: 767px) 100vw, 350px"
-                      class="img-fluid rounded-start-3"
-                      alt="Captura del proyecto Etch a Sketch hecho con JavaScript"
-                      width="700"
-                      height="525"
-                      loading="lazy" />
-                  </a>
-                </div>
-                <div class="col-md-6 text-center">
-                  <div class="card-body text-start">
-                    <a href="https://amartinezdev.github.io/etch-a-sketch/" target="_blank" class="text-light-emphasis">
-                      <h3 class="card-title h5 text-body-emphasis">Etch a Sketch</h3>
-                      <p class="card-text text-start mt-4 text-body-emphasis small">
-                        Este proyecto es una recreación del clásico juego "Etch a Sketch", donde puedes dibujar utilizando un sistema de píxeles.
-                        <span class="js badge bg-dark-subtle">JavaScript</span>
-                      </p>
-                    </a>
-                  </div>
-                  <div class="d-flex flex-wrap justify-content-center gap-2 mb-3">
-                    <a href="https://github.com/amartinezdev/etch-a-sketch" target="_blank" class="btn boton-card">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-github" aria-hidden="true">
-                        <use href="#icon-github"></use>
-                      </svg>
-                      Github
-                    </a>
-                    <a href="https://amartinezdev.github.io/etch-a-sketch/" target="_blank" class="btn boton-card">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-browser-chrome" aria-hidden="true">
-                        <use href="#icon-browser-chrome"></use>
-                      </svg>
-                      Preview
-                    </a>
-                  </div>
-                </div>
-              </div>
+        <div class="project-item">
+          <img
+            src="img/projects/etch-a-sketch.webp"
+            srcset="img/projects/etch-a-sketch-350.webp 350w, img/projects/etch-a-sketch.webp 700w"
+            sizes="260px"
+            class="project-image"
+            alt="Captura del proyecto Etch a Sketch hecho con JavaScript"
+            width="700"
+            height="525"
+            loading="lazy" />
+          <div class="project-body">
+            <h3 class="project-title">&gt; Etch a Sketch</h3>
+            <div class="project-tags">
+              <span class="tag">JavaScript</span>
+            </div>
+            <p class="project-desc">Recreación del clásico juego "Etch a Sketch", donde puedes dibujar utilizando un sistema de píxeles.</p>
+            <div class="project-links">
+              <a href="https://github.com/amartinezdev/etch-a-sketch" target="_blank" rel="noopener noreferrer" class="cmd-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" aria-hidden="true"><use href="#icon-github"></use></svg>$ github
+              </a>
+              <a href="https://amartinezdev.github.io/etch-a-sketch/" target="_blank" rel="noopener noreferrer" class="cmd-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" aria-hidden="true"><use href="#icon-browser-chrome"></use></svg>$ preview
+              </a>
             </div>
           </div>
         </div>
@@ -645,11 +635,19 @@ Desarrollador Full Stack Junior de Murcia, graduado en DAW. Trabajo con <code>Ja
 
   <!-- CERTIFICADOS -->
   <div class="container">
-    <section class="row mt-5 text-center mb-5">
-      <div class="col-12">
-        <h2 class="text-body-emphasis mb-4">Certificados</h2>
+    <section class="section-py" id="certificados">
+      <div class="section-eyebrow">
+        <span class="num">03</span>
+        <h2 class="section-title mb-0">certificados/</h2>
+      </div>
+      <p class="section-lede mb-4">Formación complementaria en IA, ingeniería de datos y desarrollo full-stack.</p>
 
-        <div id="myCarousel" class="carousel slide mx-auto certs-carousel" data-bs-ride="carousel">
+      <div class="win certs-window">
+        <div class="win-bar">
+          <span class="win-dot"></span><span class="win-dot"></span><span class="win-dot"></span>
+          <span class="win-name">certificados.log</span>
+        </div>
+        <div id="myCarousel" class="carousel slide certs-carousel" data-bs-ride="carousel">
           <div class="carousel-indicators">
             <button data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Certificado de IA Generativa"></button>
             <button data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Certificado de JavaScript en Udemy"></button>
@@ -702,72 +700,102 @@ Desarrollador Full Stack Junior de Murcia, graduado en DAW. Trabajo con <code>Ja
     </section>
 
     <!-- SKILLS -->
-    <section class="row mt-5 text-center mb-5">
-      <div class="col-12">
-        <h3 class="text-body-emphasis h4">Skills</h3>
+    <section class="section-py" id="skills">
+      <div class="section-eyebrow">
+        <span class="num">04</span>
+        <h2 class="section-title mb-0">skills --list</h2>
+      </div>
+      <p class="section-lede mb-4">Tecnologías y herramientas con las que trabajo a diario.</p>
 
-        <div class="d-flex flex-wrap gap-2 mt-3 justify-content-center mb-5">
-          <a href="https://developer.mozilla.org/es/docs/Web/HTML" class="icono" target="_blank">
-            <img class="skillIcons" src="img/icons/HTML.svg" alt="HTML" title="HTML" width="50" height="50" loading="lazy" />
-          </a>
-          <a href="https://www.w3schools.com/css/" class="icono" target="_blank">
-            <img class="skillIcons" src="img/icons/CSS.svg" alt="CSS" title="CSS" width="50" height="50" loading="lazy" />
-          </a>
-          <a href="https://www.w3schools.com/css/" class="icono" target="_blank">
-            <img class="skillIcons" src="img/icons/JavaScript.svg" alt="JavaScript" title="JavaScript" width="50" height="50" loading="lazy" />
-          </a>
+      <div class="skills-grid-outer">
+        <div class="win">
+          <div class="win-bar">
+            <span class="win-dot"></span><span class="win-dot"></span><span class="win-dot"></span>
+            <span class="win-name">frontend.json</span>
+          </div>
+          <div class="skills-grid">
+            <a href="https://developer.mozilla.org/es/docs/Web/HTML" class="skill-tile" target="_blank" rel="noopener noreferrer">
+              <img src="img/icons/HTML.svg" alt="HTML" width="28" height="28" loading="lazy" /><span>HTML</span>
+            </a>
+            <a href="https://www.w3schools.com/css/" class="skill-tile" target="_blank" rel="noopener noreferrer">
+              <img src="img/icons/CSS.svg" alt="CSS" width="28" height="28" loading="lazy" /><span>CSS</span>
+            </a>
+            <a href="https://www.w3schools.com/js/" class="skill-tile" target="_blank" rel="noopener noreferrer">
+              <img src="img/icons/JavaScript.svg" alt="JavaScript" width="28" height="28" loading="lazy" /><span>JavaScript</span>
+            </a>
+            <a href="https://es.react.dev/" class="skill-tile" target="_blank" rel="noopener noreferrer">
+              <img src="img/icons/React-Dark.svg" alt="React" width="28" height="28" loading="lazy" /><span>React</span>
+            </a>
+            <a href="https://tailwindcss.com/" class="skill-tile" target="_blank" rel="noopener noreferrer">
+              <img src="img/icons/TailwindCSS-Dark.svg" alt="Tailwind CSS" width="28" height="28" loading="lazy" /><span>Tailwind</span>
+            </a>
+            <a href="https://astro.build/" class="skill-tile" target="_blank" rel="noopener noreferrer">
+              <img src="img/icons/Astro.svg" alt="Astro" width="28" height="28" loading="lazy" /><span>Astro</span>
+            </a>
+          </div>
+        </div>
 
-          <a href="https://nodejs.org/" class="icono" target="_blank">
-            <img class="skillIcons" src="img/icons/NodeJS-Dark.svg" alt="Node.js" title="Node.js" width="50" height="50" loading="lazy" />
-          </a>
+        <div class="win">
+          <div class="win-bar">
+            <span class="win-dot"></span><span class="win-dot"></span><span class="win-dot"></span>
+            <span class="win-name">backend.json</span>
+          </div>
+          <div class="skills-grid">
+            <a href="https://nodejs.org/" class="skill-tile" target="_blank" rel="noopener noreferrer">
+              <img src="img/icons/NodeJS-Dark.svg" alt="Node.js" width="28" height="28" loading="lazy" /><span>Node.js</span>
+            </a>
+            <a href="https://expressjs.com/es/" class="skill-tile" target="_blank" rel="noopener noreferrer">
+              <img src="img/icons/ExpressJS-Dark.svg" alt="ExpressJS" width="28" height="28" loading="lazy" /><span>Express</span>
+            </a>
+            <a href="https://www.java.com/es/" class="skill-tile" target="_blank" rel="noopener noreferrer">
+              <img src="img/icons/Java-Dark.svg" alt="Java" width="28" height="28" loading="lazy" /><span>Java</span>
+            </a>
+            <a href="https://spring.io/projects/spring-boot/" class="skill-tile" target="_blank" rel="noopener noreferrer">
+              <img src="img/icons/Spring-Dark.svg" alt="Spring" width="28" height="28" loading="lazy" /><span>Spring</span>
+            </a>
+            <a href="https://www.php.net/" class="skill-tile" target="_blank" rel="noopener noreferrer">
+              <img src="img/icons/PHP-Dark.svg" alt="PHP" width="28" height="28" loading="lazy" /><span>PHP</span>
+            </a>
+            <a href="https://laravel.com/" class="skill-tile" target="_blank" rel="noopener noreferrer">
+              <img src="img/icons/Laravel-Dark.svg" alt="Laravel" width="28" height="28" loading="lazy" /><span>Laravel</span>
+            </a>
+          </div>
+        </div>
 
-          <a href="https://es.react.dev/" class="icono" target="_blank">
-            <img class="skillIcons" src="img/icons/React-Dark.svg" alt="React" title="React" width="50" height="50" loading="lazy" />
-          </a>
+        <div class="win">
+          <div class="win-bar">
+            <span class="win-dot"></span><span class="win-dot"></span><span class="win-dot"></span>
+            <span class="win-name">bbdd.json</span>
+          </div>
+          <div class="skills-grid">
+            <a href="https://mysql.com/" class="skill-tile" target="_blank" rel="noopener noreferrer">
+              <img src="img/icons/MySQL-Dark.svg" alt="MySQL" width="28" height="28" loading="lazy" /><span>MySQL</span>
+            </a>
+            <a href="https://www.postgresql.org/" class="skill-tile" target="_blank" rel="noopener noreferrer">
+              <img src="img/icons/PostgreSQL-Dark.svg" alt="PostgreSQL" width="28" height="28" loading="lazy" /><span>PostgreSQL</span>
+            </a>
+            <a href="https://www.sqlite.org/" class="skill-tile" target="_blank" rel="noopener noreferrer">
+              <img src="img/icons/SQLite.svg" alt="SQLite" width="28" height="28" loading="lazy" /><span>SQLite</span>
+            </a>
+          </div>
+        </div>
 
-          
-          <a href="https://expressjs.com/es/" class="icono" target="_blank">
-            <img class="skillIcons" src="img/icons/ExpressJS-Dark.svg" alt="ExpressJS" title="ExpressJS" width="50" height="50" loading="lazy" />
-          </a>
-
-          <a href="https://www.java.com/es/" class="icono" target="_blank">
-            <img class="skillIcons" src="img/icons/Java-Dark.svg" alt="Java" title="Java" width="50" height="50" loading="lazy" />
-          </a>
-
-
-          <a href="https://spring.io/projects/spring-boot/" class="icono" target="_blank">
-            <img class="skillIcons" src="img/icons/Spring-Dark.svg" alt="Spring" title="Spring Boot" width="50" height="50" loading="lazy" />
-          </a>
-
-
-          <div class="w-100 d-none d-sm-block"></div>
-          <a href="https://www.php.net/" class="icono" target="_blank">
-            <img class="skillIcons" src="img/icons/PHP-Dark.svg" alt="PHP" title="PHP" width="50" height="50" loading="lazy" />
-          </a>
-
-          <a href="https://laravel.com/" class="icono" target="_blank">
-            <img class="skillIcons" src="img/icons/Laravel-Dark.svg" alt="Laravel" title="Laravel" width="50" height="50" loading="lazy" />
-          </a>
-          <a href="https://mysql.com/" class="icono" target="_blank">
-            <img class="skillIcons" src="img/icons/MySQL-Dark.svg" alt="MySQL" title="MySQL" width="50" height="50" loading="lazy" />
-          </a>
-          
-          <a href="https://tailwindcss.com/" class="icono" target="_blank">
-            <img class="skillIcons" src="img/icons/TailwindCSS-Dark.svg" alt="Tailwind CSS" title="TailwindCSS" width="50" height="50" loading="lazy" />
-          </a>
-
-          <a href="https://git-scm.com/" class="icono" target="_blank">
-            <img class="skillIcons" src="img/icons/Git.svg" alt="Git" title="Git" width="50" height="50" loading="lazy" />
-          </a>
-          <a href="https://github.com/amartinezdev/" class="icono" target="_blank">
-            <img class="skillIcons" src="img/icons/Github-Dark.svg" alt="GitHub" title="GitHub" width="50" height="50" loading="lazy" />
-          </a>
-          <a href="https://www.docker.com/" class="icono" target="_blank">
-            <img class="skillIcons" src="img/icons/Docker.svg" alt="Docker" title="Docker" width="50" height="50" loading="lazy" />
-          </a>
-          <a href="https://astro.build/" class="icono" target="_blank">
-            <img class="skillIcons" src="img/icons/Astro.svg" alt="Astro" title="Astro" width="50" height="50" loading="lazy" />
-          </a>
+        <div class="win">
+          <div class="win-bar">
+            <span class="win-dot"></span><span class="win-dot"></span><span class="win-dot"></span>
+            <span class="win-name">herramientas.json</span>
+          </div>
+          <div class="skills-grid">
+            <a href="https://git-scm.com/" class="skill-tile" target="_blank" rel="noopener noreferrer">
+              <img src="img/icons/Git.svg" alt="Git" width="28" height="28" loading="lazy" /><span>Git</span>
+            </a>
+            <a href="https://github.com/amartinezdev/" class="skill-tile" target="_blank" rel="noopener noreferrer">
+              <img src="img/icons/Github-Dark.svg" alt="GitHub" width="28" height="28" loading="lazy" /><span>GitHub</span>
+            </a>
+            <a href="https://www.docker.com/" class="skill-tile" target="_blank" rel="noopener noreferrer">
+              <img src="img/icons/Docker.svg" alt="Docker" width="28" height="28" loading="lazy" /><span>Docker</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -823,74 +851,61 @@ Desarrollador Full Stack Junior de Murcia, graduado en DAW. Trabajo con <code>Ja
     </div>
   </div>
 
-  <!--  DIVIDER 2  -->
-  <div class="col-12 d-none d-lg-block mt-lg-2" id="contact"></div>
-
   <!--  CONTACTO  -->
-  <div class="container mb-5">
-    <section class="row mb-5 mt-lg-2 mt-xl-2 justify-content-center">
-      <div class="col-12 text-start text-md-center">
-        <h2>Contacto</h2>
+  <div class="container mb-5" id="contact">
+    <section class="section-py">
+      <div class="section-eyebrow">
+        <span class="num">05</span>
+        <h2 class="section-title mb-0">contacto/</h2>
       </div>
+      <p class="section-lede mb-4">¿Tienes un proyecto en mente? Escríbeme y te respondo lo antes posible.</p>
+
       <?php if ($mensaje_enviado): ?>
-        <div class="col-12 col-md-10 col-lg-8 col-xl-6 mx-auto">
-          <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <div class="contact-window mb-4">
+          <div class="alert alert-success alert-dismissible fade show mb-0" role="alert">
             <strong>¡Mensaje enviado!</strong> Gracias por contactarme. Me pondré en contacto contigo pronto.
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
           </div>
         </div>
       <?php elseif (!empty($error_mensaje)): ?>
-        <div class="col-12 col-md-10 col-lg-8 col-xl-6 mx-auto">
-          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <div class="contact-window mb-4">
+          <div class="alert alert-danger alert-dismissible fade show mb-0" role="alert">
             <strong>Error:</strong> <?php echo htmlspecialchars($error_mensaje); ?>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
           </div>
         </div>
       <?php endif; ?>
       <?php if (!$mensaje_enviado): ?>
-        <form method="POST">
-          <input type="text" name="website" id="website" style="position: absolute; left: -9999px" tabindex="-1" autocomplete="off" aria-hidden="true" />
-          <div class="row justify-content-center">
-            <div class="col-12 d-flex align-items-center justify-content-between col-md-10 col-lg-10 col-xl-8 col-xxl-6">
-              <div class="col form-floating mb-1 m-3">
-                <input type="text" class="form-control" name="nombre" id="nombre" placeholder="" required />
-                <label for="nombre">Nombre</label>
-              </div>
-              <div class="col form-floating mb-1 m-3">
-                <input type="text" class="form-control" name="apellidos" id="apellidos" placeholder="" required />
-                <label for="apellidos">Apellidos</label>
-              </div>
-            </div>
+        <form method="POST" class="win contact-window">
+          <div class="win-bar">
+            <span class="win-dot"></span><span class="win-dot"></span><span class="win-dot"></span>
+            <span class="win-name">contacto.form</span>
           </div>
-          <div class="row justify-content-center">
-            <div class="col-12 align-items-center justify-content-center col-md-10 col-lg-10 col-xl-8 col-xxl-6">
-              <div class="form-floating mb-1 m-3">
-                <input type="email" class="form-control" name="email" id="email" placeholder="" required />
-                <label for="email">Email</label>
+          <div class="field-group">
+            <input type="text" name="website" id="website" style="position: absolute; left: -9999px" tabindex="-1" autocomplete="off" aria-hidden="true" />
+            <div class="field-row">
+              <div>
+                <label class="field-label" for="nombre">nombre</label>
+                <input type="text" class="field" name="nombre" id="nombre" required />
+              </div>
+              <div>
+                <label class="field-label" for="apellidos">apellidos</label>
+                <input type="text" class="field" name="apellidos" id="apellidos" required />
               </div>
             </div>
-          </div>
-          <div class="row justify-content-center">
-            <div class="col-12 align-items-center justify-content-center col-md-10 col-lg-10 col-xl-8 col-xxl-6">
-              <div class="form-floating mb-1 m-3">
-                <input type="text" class="form-control" name="asunto" id="asunto" placeholder="" required />
-                <label for="asunto">Asunto</label>
-              </div>
+            <div class="mb-3">
+              <label class="field-label" for="email">email</label>
+              <input type="email" class="field" name="email" id="email" required />
             </div>
-          </div>
-
-          <div class="row justify-content-center">
-            <div class="col-12 align-items-center justify-content-center col-md-10 col-lg-10 col-xl-8 col-xxl-6">
-              <div class="form-floating mb-1 m-3">
-                <textarea class="form-control" placeholder="" id="mensaje" name="mensaje" rows="5" style="height: 150px" required></textarea>
-                <label for="mensaje">Mensaje</label>
-              </div>
+            <div class="mb-3">
+              <label class="field-label" for="asunto">asunto</label>
+              <input type="text" class="field" name="asunto" id="asunto" required />
             </div>
-          </div>
-          <div class="row justify-content-center">
-            <div class="d-grid col-12 col-md-10 col-lg-10 col-xl-8 col-xxl-6">
-              <button type="submit" class="btn m-3">Enviar</button>
+            <div class="mb-4">
+              <label class="field-label" for="mensaje">mensaje</label>
+              <textarea class="field" id="mensaje" name="mensaje" rows="5" style="height: 150px" required></textarea>
             </div>
+            <button type="submit" class="btn boton w-100">→ enviar</button>
           </div>
         </form>
       <?php endif; ?>
@@ -898,32 +913,40 @@ Desarrollador Full Stack Junior de Murcia, graduado en DAW. Trabajo con <code>Ja
   </div>
 
   <div class="container-fluid mb-4">
-    <footer class="row mt-5">
-      <div class="col-12 text-center mt-5 d-flex flex-column justify-content-center align-items-center">
-        <nav class="nav justify-content-center justify-content-md-start mb-3 align-items-center gap-2">
-          <a class="nav-link icono text-body-emphasis" href="https://github.com/amartinezdev/" target="_blank">
-            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" class="bi bi-github" fill="currentColor" aria-hidden="true">
+    <footer class="row mt-4" style="border-top: 1px solid var(--border-soft); padding-top: 32px;">
+      <div class="col-12 text-center d-flex flex-column justify-content-center align-items-center">
+        <nav class="nav justify-content-center mb-3 align-items-center gap-2">
+          <a class="nav-link icono" href="https://github.com/amartinezdev/" target="_blank" rel="noopener noreferrer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" class="bi bi-github" fill="currentColor" aria-hidden="true">
               <use href="#icon-github"></use>
             </svg>
           </a>
-          <a class="nav-link icono text-body-emphasis" href="https://www.linkedin.com/in/alvaromartinezdev" target="_blank">
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" class="bi bi-linkedin" fill="currentColor" aria-hidden="true">
+          <a class="nav-link icono" href="https://www.linkedin.com/in/alvaromartinezdev" target="_blank" rel="noopener noreferrer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" class="bi bi-linkedin" fill="currentColor" aria-hidden="true">
               <use href="#icon-linkedin"></use>
             </svg>
           </a>
-          <a class="nav-link icono text-body-emphasis" href="mailto:alvaromartinezdev@gmail.com">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" class="bi bi-envelope-at-fill" fill="currentColor" aria-hidden="true">
+          <a class="nav-link icono" href="mailto:alvaromartinezdev@gmail.com">
+            <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" class="bi bi-envelope-at-fill" fill="currentColor" aria-hidden="true">
               <use href="#icon-envelope"></use>
             </svg>
           </a>
         </nav>
-        <p class="mb-3">&copy; 2025 Álvaro Martínez. Casi todos los derechos reservados.</p>
+        <p class="mb-3 mono" style="font-size: 0.8rem; color: var(--text-faint);">&copy; 2025 Álvaro Martínez. Casi todos los derechos reservados.</p>
       </div>
     </footer>
   </div>
 
-  <script src="palabras.js"></script>
-  <script src="cambiarTema.js"></script>
+  <button id="backToTop" class="back-to-top" aria-label="Volver arriba" title="Volver arriba" type="button">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" aria-hidden="true">
+      <use href="#icon-arrow-up"></use>
+    </svg>
+  </button>
+
+  <script src="assets/js/palabras.js"></script>
+  <script src="assets/js/cambiarTema.js"></script>
+  <script src="assets/js/backToTop.js"></script>
+  <script src="assets/js/scrollspy.js"></script>
 </body>
 
 </html>

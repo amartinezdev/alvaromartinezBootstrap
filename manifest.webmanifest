@@ -1,6 +1,7 @@
 {
-  "name": "Álvaro Martínez - Desarrollador Full Stack en Murcia",
+  "name": "Álvaro Martínez - Desarrollador Web Full Stack en Murcia",
   "short_name": "Álvaro Martínez",
+  "description": "Portfolio de Álvaro Martínez, desarrollador web Full Stack en Murcia.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0d0d0d",
@@ -8,7 +9,7 @@
   "lang": "es",
   "icons": [
     {
-      "src": "img/am_bw.png",
+      "src": "img/brand/am_bw.png",
       "sizes": "50x50",
       "type": "image/png"
     }

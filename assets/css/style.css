@@ -1,15 +1,6 @@
-/* 
+/*
 ----------------------
-      VARIABLES 
-----------------------
-*/
-:root {
-  --font-badges: 14px;
-}
-
-/* 
-----------------------
-      GLOBALES 
+      GLOBALES
 ----------------------
 */
 body {
@@ -20,118 +11,71 @@ a {
   text-decoration: none;
 }
 
-code {
-  padding: 2px 4px;
-  border-radius: 4px;
-  font-size: 20px;
-  font-weight: 800;
-  font-family: "Fira Code", monospace;
-  color: #a862e9 !important;
-}
-
-/* 
+/*
 ----------------------
-   SELECTORES DE ID
-----------------------
-*/
-#inicio {
-  background-image: url("img/bg01.webp");
-  background-size: cover;
-  background-position: center;
-  background-color: rgba(0, 0, 0, 0.89);
-  background-blend-mode: darken;
-}
-
-html[data-bs-theme="light"] #inicio {
-  background-color: rgba(0, 0, 0, 0.6);
-}
-
-/* un broder right simulando el cursor */
-#palabras {
-  border-right: 5px solid rgba(48, 48, 48, 0.932);
-  animation: blink 1s infinite;
-}
-
-#myCarousel {
-  max-width: 480px;
-}
-
-/* 
-  de 0 a 49 muestro el color
-  de 50 a 100 oculto el color
-*/
-@keyframes blink {
-  0%,
-  49% {
-    border-right-color: #3b3b3b96;
-  }
-  50%,
-  100% {
-    border-right-color: transparent;
-  }
-}
-
-/* 
-----------------------
-      NAVBAR 
+      NAVBAR
 ----------------------
 */
 .navbar {
-  background-color: rgba(0, 0, 0, 0.5) !important;
-  backdrop-filter: blur(20px);
+  /* La navbar es siempre oscura (navbar-dark), en los dos temas, así
+     que el acento debe quedarse en su versión clara de siempre: la
+     variante oscurecida para tema claro (pensada para leerse sobre
+     fondos claros) se ve apagada aquí y se pierde contra este fondo. */
+  --accent: #e5c07b;
+  background-color: rgba(10, 10, 10, 0.86) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* 
-----------------------
-      CARDS
-----------------------
-*/
-.card {
-  transition: 0.3s ease-in-out;
-  cursor: pointer;
+.navbar-brand,
+.navbar-nav .nav-link {
+  font-family: "Fira Code", monospace;
 }
 
-.card:hover {
-  scale: 1.01;
+.navbar-nav .nav-link {
+  position: relative;
+  color: rgba(230, 230, 230, 0.72);
+  transition: color 0.2s;
 }
 
-.card-text {
-  text-wrap: balance;
+.navbar-nav .nav-link.active {
+  color: var(--accent);
 }
 
-/* 
-----------------------
-       BADGES
-----------------------
-*/
-.php {
-  color: #777bb4;
-  font-size: var(--font-badges);
+/* La línea bajo el link activo solo tiene sitio en la navbar
+   horizontal (lg+, ver navbar-expand-lg); en el menú móvil apilado
+   se solaparía con el siguiente enlace, así que ahí basta con el
+   cambio de color. El pseudo-elemento siempre está presente (oculto
+   con scaleX(0)) para poder transicionar tanto la entrada como la
+   salida: al quitar Bootstrap la clase .active la línea se repliega
+   en vez de desaparecer de golpe. */
+@media (min-width: 992px) {
+  .navbar-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -6px;
+    height: 2px;
+    border-radius: 1px;
+    background: var(--accent);
+    box-shadow: 0 0 8px 1px var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    opacity: 0;
+    transition: transform 0.35s ease, opacity 0.35s ease;
+  }
+
+  .navbar-nav .nav-link.active::after {
+    transform: scaleX(1);
+    opacity: 1;
+  }
 }
 
-.mysql {
-  color: #4479a1;
-  font-size: var(--font-badges);
-}
-
-.vite {
-  color: #c5ad10;
-  font-size: var(--font-badges);
-}
-
-.phaser {
-  color: #0f82a0;
-  font-size: var(--font-badges);
-}
-
-.js {
-  color: #c4af16;
-  font-size: var(--font-badges);
-}
-
-.css {
-  color: #264de4;
-  font-size: var(--font-badges);
+@media (prefers-reduced-motion: reduce) {
+  .navbar-nav .nav-link::after {
+    transition: opacity 0.2s ease;
+  }
 }
 
 .carousel-item > img {
