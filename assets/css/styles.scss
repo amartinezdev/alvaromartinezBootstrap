@@ -262,24 +262,15 @@ code {
   }
 }
 
-// Enlaces tipo comando ($ github / $ preview): llevan icono y se
-// subrayan en hover para que se lean como enlaces y no solo como
-// texto de terminal decorativo.
+// Enlaces tipo comando ($ github / $ preview): se subrayan en hover
+// para que se lean como enlaces y no solo como texto de terminal
+// decorativo.
 .cmd-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
   font-family: "Fira Code", monospace;
   font-size: 0.86rem;
   color: var(--accent);
   text-underline-offset: 3px;
   transition: transform $transition, opacity $transition;
-
-  svg {
-    width: 14px;
-    height: 14px;
-    flex-shrink: 0;
-  }
 
   &:hover {
     text-decoration: underline;

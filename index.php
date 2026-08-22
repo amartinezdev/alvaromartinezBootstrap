@@ -537,12 +537,8 @@ Desarrollador web Full Stack Junior de Murcia, graduado en DAW. Trabajo con <spa
             </div>
             <p class="project-desc">Proyecto práctico de un restaurante desarrollado con PHP y MySQL. Simula la funcionalidad de un restaurante real.</p>
             <div class="project-links">
-              <a href="https://github.com/amartinezdev/restaurante" target="_blank" rel="noopener noreferrer" class="cmd-link">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" aria-hidden="true"><use href="#icon-github"></use></svg>$ github
-              </a>
-              <span class="cmd-link disabled">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" aria-hidden="true"><use href="#icon-browser-chrome"></use></svg>$ preview
-              </span>
+              <a href="https://github.com/amartinezdev/restaurante" target="_blank" rel="noopener noreferrer" class="cmd-link">$ github</a>
+              <span class="cmd-link disabled">$ preview</span>
             </div>
           </div>
         </div>
@@ -565,12 +561,8 @@ Desarrollador web Full Stack Junior de Murcia, graduado en DAW. Trabajo con <spa
             </div>
             <p class="project-desc">Calculadora web totalmente funcional inspirada en la interfaz de la calculadora iOS de Apple.</p>
             <div class="project-links">
-              <a href="https://github.com/amartinezdev/iOScalculator" target="_blank" rel="noopener noreferrer" class="cmd-link">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" aria-hidden="true"><use href="#icon-github"></use></svg>$ github
-              </a>
-              <a href="https://amartinezdev.github.io/iOScalculator/" target="_blank" rel="noopener noreferrer" class="cmd-link">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" aria-hidden="true"><use href="#icon-browser-chrome"></use></svg>$ preview
-              </a>
+              <a href="https://github.com/amartinezdev/iOScalculator" target="_blank" rel="noopener noreferrer" class="cmd-link">$ github</a>
+              <a href="https://amartinezdev.github.io/iOScalculator/" target="_blank" rel="noopener noreferrer" class="cmd-link">$ preview</a>
             </div>
           </div>
         </div>
@@ -593,12 +585,8 @@ Desarrollador web Full Stack Junior de Murcia, graduado en DAW. Trabajo con <spa
             </div>
             <p class="project-desc">Recreación del clásico Pong, desarrollado con Phaser e integrado con Vite. Permite partidas locales para dos jugadores.</p>
             <div class="project-links">
-              <a href="https://github.com/amartinezdev/pong" target="_blank" rel="noopener noreferrer" class="cmd-link">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" aria-hidden="true"><use href="#icon-github"></use></svg>$ github
-              </a>
-              <a href="https://alvaromartinez.dev/pong" target="_blank" rel="noopener noreferrer" class="cmd-link">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" aria-hidden="true"><use href="#icon-browser-chrome"></use></svg>$ preview
-              </a>
+              <a href="https://github.com/amartinezdev/pong" target="_blank" rel="noopener noreferrer" class="cmd-link">$ github</a>
+              <a href="https://alvaromartinez.dev/pong" target="_blank" rel="noopener noreferrer" class="cmd-link">$ preview</a>
             </div>
           </div>
         </div>
@@ -620,12 +608,8 @@ Desarrollador web Full Stack Junior de Murcia, graduado en DAW. Trabajo con <spa
             </div>
             <p class="project-desc">Recreación del clásico juego "Etch a Sketch", donde puedes dibujar utilizando un sistema de píxeles.</p>
             <div class="project-links">
-              <a href="https://github.com/amartinezdev/etch-a-sketch" target="_blank" rel="noopener noreferrer" class="cmd-link">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" aria-hidden="true"><use href="#icon-github"></use></svg>$ github
-              </a>
-              <a href="https://amartinezdev.github.io/etch-a-sketch/" target="_blank" rel="noopener noreferrer" class="cmd-link">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" aria-hidden="true"><use href="#icon-browser-chrome"></use></svg>$ preview
-              </a>
+              <a href="https://github.com/amartinezdev/etch-a-sketch" target="_blank" rel="noopener noreferrer" class="cmd-link">$ github</a>
+              <a href="https://amartinezdev.github.io/etch-a-sketch/" target="_blank" rel="noopener noreferrer" class="cmd-link">$ preview</a>
             </div>
           </div>
         </div>
@@ -703,7 +687,7 @@ Desarrollador web Full Stack Junior de Murcia, graduado en DAW. Trabajo con <spa
     <section class="section-py" id="skills">
       <div class="section-eyebrow">
         <span class="num">04</span>
-        <h2 class="section-title mb-0">skills --list</h2>
+        <h2 class="section-title mb-0">skills/</h2>
       </div>
       <p class="section-lede mb-4">Tecnologías y herramientas con las que trabajo a diario.</p>
 
@@ -711,7 +695,7 @@ Desarrollador web Full Stack Junior de Murcia, graduado en DAW. Trabajo con <spa
         <div class="win">
           <div class="win-bar">
             <span class="win-dot"></span><span class="win-dot"></span><span class="win-dot"></span>
-            <span class="win-name">frontend.json</span>
+            <span class="win-name">frontend/</span>
           </div>
           <div class="skills-grid">
             <a href="https://developer.mozilla.org/es/docs/Web/HTML" class="skill-tile" target="_blank" rel="noopener noreferrer">
@@ -738,7 +722,7 @@ Desarrollador web Full Stack Junior de Murcia, graduado en DAW. Trabajo con <spa
         <div class="win">
           <div class="win-bar">
             <span class="win-dot"></span><span class="win-dot"></span><span class="win-dot"></span>
-            <span class="win-name">backend.json</span>
+            <span class="win-name">backend/</span>
           </div>
           <div class="skills-grid">
             <a href="https://nodejs.org/" class="skill-tile" target="_blank" rel="noopener noreferrer">
@@ -765,7 +749,7 @@ Desarrollador web Full Stack Junior de Murcia, graduado en DAW. Trabajo con <spa
         <div class="win">
           <div class="win-bar">
             <span class="win-dot"></span><span class="win-dot"></span><span class="win-dot"></span>
-            <span class="win-name">bbdd.json</span>
+            <span class="win-name">bbdd/</span>
           </div>
           <div class="skills-grid">
             <a href="https://mysql.com/" class="skill-tile" target="_blank" rel="noopener noreferrer">
@@ -783,7 +767,7 @@ Desarrollador web Full Stack Junior de Murcia, graduado en DAW. Trabajo con <spa
         <div class="win">
           <div class="win-bar">
             <span class="win-dot"></span><span class="win-dot"></span><span class="win-dot"></span>
-            <span class="win-name">herramientas.json</span>
+            <span class="win-name">herramientas/</span>
           </div>
           <div class="skills-grid">
             <a href="https://git-scm.com/" class="skill-tile" target="_blank" rel="noopener noreferrer">

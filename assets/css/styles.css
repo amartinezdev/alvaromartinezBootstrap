@@ -222,19 +222,11 @@ code {
 }
 
 .cmd-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
   font-family: "Fira Code", monospace;
   font-size: 0.86rem;
   color: var(--accent);
   text-underline-offset: 3px;
   transition: transform 0.2s, opacity 0.2s;
-}
-.cmd-link svg {
-  width: 14px;
-  height: 14px;
-  flex-shrink: 0;
 }
 .cmd-link:hover {
   text-decoration: underline;
