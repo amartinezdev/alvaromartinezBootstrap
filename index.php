@@ -399,7 +399,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   </svg>
   <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top">
     <a class="navbar-brand ms-4 mt-0 position-absolute" href="#inicio">
-      <img src="img/brand/am_wb.png" alt="Álvaro Martínez logo" width="50" height="50" />
+      <img src="img/brand/am_wb.png" alt="Álvaro Martínez logo" width="50" height="50" fetchpriority="high" />
     </a>
     <button
       class="navbar-toggler d-lg-none ms-auto me-3"
@@ -604,23 +604,24 @@ Desarrollador web Full Stack Junior de Murcia, graduado en DAW. Trabajo con <spa
 
         <div class="project-item reveal">
           <img
-            src="img/projects/etch-a-sketch.webp"
-            srcset="img/projects/etch-a-sketch-350.webp 350w, img/projects/etch-a-sketch.webp 700w"
+            src="img/projects/cine.webp"
+            srcset="img/projects/cine-350.webp 350w, img/projects/cine.webp 700w"
             sizes="260px"
             class="project-image"
-            alt="Captura del proyecto Etch a Sketch hecho con JavaScript"
+            alt="Captura del proyecto Cine, una aplicación de gestión de cartelera desarrollada con Laravel"
             width="700"
             height="525"
             loading="lazy" />
           <div class="project-body">
-            <h3 class="project-title">&gt; Etch a Sketch</h3>
+            <h3 class="project-title">&gt; Cine</h3>
             <div class="project-tags">
-              <span class="tag">JavaScript</span>
+              <span class="tag">Laravel</span>
+              <span class="tag">MySQL</span>
             </div>
-            <p class="project-desc">Recreación del clásico juego "Etch a Sketch", donde puedes dibujar utilizando un sistema de píxeles.</p>
+            <p class="project-desc">Aplicación de gestión de cartelera para un cine construida con Laravel: catálogo público de películas, panel de administración y notificaciones por Telegram.</p>
             <div class="project-links">
-              <a href="https://github.com/amartinezdev/etch-a-sketch" target="_blank" rel="noopener noreferrer" class="cmd-link">$ github</a>
-              <a href="https://amartinezdev.github.io/etch-a-sketch/" target="_blank" rel="noopener noreferrer" class="cmd-link">$ preview</a>
+              <a href="https://github.com/amartinezdev/cine" target="_blank" rel="noopener noreferrer" class="cmd-link">$ github</a>
+              <a href="https://alvaromartinez.dev/cine" target="_blank" rel="noopener noreferrer" class="cmd-link">$ preview</a>
             </div>
           </div>
         </div>
@@ -877,17 +878,17 @@ Desarrollador web Full Stack Junior de Murcia, graduado en DAW. Trabajo con <spa
     </svg>
   </button>
 
-  <script src="assets/js/palabras.js"></script>
-  <script src="assets/js/cambiarTema.js"></script>
-  <script src="assets/js/backToTop.js"></script>
-  <script src="assets/js/scrollspy.js"></script>
-  <script src="assets/js/scrollReveal.js"></script>
-  <script src="assets/js/heroReveal.js"></script>
-  <script src="assets/js/certsMarquee.js"></script>
-  <script src="assets/js/certModal.js"></script>
-  <script src="assets/js/scrollProgress.js"></script>
-  <script src="assets/js/mouseSpotlight.js"></script>
-  <script src="assets/js/textScramble.js"></script>
+  <script src="assets/js/palabras.js" defer></script>
+  <script src="assets/js/cambiarTema.js" defer></script>
+  <script src="assets/js/backToTop.js" defer></script>
+  <script src="assets/js/scrollspy.js" defer></script>
+  <script src="assets/js/scrollReveal.js" defer></script>
+  <script src="assets/js/heroReveal.js" defer></script>
+  <script src="assets/js/certsMarquee.js" defer></script>
+  <script src="assets/js/certModal.js" defer></script>
+  <script src="assets/js/scrollProgress.js" defer></script>
+  <script src="assets/js/mouseSpotlight.js" defer></script>
+  <script src="assets/js/textScramble.js" defer></script>
 </body>
 
 </html>

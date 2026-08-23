@@ -5,12 +5,16 @@
   cada 500ms: la ventana, el saludo, el nombre, la profesión y el botón.
 */
 (function () {
+  // Stagger acortado (antes 0/500/1000/1500/2000ms): con el paso 3
+  // (hero-name, el candidato a LCP) a 1000ms+, el texto principal del
+  // hero tardaba 1-2s en pintarse en móvil, empujando el LCP fuera de
+  // el rango "bueno". Mismo efecto de escritura, mucho más rápido.
   var steps = [
     { selector: '[data-reveal-step="1"]', delay: 0 },
-    { selector: '[data-reveal-step="2"]', delay: 500 },
-    { selector: '[data-reveal-step="3"]', delay: 1000 },
-    { selector: '[data-reveal-step="4"]', delay: 1500 },
-    { selector: '[data-reveal-step="5"]', delay: 2000 },
+    { selector: '[data-reveal-step="2"]', delay: 120 },
+    { selector: '[data-reveal-step="3"]', delay: 240 },
+    { selector: '[data-reveal-step="4"]', delay: 360 },
+    { selector: '[data-reveal-step="5"]', delay: 480 },
   ];
 
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
