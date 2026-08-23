@@ -31,6 +31,7 @@ $ease-out-strong: cubic-bezier(0.23, 1, 0.32, 1);
   font-display: swap;
   src: url("../fonts/Poppins-300.woff2") format("woff2");
 }
+
 @font-face {
   font-family: "Poppins";
   font-style: normal;
@@ -38,6 +39,7 @@ $ease-out-strong: cubic-bezier(0.23, 1, 0.32, 1);
   font-display: swap;
   src: url("../fonts/Poppins-400.woff2") format("woff2");
 }
+
 @font-face {
   font-family: "Poppins";
   font-style: normal;
@@ -45,6 +47,7 @@ $ease-out-strong: cubic-bezier(0.23, 1, 0.32, 1);
   font-display: swap;
   src: url("../fonts/Poppins-500.woff2") format("woff2");
 }
+
 @font-face {
   font-family: "Poppins";
   font-style: normal;
@@ -52,6 +55,7 @@ $ease-out-strong: cubic-bezier(0.23, 1, 0.32, 1);
   font-display: swap;
   src: url("../fonts/Poppins-600.woff2") format("woff2");
 }
+
 @font-face {
   font-family: "Poppins";
   font-style: normal;
@@ -59,6 +63,7 @@ $ease-out-strong: cubic-bezier(0.23, 1, 0.32, 1);
   font-display: swap;
   src: url("../fonts/Poppins-700.woff2") format("woff2");
 }
+
 @font-face {
   font-family: "Poppins";
   font-style: normal;
@@ -72,12 +77,13 @@ $ease-out-strong: cubic-bezier(0.23, 1, 0.32, 1);
        MIXINS
 ----------------------
 */
-@mixin redondear($pixeles){
-    border-radius: $pixeles;
+@mixin redondear($pixeles) {
+  border-radius: $pixeles;
 }
 
 @mixin link-hover() {
-    transition: $transition;
+  transition: $transition;
+
   &:hover {
     transform: translateY(-3px);
   }
@@ -151,9 +157,12 @@ html[data-bs-theme="light"] {
   --bg-titlebar: #ece9e2;
   --border: rgba(10, 10, 10, 0.14);
   --border-soft: rgba(10, 10, 10, 0.08);
-  --text: #262420;
+  // Más oscuro que el #262420 original: con el aura del ratón
+  // (EXP 2, body::before) mezclando --glow-rgb sobre el fondo, el
+  // contraste efectivo bajo el spotlight caía más de lo deseable.
+  --text: #100e0c;
   --text-strong: #0a0a0a;
-  --text-muted: #55524c;
+  --text-muted: #000000;
   --text-dim: #6b6862;
   --text-faint: #67635a;
   --win-dot: #cfcbc0;
@@ -191,6 +200,7 @@ body {
 a {
   color: var(--accent);
 }
+
 a:hover {
   color: var(--accent);
   opacity: 0.85;
@@ -205,7 +215,10 @@ a:hover {
   font-family: "JetBrains Mono", ui-monospace, monospace;
 }
 
-h1, h2, h3, .section-title {
+h1,
+h2,
+h3,
+.section-title {
   font-family: "JetBrains Mono", ui-monospace, monospace;
   color: var(--text-strong);
 }
@@ -373,6 +386,7 @@ code {
 }
 
 @keyframes cmd-link-glow-pulse {
+
   0%,
   100% {
     opacity: 1;
@@ -482,10 +496,12 @@ html[data-bs-theme="light"] .hero-section {
 }
 
 @keyframes blink {
+
   0%,
   49% {
     border-right-color: var(--accent);
   }
+
   50%,
   100% {
     border-right-color: transparent;
@@ -542,6 +558,193 @@ html[data-bs-theme="light"] .hero-section {
 // pantallas anchas las frases se estiran demasiado y cuesta leerlas.
 #about .lead {
   max-width: 62ch;
+}
+
+/*
+----------------------
+   TIMELINE (SOBRE MÍ)
+----------------------
+*/
+// Sin ventana de terminal ni tarjeta: solo la línea + punto y tipografía.
+// Ni la línea (.timeline-line-fill) ni los puntos (.timeline-dot.is-lit)
+// usan reveal ni transition para su progreso: ambos se leen directamente
+// del scroll en assets/js/timelineProgress.js, igual que scrollProgress.js,
+// para que suban y bajen exactamente con el gesto del usuario en vez de
+// dispararse una sola vez.
+.timeline {
+  max-width: 720px;
+  margin: 56px auto 0;
+}
+
+.timeline-track {
+  position: relative;
+  margin-top: 32px;
+}
+
+.timeline-line,
+.timeline-line-fill {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 7px;
+  width: 2px;
+  z-index: 1;
+}
+
+.timeline-line {
+  background: var(--border-soft);
+}
+
+.timeline-line-fill {
+  background: var(--accent);
+  transform: scaleY(0);
+  transform-origin: top;
+}
+
+// z-index explícito y no solo en .timeline-dot: .timeline-item lleva la
+// clase .reveal, que siempre pone un transform (16px al entrar o 0 ya
+// revelado — cualquier valor que no sea "none" cuenta). Eso convierte al
+// item en su propio contexto de apilamiento, así que el z-index de
+// .timeline-dot queda atrapado dentro de él y no llega a compararse con
+// .timeline-line: sin esto, la línea (z-index:1) se pintaba por encima
+// del item entero (z-index:auto ≈ 0), dot incluido.
+.timeline-item {
+  position: relative;
+  padding-left: 34px;
+  padding-bottom: 56px;
+  z-index: 2;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+}
+
+// Apagado por defecto (gris sólido, el mismo --win-dot de los puntos de
+// la ventana de terminal) y se enciende con la clase .is-lit, que
+// assets/js/timelineProgress.js añade a cada punto en el instante en que
+// la línea scrubbed (.timeline-line-fill) llega a su posición — no con
+// el reveal de una sola vez de scrollReveal.js. Sin opacity: como el
+// punto va por encima de la línea (z-index), si se apaga con opacity en
+// vez de con un color sólido, la línea se transparenta a través de él.
+.timeline-dot {
+  position: absolute;
+  top: 26px;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--win-dot);
+  border: 2px solid var(--win-dot);
+  box-shadow: none;
+  z-index: 2;
+  transition: border-color 240ms ease, background-color 240ms ease, box-shadow 240ms ease;
+}
+
+// El pop de encendido (timeline-dot-ignite) dura 380ms; el aura que
+// respira (timeline-dot-breathe) arranca justo cuando ese pop termina
+// (mismo 380ms de delay) y parte de los mismos valores en su 0% para
+// que el relevo entre ambas animaciones no dé un salto visual. Al ir
+// después en la lista, timeline-dot-breathe gana sobre timeline-dot-ignite
+// en las propiedades que comparten (transform y box-shadow) una vez que
+// las dos están "activas" (ver relleno hacia adelante de una animación
+// con "both").
+.timeline-dot.is-lit {
+  border-color: var(--accent);
+  background: var(--accent);
+  // Con blur (no solo spread) para que sea un aura difuminada alrededor
+  // del punto, no un anillo de borde duro.
+  box-shadow: 0 0 10px 2px rgba(var(--glow-rgb), 0.32);
+  animation: timeline-dot-ignite 380ms $ease-out-strong both, timeline-dot-breathe 3200ms ease-in-out 380ms infinite;
+}
+
+@keyframes timeline-dot-ignite {
+  0% {
+    transform: scale(0.9);
+    box-shadow: 0 0 0 0 rgba(var(--glow-rgb), 0);
+  }
+  55% {
+    transform: scale(1.15);
+    box-shadow: 0 0 20px 5px rgba(var(--glow-rgb), 0.32);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px 2px rgba(var(--glow-rgb), 0.32);
+  }
+}
+
+// Amplitud pequeña a propósito (escala +4%, no +8%): un aura que respira
+// de verdad se nota en el brillo que crece y se difumina, no en que el
+// punto cambie de tamaño de forma llamativa.
+@keyframes timeline-dot-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px 2px rgba(var(--glow-rgb), 0.32);
+  }
+  50% {
+    transform: scale(1.04);
+    box-shadow: 0 0 16px 4px rgba(var(--glow-rgb), 0.4);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .timeline-dot.is-lit {
+    animation: none;
+  }
+}
+
+.timeline-date {
+  display: block;
+  font-size: 0.76rem;
+  letter-spacing: 0.02em;
+  color: var(--text-faint);
+  margin-bottom: 6px;
+}
+
+.timeline-role {
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--text-strong);
+  margin: 0 0 12px;
+}
+
+.timeline-company {
+  font-weight: 500;
+  color: var(--accent);
+}
+
+.timeline-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.timeline-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    position: relative;
+    padding-left: 18px;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+
+    &::before {
+      content: ">";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-family: "JetBrains Mono", monospace;
+      font-weight: 600;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+  }
 }
 
 /*
@@ -1137,10 +1340,12 @@ html[data-bs-theme="light"] #cambiarTema {
 }
 
 @keyframes heroGlowBreathe {
+
   0%,
   100% {
     transform: translate(-50%, -50%) scale(1);
   }
+
   50% {
     transform: translate(-50%, -50%) scale(1.08);
   }
@@ -1174,6 +1379,12 @@ html[data-bs-theme="light"] #cambiarTema {
   body::before {
     display: none;
   }
+}
+
+// En modo claro se quita del todo: mezclado con el fondo casi blanco
+// bajaba el contraste del texto normal a su paso (ver --text más arriba).
+html[data-bs-theme="light"] body::before {
+  display: none;
 }
 
 /* ---- EXP 3: la ventana del hero aparece 1s después de cargar la página, con el mismo fundido+desplazamiento que el resto de secciones al hacer scroll (reutiliza .reveal/.is-visible; ver assets/js/heroReveal.js) ---- */
@@ -1219,6 +1430,7 @@ html[data-bs-theme="light"] #cambiarTema {
 }
 
 @media (hover: hover) and (pointer: fine) {
+
   .boton:hover::before,
   .nav-link.icono:hover::before,
   .back-to-top:hover::before {

@@ -517,6 +517,61 @@ Desarrollador web Full Stack Junior de Murcia, graduado en DAW. Trabajo con <spa
           </div>
         </div>
       </div>
+
+      <div class="timeline">
+        <p class="term-prompt mb-0 reveal">~ $ cat experiencia.log</p>
+        <div class="timeline-track">
+          <span class="timeline-line" aria-hidden="true"></span>
+          <span class="timeline-line-fill" aria-hidden="true"></span>
+          <div class="timeline-item reveal">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <div class="timeline-content">
+              <span class="timeline-date mono">02/2026 – 06/2026</span>
+              <h3 class="timeline-role">Desarrollador de Software <span class="timeline-company">@ NTT DATA</span></h3>
+              <div class="timeline-meta">
+                <span class="tag">Murcia, España</span>
+                <span class="tag">Contrato de prácticas</span>
+              </div>
+              <ul class="timeline-list">
+                <li>Desarrollé backend con <span class="tag">Python</span> y <span class="tag">SQL</span> para aplicaciones corporativas.</li>
+                <li>Diseñé y mantuve consultas sobre bases de datos relacionales.</li>
+                <li>Desarrollé nuevas funcionalidades y resolví incidencias siguiendo metodología ágil <span class="tag">SCRUM</span>.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <div class="timeline-content">
+              <span class="timeline-date mono">03/2023 – 06/2024</span>
+              <h3 class="timeline-role">Técnico Informático <span class="timeline-company">@ 4GL</span></h3>
+              <div class="timeline-meta">
+                <span class="tag">España</span>
+              </div>
+              <ul class="timeline-list">
+                <li>Automaticé e integré software corporativo, mejorando los procesos internos.</li>
+                <li>Aumenté la productividad interna en un <span class="tag">20%</span> mediante la optimización de procesos.</li>
+                <li>Diagnostiqué y resolví incidencias técnicas, documentando cada solución.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline-item reveal">
+            <span class="timeline-dot" aria-hidden="true"></span>
+            <div class="timeline-content">
+              <span class="timeline-date mono">02/2019 – 03/2023</span>
+              <h3 class="timeline-role">Empleado de Back Office <span class="timeline-company">@ ISGF</span></h3>
+              <div class="timeline-meta">
+                <span class="tag">España</span>
+              </div>
+              <ul class="timeline-list">
+                <li>Ascendido a Back Office en menos de 8 meses por cumplimiento de objetivos.</li>
+                <li>Coordiné un equipo como Líder de Equipo, con seguimiento de tareas mediante <span class="tag">KPIs</span>.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   </div>
 
@@ -887,6 +942,7 @@ Desarrollador web Full Stack Junior de Murcia, graduado en DAW. Trabajo con <spa
   <script src="assets/js/certsMarquee.js" defer></script>
   <script src="assets/js/certModal.js" defer></script>
   <script src="assets/js/scrollProgress.js" defer></script>
+  <script src="assets/js/timelineProgress.js" defer></script>
   <script src="assets/js/mouseSpotlight.js" defer></script>
   <script src="assets/js/textScramble.js" defer></script>
 </body>
