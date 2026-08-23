@@ -208,7 +208,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
     crossorigin="anonymous"
     defer></script>
-  <link rel="icon" href="img/brand/am_bw.png" type="image/png" sizes="32x32" />
+  <link rel="icon" href="img/brand/am_bw.png" type="image/png" sizes="512x512" />
   <link rel="apple-touch-icon" href="img/brand/am_bw.png" />
   <!-- Poppins y JetBrains Mono se sirven en local (assets/fonts/, @font-face en styles.scss); ya no hace falta Google Fonts. -->
   <link rel="stylesheet" href="assets/css/style.css" />
@@ -468,6 +468,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   <!-- <div class="w-100 altura d-block" ></div> -->
 
+  <main>
   <div class="container" id="about">
     <!--  ABOUT  -->
     <section class="section-py">
@@ -643,23 +644,23 @@ Desarrollador web Full Stack Junior de Murcia, graduado en DAW. Trabajo con <spa
         </div>
         <div class="certs-grid">
           <button type="button" class="cert-tile" data-bs-toggle="modal" data-bs-target="#certModal" data-cert-full="img/certs/AI-gen.png" data-cert-full-alt="Certificado de IA Generativa y su impacto en el negocio" aria-label="Ver certificado ampliado: IA Generativa y su impacto en el negocio">
-            <img src="img/certs/AI-gen-sm.png" alt="Certificado de IA Generativa y su impacto en el negocio" width="700" height="539" loading="lazy" draggable="false" />
+            <img src="img/certs/AI-gen-sm.png" srcset="img/certs/AI-gen-sm-260.png 260w, img/certs/AI-gen-sm.png 440w" sizes="220px" alt="Certificado de IA Generativa y su impacto en el negocio" width="440" height="339" loading="lazy" draggable="false" />
             <span class="cert-tile-caption">IA Generativa</span>
           </button>
           <button type="button" class="cert-tile" data-bs-toggle="modal" data-bs-target="#certModal" data-cert-full="img/certs/udemy_JS.jpg" data-cert-full-alt="Certificado de JavaScript en Udemy" aria-label="Ver certificado ampliado: JavaScript · Udemy">
-            <img src="img/certs/udemy_JS_sm.png" alt="Certificado de JavaScript en Udemy" width="700" height="539" loading="lazy" draggable="false" />
+            <img src="img/certs/udemy_JS_sm.png" srcset="img/certs/udemy_JS_sm-260.png 260w, img/certs/udemy_JS_sm.png 440w" sizes="220px" alt="Certificado de JavaScript en Udemy" width="440" height="339" loading="lazy" draggable="false" />
             <span class="cert-tile-caption">JavaScript &middot; Udemy</span>
           </button>
           <button type="button" class="cert-tile" data-bs-toggle="modal" data-bs-target="#certModal" data-cert-full="img/certs/full-stack-eng.png" data-cert-full-alt="Certificado de Full-Stack Engineer" aria-label="Ver certificado ampliado: Full-Stack Engineer">
-            <img src="img/certs/full-stack-sm.png" alt="Certificado de Full-Stack Engineer" width="700" height="539" loading="lazy" draggable="false" />
+            <img src="img/certs/full-stack-sm.png" srcset="img/certs/full-stack-sm-260.png 260w, img/certs/full-stack-sm.png 440w" sizes="220px" alt="Certificado de Full-Stack Engineer" width="440" height="339" loading="lazy" draggable="false" />
             <span class="cert-tile-caption">Full-Stack Engineer</span>
           </button>
           <button type="button" class="cert-tile" data-bs-toggle="modal" data-bs-target="#certModal" data-cert-full="img/certs/data-eng.png" data-cert-full-alt="Certificado de Data Engineer" aria-label="Ver certificado ampliado: Data Engineer">
-            <img src="img/certs/data-eng-sm.png" alt="Certificado de Data Engineer" width="700" height="539" loading="lazy" draggable="false" />
+            <img src="img/certs/data-eng-sm.png" srcset="img/certs/data-eng-sm-260.png 260w, img/certs/data-eng-sm.png 440w" sizes="220px" alt="Certificado de Data Engineer" width="440" height="339" loading="lazy" draggable="false" />
             <span class="cert-tile-caption">Data Engineer</span>
           </button>
           <button type="button" class="cert-tile" data-bs-toggle="modal" data-bs-target="#certModal" data-cert-full="img/certs/claude.png" data-cert-full-alt="Certificado de Claude Code in Action" aria-label="Ver certificado ampliado: Claude Code in Action">
-            <img src="img/certs/claude-sm.png" alt="Certificado de Claude Code in Action" width="700" height="539" loading="lazy" draggable="false" />
+            <img src="img/certs/claude-sm.png" srcset="img/certs/claude-sm-260.png 260w, img/certs/claude-sm.png 440w" sizes="220px" alt="Certificado de Claude Code in Action" width="440" height="339" loading="lazy" draggable="false" />
             <span class="cert-tile-caption">Claude Code in Action</span>
           </button>
         </div>
@@ -843,6 +844,7 @@ Desarrollador web Full Stack Junior de Murcia, graduado en DAW. Trabajo con <spa
       <?php endif; ?>
     </section>
   </div>
+  </main>
 
   <div class="container-fluid mb-4">
     <footer class="row mt-4" style="border-top: 1px solid var(--border-soft); padding-top: 32px;">

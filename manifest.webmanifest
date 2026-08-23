@@ -10,7 +10,7 @@
   "icons": [
     {
       "src": "img/brand/am_bw.png",
-      "sizes": "50x50",
+      "sizes": "512x512",
       "type": "image/png"
     }
   ]
