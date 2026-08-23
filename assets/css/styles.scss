@@ -358,11 +358,12 @@ code {
     cursor: not-allowed;
   }
 
-  // "Respiración" sutil en el enlace de preview para que destaque
-  // frente a $ github: un pulso lento de opacidad + glow, no un
-  // parpadeo. Se pausa en hover para no pelear con el subrayado.
-  &--preview {
-    animation: cmd-link-breathe 2.4s ease-in-out infinite;
+  // "Respiración" en el enlace de preview para que destaque frente a
+  // $ github: negrita + resplandor multicapa que pulsa. Se pausa en
+  // hover/focus para no pelear con el subrayado.
+  &--preview-glow {
+    font-weight: 700;
+    animation: cmd-link-glow-pulse 2.2s ease-in-out infinite;
 
     &:hover,
     &:focus-visible {
@@ -371,7 +372,7 @@ code {
   }
 }
 
-@keyframes cmd-link-breathe {
+@keyframes cmd-link-glow-pulse {
   0%,
   100% {
     opacity: 1;
@@ -379,13 +380,13 @@ code {
   }
 
   50% {
-    opacity: 0.75;
-    text-shadow: 0 0 10px rgba($accent, 0.6);
+    opacity: 0.95;
+    text-shadow: 0 0 6px rgba($accent, 0.9), 0 0 16px rgba($accent, 0.5), 0 0 28px rgba($accent, 0.25);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .cmd-link--preview {
+  .cmd-link--preview-glow {
     animation: none;
   }
 }
