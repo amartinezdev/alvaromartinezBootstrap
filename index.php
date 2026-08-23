@@ -550,7 +550,7 @@ Desarrollador web Full Stack Junior de Murcia, graduado en DAW. Trabajo con <spa
             <p class="project-desc">Aplicación de gestión de cartelera para un cine construida con Laravel: catálogo público de películas, panel de administración y notificaciones por Telegram.</p>
             <div class="project-links">
               <a href="https://github.com/amartinezdev/cine" target="_blank" rel="noopener noreferrer" class="cmd-link">$ github</a>
-              <a href="https://alvaromartinez.dev/cine" target="_blank" rel="noopener noreferrer" class="cmd-link">$ preview</a>
+              <a href="https://alvaromartinez.dev/cine" target="_blank" rel="noopener noreferrer" class="cmd-link cmd-link--preview">$ preview</a>
             </div>
           </div>
         </div>
@@ -598,7 +598,7 @@ Desarrollador web Full Stack Junior de Murcia, graduado en DAW. Trabajo con <spa
             <p class="project-desc">Calculadora web totalmente funcional inspirada en la interfaz de la calculadora iOS de Apple.</p>
             <div class="project-links">
               <a href="https://github.com/amartinezdev/iOScalculator" target="_blank" rel="noopener noreferrer" class="cmd-link">$ github</a>
-              <a href="https://amartinezdev.github.io/iOScalculator/" target="_blank" rel="noopener noreferrer" class="cmd-link">$ preview</a>
+              <a href="https://amartinezdev.github.io/iOScalculator/" target="_blank" rel="noopener noreferrer" class="cmd-link cmd-link--preview">$ preview</a>
             </div>
           </div>
         </div>
@@ -622,7 +622,7 @@ Desarrollador web Full Stack Junior de Murcia, graduado en DAW. Trabajo con <spa
             <p class="project-desc">Recreación del clásico Pong, desarrollado con Phaser e integrado con Vite. Permite partidas locales para dos jugadores.</p>
             <div class="project-links">
               <a href="https://github.com/amartinezdev/pong" target="_blank" rel="noopener noreferrer" class="cmd-link">$ github</a>
-              <a href="https://alvaromartinez.dev/pong" target="_blank" rel="noopener noreferrer" class="cmd-link">$ preview</a>
+              <a href="https://alvaromartinez.dev/pong" target="_blank" rel="noopener noreferrer" class="cmd-link cmd-link--preview">$ preview</a>
             </div>
           </div>
         </div>

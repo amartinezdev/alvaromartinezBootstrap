@@ -357,6 +357,37 @@ code {
     pointer-events: none;
     cursor: not-allowed;
   }
+
+  // "Respiración" sutil en el enlace de preview para que destaque
+  // frente a $ github: un pulso lento de opacidad + glow, no un
+  // parpadeo. Se pausa en hover para no pelear con el subrayado.
+  &--preview {
+    animation: cmd-link-breathe 2.4s ease-in-out infinite;
+
+    &:hover,
+    &:focus-visible {
+      animation-play-state: paused;
+    }
+  }
+}
+
+@keyframes cmd-link-breathe {
+  0%,
+  100% {
+    opacity: 1;
+    text-shadow: 0 0 0 rgba($accent, 0);
+  }
+
+  50% {
+    opacity: 0.75;
+    text-shadow: 0 0 10px rgba($accent, 0.6);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cmd-link--preview {
+    animation: none;
+  }
 }
 
 // Etiquetas de tecnología (badges): chip con fondo/borde del acento
