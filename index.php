@@ -208,8 +208,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
     crossorigin="anonymous"
     defer></script>
-  <link rel="icon" href="img/brand/am_bw.png" type="image/png" sizes="512x512" />
-  <link rel="apple-touch-icon" href="img/brand/am_bw.png" />
+  <link rel="icon" href="img/brand/favicon-32.png" type="image/png" sizes="32x32" />
+  <link rel="icon" href="img/brand/favicon-512.png" type="image/png" sizes="512x512" />
+  <link rel="apple-touch-icon" href="img/brand/favicon-180.png" />
   <!-- Poppins y JetBrains Mono se sirven en local (assets/fonts/, @font-face en styles.scss); ya no hace falta Google Fonts. -->
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="stylesheet" href="assets/css/styles.css" />
@@ -532,6 +533,30 @@ Desarrollador web Full Stack Junior de Murcia, graduado en DAW. Trabajo con <spa
       <div class="project-list">
         <div class="project-item reveal">
           <img
+            src="img/projects/cine.webp"
+            srcset="img/projects/cine-350.webp 350w, img/projects/cine.webp 700w"
+            sizes="260px"
+            class="project-image"
+            alt="Captura del proyecto Cine, una aplicación de gestión de cartelera desarrollada con Laravel"
+            width="700"
+            height="525"
+            loading="lazy" />
+          <div class="project-body">
+            <h3 class="project-title">&gt; Cine</h3>
+            <div class="project-tags">
+              <span class="tag">Laravel</span>
+              <span class="tag">MySQL</span>
+            </div>
+            <p class="project-desc">Aplicación de gestión de cartelera para un cine construida con Laravel: catálogo público de películas, panel de administración y notificaciones por Telegram.</p>
+            <div class="project-links">
+              <a href="https://github.com/amartinezdev/cine" target="_blank" rel="noopener noreferrer" class="cmd-link">$ github</a>
+              <a href="https://alvaromartinez.dev/cine" target="_blank" rel="noopener noreferrer" class="cmd-link">$ preview</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-item reveal">
+          <img
             src="img/projects/restaurante.webp"
             srcset="img/projects/restaurante-350.webp 350w, img/projects/restaurante.webp 700w"
             sizes="260px"
@@ -598,30 +623,6 @@ Desarrollador web Full Stack Junior de Murcia, graduado en DAW. Trabajo con <spa
             <div class="project-links">
               <a href="https://github.com/amartinezdev/pong" target="_blank" rel="noopener noreferrer" class="cmd-link">$ github</a>
               <a href="https://alvaromartinez.dev/pong" target="_blank" rel="noopener noreferrer" class="cmd-link">$ preview</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-item reveal">
-          <img
-            src="img/projects/cine.webp"
-            srcset="img/projects/cine-350.webp 350w, img/projects/cine.webp 700w"
-            sizes="260px"
-            class="project-image"
-            alt="Captura del proyecto Cine, una aplicación de gestión de cartelera desarrollada con Laravel"
-            width="700"
-            height="525"
-            loading="lazy" />
-          <div class="project-body">
-            <h3 class="project-title">&gt; Cine</h3>
-            <div class="project-tags">
-              <span class="tag">Laravel</span>
-              <span class="tag">MySQL</span>
-            </div>
-            <p class="project-desc">Aplicación de gestión de cartelera para un cine construida con Laravel: catálogo público de películas, panel de administración y notificaciones por Telegram.</p>
-            <div class="project-links">
-              <a href="https://github.com/amartinezdev/cine" target="_blank" rel="noopener noreferrer" class="cmd-link">$ github</a>
-              <a href="https://alvaromartinez.dev/cine" target="_blank" rel="noopener noreferrer" class="cmd-link">$ preview</a>
             </div>
           </div>
         </div>
