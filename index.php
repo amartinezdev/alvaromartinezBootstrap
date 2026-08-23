@@ -491,17 +491,17 @@ Desarrollador web Full Stack Junior de Murcia, graduado en DAW. Trabajo con <spa
           </p>
           <div class="d-flex flex-wrap justify-content-center justify-content-md-start align-items-center gap-3 mt-4">
             <nav class="nav align-items-center gap-2">
-              <a class="nav-link icono" href="https://github.com/amartinezdev/" target="_blank" rel="noopener noreferrer" title="GitHub">
+              <a class="nav-link icono" href="https://github.com/amartinezdev/" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="bi bi-github" fill="currentColor" aria-hidden="true">
                   <use href="#icon-github"></use>
                 </svg>
               </a>
-              <a class="nav-link icono" href="https://www.linkedin.com/in/alvaromartinezdev" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+              <a class="nav-link icono" href="https://www.linkedin.com/in/alvaromartinezdev" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn">
                 <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" class="bi bi-linkedin" fill="currentColor" aria-hidden="true">
                   <use href="#icon-linkedin"></use>
                 </svg>
               </a>
-              <a class="nav-link icono" href="mailto:alvaromartinezdev@gmail.com" title="Correo electrónico">
+              <a class="nav-link icono" href="mailto:alvaromartinezdev@gmail.com" title="Correo electrónico" aria-label="Correo electrónico">
                 <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" class="bi bi-envelope-at-fill" fill="currentColor" aria-hidden="true">
                   <use href="#icon-envelope"></use>
                 </svg>
@@ -848,17 +848,17 @@ Desarrollador web Full Stack Junior de Murcia, graduado en DAW. Trabajo con <spa
     <footer class="row mt-4" style="border-top: 1px solid var(--border-soft); padding-top: 32px;">
       <div class="col-12 text-center d-flex flex-column justify-content-center align-items-center">
         <nav class="nav justify-content-center mb-3 align-items-center gap-2">
-          <a class="nav-link icono" href="https://github.com/amartinezdev/" target="_blank" rel="noopener noreferrer">
+          <a class="nav-link icono" href="https://github.com/amartinezdev/" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" class="bi bi-github" fill="currentColor" aria-hidden="true">
               <use href="#icon-github"></use>
             </svg>
           </a>
-          <a class="nav-link icono" href="https://www.linkedin.com/in/alvaromartinezdev" target="_blank" rel="noopener noreferrer">
+          <a class="nav-link icono" href="https://www.linkedin.com/in/alvaromartinezdev" target="_blank" rel="noopener noreferrer" title="LinkedIn" aria-label="LinkedIn">
             <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" class="bi bi-linkedin" fill="currentColor" aria-hidden="true">
               <use href="#icon-linkedin"></use>
             </svg>
           </a>
-          <a class="nav-link icono" href="mailto:alvaromartinezdev@gmail.com">
+          <a class="nav-link icono" href="mailto:alvaromartinezdev@gmail.com" title="Correo electrónico" aria-label="Correo electrónico">
             <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" class="bi bi-envelope-at-fill" fill="currentColor" aria-hidden="true">
               <use href="#icon-envelope"></use>
             </svg>
