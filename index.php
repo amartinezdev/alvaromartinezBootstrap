@@ -208,9 +208,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
     crossorigin="anonymous"
     defer></script>
-  <link rel="icon" href="img/brand/favicon-32.png" type="image/png" sizes="32x32" />
-  <link rel="icon" href="img/brand/favicon-512.png" type="image/png" sizes="512x512" />
-  <link rel="apple-touch-icon" href="img/brand/favicon-180.png" />
+  <link rel="icon" href="img/brand/am_bw.png" type="image/png" />
+  <link rel="apple-touch-icon" href="img/brand/am_bw.png" />
   <!-- Poppins y JetBrains Mono se sirven en local (assets/fonts/, @font-face en styles.scss); ya no hace falta Google Fonts. -->
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="stylesheet" href="assets/css/styles.css" />
