@@ -573,7 +573,7 @@ Desarrollador web Full Stack Junior de Murcia, graduado en DAW. Trabajo con <spa
             <p class="project-desc">Proyecto práctico de un restaurante desarrollado con PHP y MySQL. Simula la funcionalidad de un restaurante real.</p>
             <div class="project-links">
               <a href="https://github.com/amartinezdev/restaurante" target="_blank" rel="noopener noreferrer" class="cmd-link">$ github</a>
-              <span class="cmd-link disabled">$ preview</span>
+              <a href="https://alvaromartinez.dev/restaurante" target="_blank" rel="noopener noreferrer" class="cmd-link cmd-link--preview-glow">$ preview</a>
             </div>
           </div>
         </div>
