@@ -614,7 +614,7 @@ Desarrollador web Full Stack Junior de Murcia, graduado en DAW. Trabajo con <spa
             <p class="project-desc">Aplicación de gestión de cartelera para un cine construida con Laravel: catálogo público de películas, panel de administración y notificaciones por Telegram.</p>
             <div class="project-links">
               <a href="https://github.com/amartinezdev/cine" target="_blank" rel="noopener noreferrer" class="cmd-link">$ github</a>
-              <a href="https://alvaromartinez.dev/cine" target="_blank" rel="noopener noreferrer" class="cmd-link cmd-link--preview-glow">$ preview</a>
+              <a href="https://alvaromartinez.dev/cine/login" target="_blank" rel="noopener noreferrer" class="cmd-link cmd-link--preview-glow">$ preview</a>
             </div>
           </div>
         </div>
