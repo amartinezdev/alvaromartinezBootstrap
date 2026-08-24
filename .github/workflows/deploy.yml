@@ -52,5 +52,6 @@ jobs:
             **/.env.example
             **/img/archive/**
             **/img/**/originals/**
+            **/img/**/old/**
             **/.claude/**
             **/.agents/**

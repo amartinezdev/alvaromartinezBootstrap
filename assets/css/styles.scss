@@ -405,7 +405,11 @@ code {
   }
 }
 
-// Etiquetas de tecnología (badges): chip con fondo/borde del acento
+// Etiquetas de tecnología (badges): chip con fondo/borde del acento.
+// rgba(var(--glow-rgb), …) en vez de rgba($accent, …): $accent es el
+// dorado claro fijo de siempre, y en modo claro el fondo/borde le salían
+// casi invisibles sobre --bg (mismo motivo por el que --accent ya usa un
+// dorado oscuro ahí). --glow-rgb sí cambia por tema para este uso.
 .tag {
   display: inline-flex;
   align-items: center;
@@ -414,8 +418,8 @@ code {
   font-weight: 600;
   letter-spacing: 0.01em;
   color: var(--accent);
-  background: rgba($accent, 0.12);
-  border: 1px solid rgba($accent, 0.35);
+  background: rgba(var(--glow-rgb), 0.12);
+  border: 1px solid rgba(var(--glow-rgb), 0.4);
   padding: 4px 10px;
   border-radius: 999px;
 
@@ -783,14 +787,18 @@ html[data-bs-theme="light"] .hero-section {
   border-bottom: 1px solid var(--border-soft);
 }
 
+// En móvil (card apilada, columna) más grande que el hueco fijo de
+// escritorio y centrada: sin esto se quedaba en 260px de ancho pegada
+// al borde izquierdo de la tarjeta. aspect-ratio en vez de height fijo
+// porque aquí el ancho es fluido (hasta max-width).
 .project-image {
-  width: 260px;
-  max-width: 100%;
-  height: 195px;
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
   border: 1px solid var(--border);
   display: block;
-  margin: 0;
+  margin: 0 auto;
 }
 
 .project-body {
@@ -833,7 +841,12 @@ html[data-bs-theme="light"] .hero-section {
   }
 
   .project-image {
+    width: 260px;
+    max-width: 100%;
+    height: 195px;
+    aspect-ratio: auto;
     flex-shrink: 0;
+    margin: 0;
   }
 }
 

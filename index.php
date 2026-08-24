@@ -158,6 +158,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html lang="es" data-bs-theme="dark">
 
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -165,8 +167,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
   })(window,document,'script','dataLayer','GTM-TGNZRFLL');</script>
   <!-- End Google Tag Manager -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Álvaro Martínez | Desarrollador Web Full Stack en Murcia</title>
   <meta name="description" content="Álvaro Martínez, desarrollador web Full Stack Junior en Murcia. Java, Spring Boot, React, Node.js y PHP. Descubre mis proyectos, certificados y contacto." />
   <meta name="author" content="Álvaro Martínez" />
@@ -198,6 +198,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
   <link rel="manifest" href="manifest.webmanifest" />
 
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
     rel="stylesheet"
@@ -488,7 +489,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
         <div class="col-12 text-start col-md">
           <p class="lead">
-Desarrollador web Full Stack Junior de Murcia, graduado en DAW. Trabajo con <span class="tag">Java</span>, <span class="tag">Spring Boot</span>, <span class="tag">JavaScript</span>, <span class="tag">React</span>, <span class="tag">Node.js</span> y <span class="tag">SQL</span>, desarrollando aplicaciones web completas desde la base de datos hasta la interfaz de usuario.
+Desarrollador web Full Stack Junior de Murcia, graduado en DAW. Trabajo con <span class="tag">Java</span>&#8288;, <span class="tag">Spring Boot</span>&#8288;, <span class="tag">JavaScript</span>&#8288;, <span class="tag">React</span>&#8288;, <span class="tag">Node.js</span> y <span class="tag">SQL</span>&#8288;, desarrollando aplicaciones web completas desde la base de datos hasta la interfaz de usuario.
           </p>
           <div class="d-flex flex-wrap justify-content-center justify-content-md-start align-items-center gap-3 mt-4">
             <nav class="nav align-items-center gap-2">
@@ -535,7 +536,7 @@ Desarrollador web Full Stack Junior de Murcia, graduado en DAW. Trabajo con <spa
               <ul class="timeline-list">
                 <li>Desarrollé backend con <span class="tag">Python</span> y <span class="tag">SQL</span> para aplicaciones corporativas.</li>
                 <li>Diseñé y mantuve consultas sobre bases de datos relacionales.</li>
-                <li>Desarrollé nuevas funcionalidades y resolví incidencias siguiendo metodología ágil <span class="tag">SCRUM</span>.</li>
+                <li>Desarrollé nuevas funcionalidades y resolví incidencias siguiendo metodología ágil <span class="tag">SCRUM</span>&#8288;.</li>
               </ul>
             </div>
           </div>
@@ -566,7 +567,7 @@ Desarrollador web Full Stack Junior de Murcia, graduado en DAW. Trabajo con <spa
               </div>
               <ul class="timeline-list">
                 <li>Ascendido a Back Office en menos de 8 meses por cumplimiento de objetivos.</li>
-                <li>Coordiné un equipo como Líder de Equipo, con seguimiento de tareas mediante <span class="tag">KPIs</span>.</li>
+                <li>Coordiné un equipo como Líder de Equipo, con seguimiento de tareas mediante <span class="tag">KPIs</span>&#8288;.</li>
               </ul>
             </div>
           </div>
@@ -589,7 +590,7 @@ Desarrollador web Full Stack Junior de Murcia, graduado en DAW. Trabajo con <spa
           <img
             src="img/projects/cine.webp"
             srcset="img/projects/cine-350.webp 350w, img/projects/cine.webp 700w"
-            sizes="260px"
+            sizes="(min-width: 768px) 260px, (min-width: 480px) 420px, 90vw"
             class="project-image"
             alt="Captura del proyecto Cine, una aplicación de gestión de cartelera desarrollada con Laravel"
             width="700"
@@ -613,7 +614,7 @@ Desarrollador web Full Stack Junior de Murcia, graduado en DAW. Trabajo con <spa
           <img
             src="img/projects/restaurante.webp"
             srcset="img/projects/restaurante-350.webp 350w, img/projects/restaurante.webp 700w"
-            sizes="260px"
+            sizes="(min-width: 768px) 260px, (min-width: 480px) 420px, 90vw"
             class="project-image"
             alt="Captura del proyecto Restaurante, desarrollado con PHP y MySQL"
             width="700"
@@ -637,7 +638,7 @@ Desarrollador web Full Stack Junior de Murcia, graduado en DAW. Trabajo con <spa
           <img
             src="img/projects/calculator.webp"
             srcset="img/projects/calculator-350.webp 350w, img/projects/calculator.webp 700w"
-            sizes="260px"
+            sizes="(min-width: 768px) 260px, (min-width: 480px) 420px, 90vw"
             class="project-image"
             alt="Captura de la calculadora web estilo iOS hecha con JavaScript y CSS"
             width="700"
@@ -661,7 +662,7 @@ Desarrollador web Full Stack Junior de Murcia, graduado en DAW. Trabajo con <spa
           <img
             src="img/projects/pong.webp"
             srcset="img/projects/pong-350.webp 350w, img/projects/pong.webp 700w"
-            sizes="260px"
+            sizes="(min-width: 768px) 260px, (min-width: 480px) 420px, 90vw"
             class="project-image"
             alt="Captura del juego Pong recreado con Phaser y Vite"
             width="700"
