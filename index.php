@@ -158,6 +158,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html lang="es" data-bs-theme="dark">
 
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5GK9N4DJD2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-5GK9N4DJD2');
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Google Tag Manager -->
